@@ -47,11 +47,17 @@ module WirelessNodeBasic
 
         narrowbandInterface: Ieee802154NarrowbandInterface {
             parameters:
-                *.interfaceTableModule = default(absPath(".interfaceTable"));
-                //*.interfaceTableModule = default(absPath(interfaceTableModule));
-                //*.mobilityModule = default(absPath(".mobility");
-                radio.antenna.mobility.typename = default("");
-                //radio.antenna.mobilityModule = default(absPath("StationaryMobility"));
+                *.interfaceTableModule = default(absPath(".interfaceTable")); // Esto funciona... al menos está corriendo en compilación y runtime
+                
+                radio.antenna.mobility.typename = default("StationaryMobility"); // Esto funciona. Encuentra el Stationary Mobility
+                // Estas líneas son necesarias para definir el stationary mobility
+                radio.antenna.mobility.constraintAreaMaxX = 10000m;
+				radio.antenna.mobility.constraintAreaMinX = 0m;
+				radio.antenna.mobility.constraintAreaMaxY = 10000m;
+				radio.antenna.mobility.constraintAreaMinY = 0m;
+				radio.antenna.mobility.constraintAreaMaxZ = 0m;
+				radio.antenna.mobility.constraintAreaMinZ = 0m;
+                
                 @display("p=280.84,120.596");
         }
 
