@@ -22,7 +22,7 @@ simple RfPhysicalInterface
 {
     parameters:
         @class(RfPhysicalInterface);
-        @display("i=misc/sensor2");
+        
         int packetByteLength = default(80);
         bool sendMsgOnInit = default(false);
     gates:

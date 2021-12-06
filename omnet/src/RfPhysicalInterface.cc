@@ -31,6 +31,7 @@ RfPhysicalInterface::~RfPhysicalInterface() {
 
 void RfPhysicalInterface::initialize(){
 
+    EV << "I am initialized\n";
     if( par("sendMsgOnInit").boolValue() == true) {
 
         // We schedule an initial auto-message. When it arrives, we will send the first network message
