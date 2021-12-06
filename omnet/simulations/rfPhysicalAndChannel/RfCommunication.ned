@@ -24,16 +24,16 @@ network RfCommunication
     parameters:
         @display("bgb=295,240");
 
-
-    types:
-
-        channel Channel extends ned.DatarateChannel
-        {
-            //@signal[messageSent](type=omnetpp::cMessage);
-            //@signal[messageDiscarded](type=omnetpp::cMessage);
-            delay = default(100ms);
-            per = default(0.1);
-        }
+// Esto con el radiochannel no debería ser necesario
+//    types:
+//
+//        channel Channel extends ned.DatarateChannel
+//        {
+//            //@signal[messageSent](type=omnetpp::cMessage);
+//            //@signal[messageDiscarded](type=omnetpp::cMessage);
+//            delay = default(100ms);
+//            per = default(0.1);
+//        }
 
     submodules:
 
