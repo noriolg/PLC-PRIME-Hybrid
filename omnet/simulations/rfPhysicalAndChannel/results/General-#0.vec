@@ -1,4 +1,3 @@
-file 855 1638795985                                             
 version 3
 run General-0-20211206-14:05:46-9954
 attr configname General
@@ -29,5 +28,6 @@ vector 0 RfCommunication.RfBaseNode.narrowbandInterface.radio radioMode:vector E
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-0	838 16 0 0 0 0 2 0 0 0 0
+0	0	0	0
+0	0	0	0
 

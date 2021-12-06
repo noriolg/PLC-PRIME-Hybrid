@@ -50,7 +50,8 @@ module WirelessNodeBasic
                 *.interfaceTableModule = default(absPath(".interfaceTable"));
                 //*.interfaceTableModule = default(absPath(interfaceTableModule));
                 //*.mobilityModule = default(absPath(".mobility");
-                radio.antenna.mobilityModule = default("^.^.^.mobility");
+                radio.antenna.mobility.typename = default("");
+                //radio.antenna.mobilityModule = default(absPath("StationaryMobility"));
                 @display("p=280.84,120.596");
         }
 
