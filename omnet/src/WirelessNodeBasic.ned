@@ -49,14 +49,15 @@ module WirelessNodeBasic
             parameters:
                 *.interfaceTableModule = default(absPath(".interfaceTable")); // Esto funciona... al menos está corriendo en compilación y runtime
                 
-                radio.antenna.mobility.typename = default("StationaryMobility"); // Esto funciona. Encuentra el Stationary Mobility
+                radio.antenna.mobilityModule = default(exists(mobility) ? absPath(".mobility") : "");
+                //radio.antenna.mobility.typename = default("StationaryMobility"); // Esto funciona. Encuentra el Stationary Mobility
                 // Estas líneas son necesarias para definir el stationary mobility
-                radio.antenna.mobility.constraintAreaMaxX = 10000m;
-				radio.antenna.mobility.constraintAreaMinX = 0m;
-				radio.antenna.mobility.constraintAreaMaxY = 10000m;
-				radio.antenna.mobility.constraintAreaMinY = 0m;
-				radio.antenna.mobility.constraintAreaMaxZ = 0m;
-				radio.antenna.mobility.constraintAreaMinZ = 0m;
+                //radio.antenna.mobility.constraintAreaMaxX = 10000m;
+				//radio.antenna.mobility.constraintAreaMinX = 0m;
+				//radio.antenna.mobility.constraintAreaMaxY = 10000m;
+				//radio.antenna.mobility.constraintAreaMinY = 0m;
+				//radio.antenna.mobility.constraintAreaMaxZ = 0m;
+				//radio.antenna.mobility.constraintAreaMinZ = 0m;
                 
                 @display("p=280.84,120.596");
         }
