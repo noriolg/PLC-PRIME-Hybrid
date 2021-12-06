@@ -1,0 +1,3 @@
+package hybridmeter;
+
+@license(LGPL);

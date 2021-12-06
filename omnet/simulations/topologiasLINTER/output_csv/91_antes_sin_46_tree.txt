@@ -1,0 +1,362 @@
+The network logical topology is :
+I am node with SID=0
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15363
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15364
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15366
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15367
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15370
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15373
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15394
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15419
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15425
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15443
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15458
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15477
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15478
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15484
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15496
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15503
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15508
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15528
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15533
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15535
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15536
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15537
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15583
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15610
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15619
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15624
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15629
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15633
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15641
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15643
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15658
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15669
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15673
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15707
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15717
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15756
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15762
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15772
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15782
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15783
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15789
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15794
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15802
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15819
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15826
+		|
+		|
+		-> I am node with SID = 1 and LNID = 15894
+		|
+		|
+		-> I am node with SID = 1 and LNID = 16216
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15828
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15863
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15879
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15884
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15904
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15905
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15918
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15922
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15924
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15925
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15937
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15941
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15948
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15976
+	|
+	|
+	-> I am node with SID = 0 and LNID = 15998
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16005
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16014
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16031
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16036
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16041
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16045
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16093
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16110
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16115
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16117
+		|
+		|
+		-> I am node with SID = 3 and LNID = 15757
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16131
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16136
+		|
+		|
+		-> I am node with SID = 2 and LNID = 15939
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16175
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16203
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16207
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16215
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16221
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16229
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16237
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16240
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16245
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16256
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16275
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16278
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16293
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16342
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16351
+Nodo huerfano: 1
+Nodo huerfano: 2
+Nodo huerfano: 3
+Nodo huerfano: 4
+Nodo huerfano: 5
+Nodo huerfano: 6
+Nodo huerfano: 7
+Nodo huerfano: 8
+Nodo huerfano: 9
+Nodo huerfano: 10
+Nodo huerfano: 11
+Nodo huerfano: 12
+Nodo huerfano: 13
+Nodo huerfano: 14
+Nodo huerfano: 15
+Nodo huerfano: 16
+Nodo huerfano: 17
+Nodo huerfano: 18
+Nodo huerfano: 19
+Nodo huerfano: 20
+Nodo huerfano: 21
+Nodo huerfano: 22
+Nodo huerfano: 23
+Nodo huerfano: 24
+Nodo huerfano: 25
+Nodo huerfano: 26
+Nodo huerfano: 27
+Nodo huerfano: 28
+Nodo huerfano: 29
+Nodo huerfano: 30
+Nodo huerfano: 31
+Nodo huerfano: 32
+Nodo huerfano: 33
+Nodo huerfano: 34
+Nodo huerfano: 35
+Nodo huerfano: 36
+Nodo huerfano: 37
+Nodo huerfano: 38
+Nodo huerfano: 39
+Nodo huerfano: 40
+Nodo huerfano: 41
+Nodo huerfano: 42
+Nodo huerfano: 43
+Nodo huerfano: 44
+Nodo huerfano: 45
+Nodo huerfano: 46
+Nodo huerfano: 47
+Nodo huerfano: 48
+Nodo huerfano: 49
+Nodo huerfano: 50
+Nodo huerfano: 51
+Nodo huerfano: 52
+Nodo huerfano: 53
+Nodo huerfano: 54
+Nodo huerfano: 55
+Nodo huerfano: 56
+Nodo huerfano: 57
+Nodo huerfano: 58
+Nodo huerfano: 59
+Nodo huerfano: 60
+Nodo huerfano: 61
+Nodo huerfano: 62
+Nodo huerfano: 63
+Nodo huerfano: 64
+Nodo huerfano: 65
+Nodo huerfano: 66
+Nodo huerfano: 67
+Nodo huerfano: 68
+Nodo huerfano: 69
+Nodo huerfano: 70
+Nodo huerfano: 71
+Nodo huerfano: 72
+Nodo huerfano: 73
+Nodo huerfano: 74
+Nodo huerfano: 75
+Nodo huerfano: 76
+Nodo huerfano: 77
+Nodo huerfano: 78
+Nodo huerfano: 79
+Nodo huerfano: 80
+Nodo huerfano: 81
+Nodo huerfano: 82
+Nodo huerfano: 83
+Nodo huerfano: 84
+Nodo huerfano: 85
+Nodo huerfano: 86
+Nodo huerfano: 87

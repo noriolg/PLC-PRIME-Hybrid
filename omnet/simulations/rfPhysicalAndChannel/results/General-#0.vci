@@ -1,0 +1,78 @@
+file 2649 1638737179                                            
+version 3
+run General-0-20211205-21:46:11-2280
+attr configname General
+attr datetime 20211205-21:46:11
+attr datetimef 20211205-214611
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RfCommunication
+attr processid 2280
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config debug-on-errors true
+config image-path ../../../../../inet4.3/images
+config network RfCommunication
+config **.channel.per 0.2
+config **.channel.delay 200ms
+config *.RfBaseNode.packetByteLength 100
+config *.RfBaseNode.sendMsgOnInitWN true
+
+vector 0 RfCommunication.RfBaseNode.wlan.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 RfCommunication.RfBaseNode.wlan.radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 RfCommunication.RfServiceNode.wlan.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 RfCommunication.RfServiceNode.wlan.radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 RfCommunication.RfBaseNode.wlan.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 RfCommunication.RfBaseNode.wlan.mac.dcf.channelAccess.contention stateChanged:vector ETV
+attr enum IDLE,DEFER,IFS_AND_BACKOFF
+attr interpolationmode none
+attr title "contention state changed, vector"
+attr type enum
+vector 6 RfCommunication.RfServiceNode.wlan.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 RfCommunication.RfServiceNode.wlan.mac.dcf.channelAccess.contention stateChanged:vector ETV
+attr enum IDLE,DEFER,IFS_AND_BACKOFF
+attr interpolationmode none
+attr title "contention state changed, vector"
+attr type enum
+vector 8 RfCommunication.RfBaseNode.wlan.mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 9 RfCommunication.RfServiceNode.wlan.mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+0	2518 24 0 0 0 0 3 0 2 2 4
+1	2542 8 0 0 0 0 1 0 0 0 0
+2	2550 24 0 0 0 0 3 0 2 2 4
+3	2574 8 0 0 0 0 1 0 0 0 0
+4	2582 8 0 0 0 0 1 1 1 1 1
+5	2590 16 0 0 0 0 2 0 0 0 0
+6	2606 8 0 0 0 0 1 1 1 1 1
+7	2614 16 0 0 0 0 2 0 0 0 0
+8	2630 9 0 0 0 0 1 31 31 31 961
+9	2639 9 0 0 0 0 1 31 31 31 961
+

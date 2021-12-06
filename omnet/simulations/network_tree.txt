@@ -1,0 +1,2 @@
+The netwok logical topology is :
+ -> I am node with SID = 0

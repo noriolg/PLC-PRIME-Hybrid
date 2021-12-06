@@ -1,0 +1,47 @@
+<Report IdRpt="S11" IdPet="0" Version="3.1.c">
+	<Cnc Id="CIR4621220001">
+		<S11 Fh="20140605125653000S">
+			<MacSNA macBeaconsPerFrame="5" macState="3" macSCPLength="245" macNodeHierarchyLevel="0" macBeaconSlotCount="4" macBeaconTxSlot="0" macBeaconTxFrequency="0" macCSMAChBusyCount="20508"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:AE" regEntryLNID="6171" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="00:80:E1:0E:67:93" regEntryLNID="6189" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="00:80:E1:0F:D2:53" regEntryLNID="6220" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:63:E4:89" regEntryLNID="6278" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="00:80:E1:0E:6E:10" regEntryLNID="6335" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:2A:7D:E4" regEntryLNID="6406" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:CD" regEntryLNID="6474" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:2A:7D:E8" regEntryLNID="6498" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="00:80:E1:0E:6A:98" regEntryLNID="6531" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:B9" regEntryLNID="6538" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:C7" regEntryLNID="6627" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:B8" regEntryLNID="6675" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:B7" regEntryLNID="6760" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:B2" regEntryLNID="6833" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:B6" regEntryLNID="6942" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:4B:77:F8" regEntryLNID="6967" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="00:80:E1:0E:87:23" regEntryLNID="6988" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:2A:65:3F" regEntryLNID="7035" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:4B:77:F7" regEntryLNID="7134" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListRegDevices regEntryID="40:40:22:19:04:CB" regEntryLNID="7160" regEntryState="1" regEntryLSID="255" regEntrySID="0" regEntryLevel="0"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6278" connEntryLCID="256" connEntryID="40:40:22:63:E4:89"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6171" connEntryLCID="256" connEntryID="40:40:22:19:04:AE"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6967" connEntryLCID="256" connEntryID="40:40:22:4B:77:F8"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6988" connEntryLCID="256" connEntryID="00:80:E1:0E:87:23"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6189" connEntryLCID="256" connEntryID="00:80:E1:0E:67:93"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6474" connEntryLCID="256" connEntryID="40:40:22:19:04:CD"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6531" connEntryLCID="256" connEntryID="00:80:E1:0E:6A:98"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6335" connEntryLCID="256" connEntryID="00:80:E1:0E:6E:10"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6220" connEntryLCID="256" connEntryID="00:80:E1:0F:D2:53"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6498" connEntryLCID="256" connEntryID="40:40:22:2A:7D:E8"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6942" connEntryLCID="256" connEntryID="40:40:22:19:04:B6"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6538" connEntryLCID="256" connEntryID="40:40:22:19:04:B9"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6406" connEntryLCID="256" connEntryID="40:40:22:2A:7D:E4"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6675" connEntryLCID="256" connEntryID="40:40:22:19:04:B8"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6627" connEntryLCID="256" connEntryID="40:40:22:19:04:C7"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="7134" connEntryLCID="256" connEntryID="40:40:22:4B:77:F7"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="7035" connEntryLCID="256" connEntryID="40:40:22:2A:65:3F"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6760" connEntryLCID="256" connEntryID="40:40:22:19:04:B7"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="7160" connEntryLCID="256" connEntryID="40:40:22:19:04:CB"/>
+			<macListActiveConn connEntrySID="0" connEntryLNID="6833" connEntryLCID="256" connEntryID="40:40:22:19:04:B2"/>
+		</S11>
+	</Cnc>
+</Report>

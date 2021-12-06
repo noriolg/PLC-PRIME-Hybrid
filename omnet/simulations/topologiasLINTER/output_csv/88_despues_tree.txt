@@ -1,0 +1,285 @@
+The network logical topology is :
+I am node with SID=0
+	|
+	|
+	-> I am node with SID = 0 and LNID = 24
+		|
+		|
+		-> I am node with SID = 56 and LNID = 82
+		|
+		|
+		-> I am node with SID = 56 and LNID = 546
+		|
+		|
+		-> I am node with SID = 56 and LNID = 698
+	|
+	|
+	-> I am node with SID = 0 and LNID = 194
+		|
+		|
+		-> I am node with SID = 36 and LNID = 586
+	|
+	|
+	-> I am node with SID = 0 and LNID = 234
+		|
+		|
+		-> I am node with SID = 143 and LNID = 154
+		|
+		|
+		-> I am node with SID = 143 and LNID = 308
+		|
+		|
+		-> I am node with SID = 143 and LNID = 479
+			|
+			|
+			-> I am node with SID = 133 and LNID = 592
+			|
+			|
+			-> I am node with SID = 133 and LNID = 822
+			|
+			|
+			-> I am node with SID = 133 and LNID = 1012
+		|
+		|
+		-> I am node with SID = 143 and LNID = 700
+		|
+		|
+		-> I am node with SID = 143 and LNID = 795
+		|
+		|
+		-> I am node with SID = 143 and LNID = 1000
+	|
+	|
+	-> I am node with SID = 0 and LNID = 258
+	|
+	|
+	-> I am node with SID = 0 and LNID = 311
+		|
+		|
+		-> I am node with SID = 53 and LNID = 96
+		|
+		|
+		-> I am node with SID = 53 and LNID = 214
+		|
+		|
+		-> I am node with SID = 53 and LNID = 253
+		|
+		|
+		-> I am node with SID = 53 and LNID = 369
+			|
+			|
+			-> I am node with SID = 39 and LNID = 569
+		|
+		|
+		-> I am node with SID = 53 and LNID = 401
+		|
+		|
+		-> I am node with SID = 53 and LNID = 422
+		|
+		|
+		-> I am node with SID = 53 and LNID = 490
+		|
+		|
+		-> I am node with SID = 53 and LNID = 503
+		|
+		|
+		-> I am node with SID = 53 and LNID = 933
+	|
+	|
+	-> I am node with SID = 0 and LNID = 419
+	|
+	|
+	-> I am node with SID = 0 and LNID = 473
+	|
+	|
+	-> I am node with SID = 0 and LNID = 510
+		|
+		|
+		-> I am node with SID = 162 and LNID = 133
+		|
+		|
+		-> I am node with SID = 162 and LNID = 386
+		|
+		|
+		-> I am node with SID = 162 and LNID = 575
+		|
+		|
+		-> I am node with SID = 162 and LNID = 671
+		|
+		|
+		-> I am node with SID = 162 and LNID = 852
+	|
+	|
+	-> I am node with SID = 0 and LNID = 640
+	|
+	|
+	-> I am node with SID = 0 and LNID = 693
+	|
+	|
+	-> I am node with SID = 0 and LNID = 730
+		|
+		|
+		-> I am node with SID = 191 and LNID = 18
+		|
+		|
+		-> I am node with SID = 191 and LNID = 352
+		|
+		|
+		-> I am node with SID = 191 and LNID = 362
+		|
+		|
+		-> I am node with SID = 191 and LNID = 610
+	|
+	|
+	-> I am node with SID = 0 and LNID = 798
+	|
+	|
+	-> I am node with SID = 0 and LNID = 930
+		|
+		|
+		-> I am node with SID = 124 and LNID = 139
+		|
+		|
+		-> I am node with SID = 124 and LNID = 849
+	|
+	|
+	-> I am node with SID = 0 and LNID = 954
+		|
+		|
+		-> I am node with SID = 149 and LNID = 38
+		|
+		|
+		-> I am node with SID = 149 and LNID = 67
+		|
+		|
+		-> I am node with SID = 149 and LNID = 123
+		|
+		|
+		-> I am node with SID = 149 and LNID = 302
+		|
+		|
+		-> I am node with SID = 149 and LNID = 318
+		|
+		|
+		-> I am node with SID = 149 and LNID = 508
+	|
+	|
+	-> I am node with SID = 0 and LNID = 968
+		|
+		|
+		-> I am node with SID = 105 and LNID = 398
+		|
+		|
+		-> I am node with SID = 105 and LNID = 702
+	|
+	|
+	-> I am node with SID = 0 and LNID = 974
+	|
+	|
+	-> I am node with SID = 0 and LNID = 998
+		|
+		|
+		-> I am node with SID = 248 and LNID = 243
+			|
+			|
+			-> I am node with SID = 28 and LNID = 83
+			|
+			|
+			-> I am node with SID = 28 and LNID = 527
+		|
+		|
+		-> I am node with SID = 248 and LNID = 259
+		|
+		|
+		-> I am node with SID = 248 and LNID = 410
+			|
+			|
+			-> I am node with SID = 54 and LNID = 885
+		|
+		|
+		-> I am node with SID = 248 and LNID = 555
+		|
+		|
+		-> I am node with SID = 248 and LNID = 597
+		|
+		|
+		-> I am node with SID = 248 and LNID = 741
+	|
+	|
+	-> I am node with SID = 0 and LNID = 1022
+	|
+	|
+	-> I am node with SID = 0 and LNID = 16383
+		|
+		|
+		-> I am node with SID = 145 and LNID = 92
+		|
+		|
+		-> I am node with SID = 145 and LNID = 103
+		|
+		|
+		-> I am node with SID = 145 and LNID = 110
+		|
+		|
+		-> I am node with SID = 145 and LNID = 165
+		|
+		|
+		-> I am node with SID = 145 and LNID = 198
+		|
+		|
+		-> I am node with SID = 145 and LNID = 205
+		|
+		|
+		-> I am node with SID = 145 and LNID = 399
+		|
+		|
+		-> I am node with SID = 145 and LNID = 442
+		|
+		|
+		-> I am node with SID = 145 and LNID = 453
+		|
+		|
+		-> I am node with SID = 145 and LNID = 642
+		|
+		|
+		-> I am node with SID = 145 and LNID = 657
+		|
+		|
+		-> I am node with SID = 145 and LNID = 679
+		|
+		|
+		-> I am node with SID = 145 and LNID = 801
+			|
+			|
+			-> I am node with SID = 176 and LNID = 239
+			|
+			|
+			-> I am node with SID = 176 and LNID = 240
+			|
+			|
+			-> I am node with SID = 176 and LNID = 273
+			|
+			|
+			-> I am node with SID = 176 and LNID = 680
+			|
+			|
+			-> I am node with SID = 176 and LNID = 738
+Nodo huerfano: 1
+Nodo huerfano: 2
+Nodo huerfano: 3
+Nodo huerfano: 4
+Nodo huerfano: 5
+Nodo huerfano: 6
+Nodo huerfano: 7
+Nodo huerfano: 8
+Nodo huerfano: 9
+Nodo huerfano: 10
+Nodo huerfano: 11
+Nodo huerfano: 12
+Nodo huerfano: 13
+Nodo huerfano: 14
+Nodo huerfano: 15
+Nodo huerfano: 16
+Nodo huerfano: 17
+Nodo huerfano: 18
+Nodo huerfano: 19

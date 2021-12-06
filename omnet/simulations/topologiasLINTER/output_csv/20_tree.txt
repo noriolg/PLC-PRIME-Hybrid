@@ -1,0 +1,82 @@
+The network logical topology is :
+I am node with SID=0
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6171
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6189
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6220
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6278
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6335
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6406
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6474
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6498
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6531
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6538
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6627
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6675
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6760
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6833
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6942
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6967
+	|
+	|
+	-> I am node with SID = 0 and LNID = 6988
+	|
+	|
+	-> I am node with SID = 0 and LNID = 7035
+	|
+	|
+	-> I am node with SID = 0 and LNID = 7134
+	|
+	|
+	-> I am node with SID = 0 and LNID = 7160
+Nodo huerfano: 1
+Nodo huerfano: 2
+Nodo huerfano: 3
+Nodo huerfano: 4
+Nodo huerfano: 5
+Nodo huerfano: 6
+Nodo huerfano: 7
+Nodo huerfano: 8
+Nodo huerfano: 9
+Nodo huerfano: 10
+Nodo huerfano: 11
+Nodo huerfano: 12
+Nodo huerfano: 13
+Nodo huerfano: 14
+Nodo huerfano: 15
+Nodo huerfano: 16
+Nodo huerfano: 17
+Nodo huerfano: 18
+Nodo huerfano: 19
+Nodo huerfano: 20
