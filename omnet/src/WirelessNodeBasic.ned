@@ -49,18 +49,30 @@ module WirelessNodeBasic
             parameters:
                 *.interfaceTableModule = default(absPath(".interfaceTable")); // Esto funciona... al menos está corriendo en compilación y runtime
                 
-                //radio.antenna.mobility.typename = default(exists(mobility) ? "StationaryMobility" : "");
                 
-                // radio.antenna.mobilityModule = default(exists(mobility) ? absPath(".mobility") : ""); // Esto da un error
+                //radio.antenna.mobility.typename = default(exists(mobility) ? "StationaryMobility" : ""); // Error
+                //radio.antenna.mobilityModule = default(exists(mobility) ? absPath(".mobility") : ""); // Error
+                //radio.antenna.mobility.typename = default("StationaryMobility" : "");   // Error
+                //radio.antenna.mobilityModule = default("^.^.^.mobility"); // Error
+                //radio.antenna.mobilityModule = default("^.^.^.^.mobility"); // Error
+                //radio.antenna.mobilityModule = default("^.^.mobility"); // Error
+                //radio.antenna.mobilityModule = default("inet.mobility.static.StationaryMobility"); //Error
                 
-                //radio.antenna.mobility.typename = default("StationaryMobility"); // Esto funciona. Encuentra el Stationary Mobility
+                
+                
+                
+               radio.antenna.mobility.typename = default("StationaryMobility"); 
+                // Esto funciona. Encuentra el Stationary Mobility
+                //  -- PERO falla por algo adicional -- se queda buffering... creo que le falta el:
+                // cDisplayString& displayString = subjectModule->getDisplayString(); que se ve en la línea 47 de StationaryMobility.cc (inet/mobility/static/StationaryMobility)
+               
                 // Estas líneas son necesarias para definir el stationary mobility
-                //radio.antenna.mobility.constraintAreaMaxX = 10000m;
-				//radio.antenna.mobility.constraintAreaMinX = 0m;
-				//radio.antenna.mobility.constraintAreaMaxY = 10000m;
-				//radio.antenna.mobility.constraintAreaMinY = 0m;
-				//radio.antenna.mobility.constraintAreaMaxZ = 0m;
-				//radio.antenna.mobility.constraintAreaMinZ = 0m;
+                radio.antenna.mobility.constraintAreaMaxX = 1000m;
+				radio.antenna.mobility.constraintAreaMinX = 0m;
+				radio.antenna.mobility.constraintAreaMaxY = 1000m;
+				radio.antenna.mobility.constraintAreaMinY = 0m;
+				radio.antenna.mobility.constraintAreaMaxZ = 0m;
+				radio.antenna.mobility.constraintAreaMinZ = 0m;
                 
                 @display("p=280.84,120.596");
         }
