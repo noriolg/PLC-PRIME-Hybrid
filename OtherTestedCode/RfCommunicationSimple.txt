@@ -55,7 +55,7 @@ network RfCommunication
             @display("p=446,31");
         }
 
-//    connections:
+    connections allowunconnected:
 //        RfBaseNode.radioIn --> Channel --> RfServiceNode.rfgatein;
 //
 //        RfServiceNode.rfgateout --> Channel --> RfBaseNode.rfgatein;
@@ -63,3 +63,4 @@ network RfCommunication
 
 
 }
+

@@ -20,54 +20,60 @@ package hybridmeter;
 //
 
 import inet.linklayer.contract.IWirelessInterface;
-import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
-import inet.networklayer.common.NetworkInterface;
+import inet.networklayer.common.InterfaceTable;
+import inet.node.base.NodeBase;
 
 
-module WirelessNodeBasic
+module WirelessNodeBasic extends NodeBase
 {
     parameters:
+        int numPcapRecorders = default(0);
+        int numLoInterfaces = default(1);
+        int numWlanInterfaces = default(1);
+        int numEthInterfaces = default(0);  // minimum number of ethernet interfaces
+        int numPppInterfaces = default(0);  // minimum number of PPP interfaces
+        int numTunInterfaces = default(0);
+        int numVlanInterfaces = default(0);
+        mobility.typename = default(numWlanInterfaces > 0 ? "StationaryMobility" : "");
+        *.interfaceTableModule = default(absPath(".interfaceTable"));
+        wlan.radio.antenna.mobilityModule = default("^.^.^.mobility");
+        @figure[linkLayer](type=rectangle; pos=250,456; size=1000,210; fillColor=#0000ff; lineColor=#808080; cornerRadius=5; fillOpacity=0.1);
+        @figure[linkLayer.title](type=text; pos=1245,461; anchor=ne; text="link layer");
 
         bool sendMsgOnInitWN = default(false);
         int packetByteLength = default(90);
 
-        @display("bgb=821.044,695.492");
     gates:
-        input upperLayerIn;   // Aquí conectaremos la MAC de PRIME
-        output upperLayerOut; // Aquí conectaremos la MAC de PRIME
+        input radioIn @directIn;
 
     submodules:
 
+        interfaceTable: InterfaceTable {
+            parameters:
+                @display("p=125,240;is=s");
+        }
+
+        // TODO: move wlan interfaces after eth interfaces, but it changes IP address assignment and breaks examples/inet/configurator/complex.ini
+        // scr/inet/linklayer/ieee802114/
+        wlan: <default("Ieee80211Interface")> like IWirelessInterface {
+            parameters:
+                @display("p=375,616,row,150;q=queue");
+        }
 
         PHYLayerAbstraction: RfPhysicalInterface {
-            parameters:
-                @display("p=280.84,353.52798");
+            @display("p=514,134");
+            sendMsgOnInit = parent.sendMsgOnInitWN;
+            packetByteLength = parent.packetByteLength;
         }
 
-
-        narrowbandInterface: Ieee802154NarrowbandInterface {
-            parameters:
-                *.interfaceTableModule = default(absPath(".interfaceTable")); // Esto funciona... al menos está corriendo en compilación y runtime
-                
-                radio.antenna.mobilityModule = default(exists(mobility) ? absPath(".mobility") : "");
-                //radio.antenna.mobility.typename = default("StationaryMobility"); // Esto funciona. Encuentra el Stationary Mobility
-                // Estas líneas son necesarias para definir el stationary mobility
-                //radio.antenna.mobility.constraintAreaMaxX = 10000m;
-				//radio.antenna.mobility.constraintAreaMinX = 0m;
-				//radio.antenna.mobility.constraintAreaMaxY = 10000m;
-				//radio.antenna.mobility.constraintAreaMinY = 0m;
-				//radio.antenna.mobility.constraintAreaMaxZ = 0m;
-				//radio.antenna.mobility.constraintAreaMinZ = 0m;
-                
-                @display("p=280.84,120.596");
-        }
 
 
     connections allowunconnected:
 
+        radioIn --> { @display("m=s"); } --> wlan.radioIn;
 
-        PHYLayerAbstraction.rfgateout --> narrowbandInterface.upperLayerIn;
-        narrowbandInterface.upperLayerOut --> PHYLayerAbstraction.rfgatein;
+        PHYLayerAbstraction.rfgatein <-- wlan.upperLayerOut;
+        PHYLayerAbstraction.rfgateout --> wlan.upperLayerIn;
 
 
 }

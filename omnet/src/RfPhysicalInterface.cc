@@ -14,7 +14,7 @@
 // 
 
 #include "RfPhysicalInterface.h"
-#include <string.h>
+
 
 Define_Module(RfPhysicalInterface);
 Register_Class(RfPhysicalInterface);
@@ -36,7 +36,7 @@ void RfPhysicalInterface::initialize(){
         // We schedule an initial auto-message. When it arrives, we will send the first network message
         EV << "Creating INITSELFMSG\n";
         cMessage * msg = new cMessage("InitialSelfMessage", INITSELFMSG);
-        scheduleAt(simTime()+ 5.0,msg );
+        scheduleAt(simTime()+ 1.0,msg );
 
     }
 
@@ -81,19 +81,27 @@ void RfPhysicalInterface::handleSelfMessage(cMessage *msg){
 
 void RfPhysicalInterface::sendInitialNetworkMessage(){
 
-    // Opción 1 intentada
+    // Tested option 1
     // cMessage *msg = new cMessage("RFMessage", TESTPHYMSG);
     // Packet *packet = dynamic_cast<Packet*>(msg);
 
-    EV << "We are now about to create the initial network message";
-    // Opción 2 intentada
-    Packet *packet = new Packet("RFPHYPacket");
-    long packetByteLength = long(par("packetByteLength"));
-    packet->setByteLength(packetByteLength);
-    //this->address = e8;
-    //cPacket *packet = createPacket();
+    // Tested option 2
+    //Packet *packet = new Packet("RFPHYPacket");
+    //long packetByteLength = long(par("packetByteLength"));
+    //packet->setByteLength(packetByteLength);
 
-    EV << "Creating packet with a length of " << packetByteLength << " bytes\n";
+    //Tested option 3
+    EV << "We are now about to create the initial network message";
+
+    //auto rfMsg= makeShared<RfMsg>();                  //I will be able to create by own messages at some point
+    auto data =  makeShared<ByteCountChunk>(B(10));    // Creating a chunk with 10 bytes
+
+    //data -> setChunkLength(B(packetByteLength))       // I can edit several data properties before inserting in packet
+
+    Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
+
+    long packetByteLength = long(par("packetByteLength"));
+    EV << "Creating packet with a length of " << packetByteLength << " bytes (not really, still to be implemented)\n";
 
     send(packet, "rfgateout");
     //sendPacket(packet, "rfgateout")

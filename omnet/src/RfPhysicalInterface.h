@@ -19,6 +19,7 @@
 #include <omnetpp.h>
 #include "global_variables.h"
 #include "inet/common/packet/Packet.h"
+#include <inet/common/packet/chunk/ByteCountChunk.h>
 
 using namespace inet;
 
