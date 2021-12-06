@@ -22,7 +22,7 @@ import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
 network RfCommunication
 {
     parameters:
-        @display("bgb=295,240");
+        @display("bgb=586,247");
 
 
     types:
@@ -44,7 +44,7 @@ network RfCommunication
 
 
         RfBaseNode: WirelessNodeBasic {
-            @display("p=218,134");
+            @display("p=514,134");
         }
 
         RfServiceNode: WirelessNodeBasic {
@@ -52,10 +52,10 @@ network RfCommunication
         }
 
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
-            @display("p=218,49");
+            @display("p=446,31");
         }
 
-    connections allowunconnected:
+//    connections:
 //        RfBaseNode.radioIn --> Channel --> RfServiceNode.rfgatein;
 //
 //        RfServiceNode.rfgateout --> Channel --> RfBaseNode.rfgatein;
@@ -63,3 +63,4 @@ network RfCommunication
 
 
 }
+
