@@ -100,7 +100,7 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
 
     Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
 
-    packet->addTagIfAbsent<MacAddressReq>()->setSrcAddress("RfServiceNode");
+    //packet->addTagIfAbsent<MacAddressReq>()->setSrcAddress("RfServiceNode");
 
 
     long packetByteLength = long(par("packetByteLength")); // This parameter is currently being imported from the .ini file. All defaults are set at different values to test precedence

@@ -1,3 +1,5 @@
+// This wireless Node is working but cannot find other MAC addresses
+
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -24,15 +26,16 @@ import inet.node.base.NodeBase;
 import inet.node.inet.WirelessHost;
 
 
-module WirelessNodeBasic extends WirelessHost
+module WirelessNodeBasic extends NodeBase
 {
     parameters:
-		numApps = 1;
-		numWlanInterfaces = 1;
-		wlan[0].typename = "Ieee802154NarrowbandInterface";
-		hasGn = true;
-		hasIpv4 = false;
-		
+
+        mobility.typename = default("StationaryMobility");
+        *.interfaceTableModule = default(absPath(".interfaceTable"));
+        narrowbandInterface.radio.antenna.mobilityModule = default("^.^.^.mobility");
+
+        bool sendMsgOnInitWN = default(false);
+        int packetByteLength = default(90);
 
         @display("i=misc/sensor2");
         @display("bgb=821.044,695.492");
@@ -43,6 +46,11 @@ module WirelessNodeBasic extends WirelessHost
 
     submodules:
 
+        interfaceTable: InterfaceTable {
+            parameters:
+                @display("p=125,240;is=s");
+        }
+
 
         PHYLayerAbstraction: RfPhysicalInterface {
             parameters:
@@ -50,10 +58,27 @@ module WirelessNodeBasic extends WirelessHost
         }
 
 
+//        narrowbandInterface: Ieee802154NarrowbandInterface {
+//            parameters:
+//
+//                @display("p=280.84,120.596");
+//        }
+
+        fakeNarrowbandInterface: WirelessHost{
+        	@display("i=misc/sensor");
+        	wlan[0].typename = "Ieee802154NarrowbandInterface";
+        	numApps = 1;
+        	
+        	
+        	
+        }
+
+
     connections allowunconnected:
 
 
-        PHYLayerAbstraction.rfgateout --> app[0].socketIn;
-        app[0].socketOut --> PHYLayerAbstraction.rfgatein;
+        PHYLayerAbstraction.rfgateout --> narrowbandInterface.upperLayerIn;
+        narrowbandInterface.upperLayerOut --> PHYLayerAbstraction.rfgatein;
 
 }
+

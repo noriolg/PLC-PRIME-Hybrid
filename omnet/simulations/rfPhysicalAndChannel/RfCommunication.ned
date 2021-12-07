@@ -16,7 +16,9 @@
 package hybridmeter.simulations.rfPhysicalAndChannel;
 
 import hybridmeter.WirelessNodeBasic;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
+import inet.visualizer.contract.IIntegratedVisualizer;
 
 
 network RfCommunication
@@ -37,11 +39,16 @@ network RfCommunication
 
     submodules:
 
-//        RfChannel: RfRadioChannel {
-//
-//            @display("p=300,134;b=63,64,rect;o=#408060");
-//        }
-
+        //        RfChannel: RfRadioChannel {
+        //
+        //            @display("p=300,134;b=63,64,rect;o=#408060");
+        //        }
+        visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
+            @display("p=580,125");
+        }
+        configurator: Ipv4NetworkConfigurator {
+            @display("p=580,200");
+        }
 
         RfBaseNode: WirelessNodeBasic {
             @display("p=218,134");
