@@ -30,7 +30,11 @@
  ../../../../inet4.3/src/inet/common/packet/chunk/SliceChunk.h \
  ../../../../inet4.3/src/inet/common/packet/tag/ITaggedObject.h \
  ../../../../inet4.3/src/inet/common/packet/tag/SharingTagSet.h \
- ../../../../inet4.3/src/inet/common/packet/chunk/ByteCountChunk.h
+ ../../../../inet4.3/src/inet/common/packet/chunk/ByteCountChunk.h \
+ ../../../../inet4.3/src/inet/linklayer/common/MacAddressTag_m.h \
+ ../../../../inet4.3/src/inet/common/INETDefs_m.h \
+ ../../../../inet4.3/src/inet/common/TagBase_m.h \
+ ../../../../inet4.3/src/inet/linklayer/common/MacAddress_m.h
 
 RfPhysicalInterface.h:
 
@@ -99,3 +103,11 @@ global_variables.h:
 ../../../../inet4.3/src/inet/common/packet/tag/SharingTagSet.h:
 
 ../../../../inet4.3/src/inet/common/packet/chunk/ByteCountChunk.h:
+
+../../../../inet4.3/src/inet/linklayer/common/MacAddressTag_m.h:
+
+../../../../inet4.3/src/inet/common/INETDefs_m.h:
+
+../../../../inet4.3/src/inet/common/TagBase_m.h:
+
+../../../../inet4.3/src/inet/linklayer/common/MacAddress_m.h:

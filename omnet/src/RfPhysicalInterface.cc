@@ -51,7 +51,6 @@ void RfPhysicalInterface::handleMessage(cMessage *msg){
         handleSelfMessage(msg);
     }
     else{
-
         forwardMessage(msg);
     }
 
@@ -68,7 +67,7 @@ void RfPhysicalInterface::handleSelfMessage(cMessage *msg){
             cancelAndDelete(msg);
 
 
-            // Calling the folowing function to start with the network messages
+            // Calling the following function to start with the network messages
             sendInitialNetworkMessage();
 
             break;
@@ -101,7 +100,11 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
 
     Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
 
-    long packetByteLength = long(par("packetByteLength"));
+    packet->addTagIfAbsent<MacAddressReq>()->setSrcAddress("RfServiceNode");
+
+
+    long packetByteLength = long(par("packetByteLength")); // This parameter is currently being imported from the .ini file. All defaults are set at different values to test precedence
+
     EV << "Creating packet with a length of " << packetByteLength << " bytes (not really, still to be implemented)\n";
 
     send(packet, "rfgateout");

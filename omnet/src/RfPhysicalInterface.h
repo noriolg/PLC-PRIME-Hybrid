@@ -20,6 +20,9 @@
 #include "global_variables.h"
 #include "inet/common/packet/Packet.h"
 #include <inet/common/packet/chunk/ByteCountChunk.h>
+#include <inet/linklayer/common/MacAddress.h>
+#include <inet/linklayer/common/MacAddressTag_m.h>
+
 
 using namespace inet;
 
