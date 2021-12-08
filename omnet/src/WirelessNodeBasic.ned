@@ -19,20 +19,23 @@ package hybridmeter;
 // TODO auto-generated type
 //
 
-import inet.networklayer.common.InterfaceTable;
-import inet.node.base.NodeBase;
+import inet.applications.contract.IApp;
 import inet.node.inet.WirelessHost;
 
 
 module WirelessNodeBasic extends WirelessHost
 {
     parameters:
-		numApps = 1;
-		numWlanInterfaces = 1;
-		wlan[0].typename = "Ieee802154NarrowbandInterface";
-		hasGn = true;
-		hasIpv4 = false;
-		
+        numApps = 1;
+        numWlanInterfaces = 1;
+        wlan[0].typename = "Ieee802154NarrowbandInterface";
+
+        // See https://inet.omnetpp.org/docs/users-guide/ch-other-network-protocols.html for an explanation of this configuration
+        hasGn = false; // Esto en el fondo, quiero que esté a true
+        hasIpv4 = true; // Voy a probar esta configuración
+        hasIpv6 = false;
+        generic.typename = "WiseRouteNetworkLayer";
+
 
         @display("i=misc/sensor2");
         @display("bgb=821.044,695.492");
@@ -42,6 +45,11 @@ module WirelessNodeBasic extends WirelessHost
         output upperLayerOut; // Aquí conectaremos la MAC de PRIME
 
     submodules:
+
+//        app[numApps]: <> like IApp {
+//            parameters:
+//                @display("p=485.688,42.952,row,150");
+//        }
 
 
         PHYLayerAbstraction: RfPhysicalInterface {
@@ -53,7 +61,7 @@ module WirelessNodeBasic extends WirelessHost
     connections allowunconnected:
 
 
-        PHYLayerAbstraction.rfgateout --> app[0].socketIn;
-        app[0].socketOut --> PHYLayerAbstraction.rfgatein;
+        //PHYLayerAbstraction.rfgateout --> app[0].socketIn; // Si pongo una aplicación predeterminada, entonces este cocket ya está usado. Por eso quiero crear mi aplicación...
+        // app[0].socketOut --> PHYLayerAbstraction.rfgatein;  // Si pongo una aplicación predeterminada, entonces este cocket ya está usado. Por eso quiero crear mi aplicación...
 
 }

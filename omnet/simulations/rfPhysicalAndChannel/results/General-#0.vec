@@ -1,8 +1,8 @@
 version 3
-run General-0-20211207-18:10:23-2435
+run General-0-20211208-20:12:06-13551
 attr configname General
-attr datetime 20211207-18:10:23
-attr datetimef 20211207-181023
+attr datetime 20211208-20:12:06
+attr datetimef 20211208-201206
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network RfCommunication
-attr processid 2435
+attr processid 13551
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -21,20 +21,30 @@ config image-path ../../../../../inet4.3/images
 config network RfCommunication
 config *.RfBaseNode.PHYLayerAbstraction.sendMsgOnInit true
 config *.RfBaseNode.PHYLayerAbstraction.packetByteLength 100
+config *.RfBaseNode.app[0].typename UdpBasicApp
+config *.RfBaseNode.app[0].destAdresses "\"RfServiceNode\""
+config *.RfBaseNode.app[0].localPort 4000
+config *.RfBaseNode.app[0].destPort 4000
+config *.RfBaseNode.app[0].networkProtocol "\"flood\""
+config *.RfServiceNode.app[0].typename UdpBasicApp
+config *.RfServiceNode.app[0].destAdresses "\"RfBaseNode\""
+config *.RfServiceNode.app[0].localPort 4000
+config *.RfServiceNode.app[0].destPort 4000
+config *.RfServiceNode.app[0].networkProtocol "\"flood\""
 
-vector 0 RfCommunication.RfBaseNode.narrowbandInterface.radio radioMode:vector ETV
+vector 0 RfCommunication.RfBaseNode.wlan[0].radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 1 RfCommunication.RfServiceNode.narrowbandInterface.radio radioMode:vector ETV
+vector 1 RfCommunication.RfServiceNode.wlan[0].radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 2 RfCommunication.RfBaseNode.narrowbandInterface.radio receptionState:vector ETV
+vector 2 RfCommunication.RfBaseNode.wlan[0].radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
-vector 3 RfCommunication.RfServiceNode.narrowbandInterface.radio receptionState:vector ETV
+vector 3 RfCommunication.RfServiceNode.wlan[0].radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"

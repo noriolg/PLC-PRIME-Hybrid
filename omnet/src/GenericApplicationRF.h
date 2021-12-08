@@ -13,13 +13,13 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef GENERICAPPLICACTIONRF_H_
-#define GENERICAPPLICACTIONRF_H_
+#ifndef GENERICAPPLICATIONRF_H_
+#define GENERICAPPLICATIONRF_H_
 
-class GenericApplicactionRF {
+class GenericApplicationRF {
 public:
-    GenericApplicactionRF();
-    virtual ~GenericApplicactionRF();
+    GenericApplicationRF();
+    virtual ~GenericApplicationRF();
 };
 
-#endif /* GENERICAPPLICACTIONRF_H_ */
+#endif /* GENERICAPPLICATIONRF_H_ */

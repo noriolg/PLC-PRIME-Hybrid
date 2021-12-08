@@ -13,14 +13,18 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include "GenericApplicactionRF.h"
+#include "GenericApplicationRF.h"
 
-GenericApplicactionRF::GenericApplicactionRF() {
+//Define_Module(GenericApplicationRF); // Esto me sigue dando fallo... no entiendo por qué, en la otra clase funciona perfectamente. Además, si esto no está NO ENCUENTRA la clase
+//Register_Class(GenericApplicationRF);
+
+
+GenericApplicationRF::GenericApplicationRF() {
     // TODO Auto-generated constructor stub
 
 }
 
-GenericApplicactionRF::~GenericApplicactionRF() {
+GenericApplicationRF::~GenericApplicationRF() {
     // TODO Auto-generated destructor stub
 }
 
