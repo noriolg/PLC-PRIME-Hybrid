@@ -13,19 +13,14 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package hybridmeter;
+#include "GenericApplicactionRF.h"
 
-import inet.applications.contract.IApp;
+GenericApplicactionRF::GenericApplicactionRF() {
+    // TODO Auto-generated constructor stub
 
-
-//
-// TODO auto-generated type
-//
-simple GenericApplication like IApp
-{
-       parameters:
-        @display("i=block/app");
-    gates:
-        input socketIn;
-        output socketOut;
 }
+
+GenericApplicactionRF::~GenericApplicactionRF() {
+    // TODO Auto-generated destructor stub
+}
+
