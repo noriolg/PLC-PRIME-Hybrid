@@ -21,6 +21,9 @@ package hybridmeter;
 // TODO auto-generated type
 //
 
+import inet.mobility.contract.IMobility;
+import inet.physicallayer.wireless.common.contract.packetlevel.IAntenna;
+import inet.physicallayer.wireless.common.contract.packetlevel.IRadio;
 import inet.physicallayer.wireless.ieee802154.packetlevel.Ieee802154NarrowbandScalarRadio;
 
 
@@ -28,11 +31,12 @@ module WirelessNodeBasic //extends NodeBase
 {
     parameters:
 
-        mobility.typename = default("StationaryMobility");
-		narrowbandRadio.antenna.mobilityModule = default("^.^.^.mobility");
+        //mobility.typename = default("StationaryMobility");
+        //narrowbandRadio.antenna.mobilityModule = default("^.^.^.mobility");
 
+        *.mobilityModule = default(absPath(".mobility"));
 		//mobility.mobilityModule = default("^.^.mobility");
-		
+
 		// Valid for MAC & PHY abstraction
         //narrowbandRadio.radio.antenna.mobilityModule = default("^.^.^.mobility"); // https://inet.omnetpp.org/docs/showcases/mobility/combining/doc/index.html
         *.interfaceTableModule = default(absPath(".interfaceTable"));  // Interface table used in combination with mac interface
@@ -49,6 +53,16 @@ module WirelessNodeBasic //extends NodeBase
 
     submodules:
 
+        mobility: <default("StationaryMobility")> like IMobility {
+            parameters:
+                @display("p=100,100");
+        }
+
+        antenna: <default("IsotropicAntenna")> like IAntenna {
+            parameters:
+                @display("p=100,200");
+        }
+
 
         PHYLayerAbstraction: RfPhysicalInterface {
             parameters:
@@ -59,7 +73,9 @@ module WirelessNodeBasic //extends NodeBase
         narrowbandRadio: Ieee802154NarrowbandScalarRadio {
             parameters:
 
+                antenna.mobilityModule = default("^.^.mobility");
                 @display("p=280.84,120.596");
+                @node;
         }
 
 
@@ -73,9 +89,7 @@ module WirelessNodeBasic //extends NodeBase
 
 
 		// Ieee802154NarrowbandScalarRadio  // Este solo PHY
-        //test: Ieee802154NarrowbandInterface; // Esto tiene MAC y PHY
-        //test2: IsotropicAntenna;  // To quickly access the necessary classes 
-
+        //test: Ieee802154NarrowbandInterface;
     connections allowunconnected:
 
         // upperLayerIn --> PHYLayerAbstraction.upperLayerIn;  //  Gate "upperLayerIn" is not created yet in the RfPhysicalInterface.c file
