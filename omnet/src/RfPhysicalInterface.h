@@ -39,7 +39,6 @@ public:
         virtual void initialize() override;
         virtual void handleMessage(cMessage *msg) override;
         void forwardMessage(cMessage *msg);
-
         /**
             Describes the treatment of all handle
 
@@ -53,6 +52,7 @@ public:
         */
         void sendInitialNetworkMessage();
 
+        //long double readBERDataFromFile();
 
         //cPacket RfPhysicalInterface::createPacket();
 };

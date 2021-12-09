@@ -140,3 +140,63 @@ void RfPhysicalInterface::forwardMessage(cMessage *msg)
 
 }
 
+
+//long double RfPhysicalInterface::readBERDataFromFile(){
+//
+//    std::string fileName = par("BERFilename"); // Esto hay que ver el path donde lo buscamos
+//
+//    // Estos son los datos leídos
+//    bool FEC;
+//
+//
+//    std::ifstream inf(fileName.c_str());
+//
+//    if (inf.is_open()){
+//
+//        std::string BER;
+//        std::string SNR;
+//
+//        std::string aucComMode;
+//        getline(inf,auxComMode);
+//        EV << "Leo Communication Mode: " << auxComMode << "\n";
+//
+//        std::string auxFEC;
+//        getline(inf,auxFEC);
+//        EV << "Leo FEC: " << auxFEC<< "\n";
+//
+//        if (auxFEC.compare("false")==0){
+//            FEC=false;
+//        }
+//
+//        if (auxFEC.compare("true")==0){
+//            FEC=true;
+//        }
+//
+//        std::string auxModulation;
+//        getline(inf,auxModulation);
+//        EV << "Leo Modulation: " << auxModulation<< endl;
+//
+//        // Aquí empiezo a leer todos los puntos de BER para esta modulación
+//
+//        // Falta terminar de ajustar esta parte de la lectura
+//        while(!std::getline(inf,BER,'|').eof())
+//            //while(!inf.eof())
+//        {
+//            getline(inf,SNR);
+//
+//            EV << "Leo BER: " << BER << "Leo SNR: " << SNR << endl;
+//
+//            from_string<float>(auxBER, BER, std::dec);
+//            from_string<float>(auxSNR, SNR, std::dec);
+//            //BERvector.push_back(auxBER);
+//            //SNRvector.push_back(auxSNR);
+//        }
+//
+//        //EV <<"Inserting data in berData list" <<endl;
+//        //berData->insert(new BERData(auxComMode, FEC,auxModulation, SNRvector, BERvector ));
+//    }
+//    else {
+//        error("File not found");
+//    }
+//
+//}

@@ -29,6 +29,7 @@ network RfCommunication
     parameters:
 
         int numberOfServiceNodes = default(2);
+        string BERFilename = default("");
         @display("bgb=391.68997,239.19998");
 
 

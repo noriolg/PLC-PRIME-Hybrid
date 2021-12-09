@@ -1,4 +1,4 @@
-// This wireless Node is working but cannot find other MAC addresses
+// Problems with the mobility module
 
 
 // This program is free software: you can redistribute it and/or modify
@@ -21,22 +21,20 @@ package hybridmeter;
 // TODO auto-generated type
 //
 
-import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
-import inet.networklayer.common.InterfaceTable;
-import inet.node.base.NodeBase;
+import inet.physicallayer.wireless.ieee802154.packetlevel.Ieee802154NarrowbandScalarRadio;
 
 
-module WirelessNodeBasic extends NodeBase
+module WirelessNodeBasic //extends NodeBase
 {
     parameters:
 
         mobility.typename = default("StationaryMobility");
-
+		narrowbandRadio.antenna.mobilityModule = default("^.^.^.mobility");
 
 		//mobility.mobilityModule = default("^.^.mobility");
-
-
-        narrowbandRadio.radio.antenna.mobilityModule = default("^.^.^.mobility"); // https://inet.omnetpp.org/docs/showcases/mobility/combining/doc/index.html
+		
+		// Valid for MAC & PHY abstraction
+        //narrowbandRadio.radio.antenna.mobilityModule = default("^.^.^.mobility"); // https://inet.omnetpp.org/docs/showcases/mobility/combining/doc/index.html
         *.interfaceTableModule = default(absPath(".interfaceTable"));  // Interface table used in combination with mac interface
 
         bool sendMsgOnInitWN = default(false);
@@ -51,11 +49,6 @@ module WirelessNodeBasic extends NodeBase
 
     submodules:
 
-        interfaceTable: InterfaceTable {
-            parameters:
-                @display("p=125,240;is=s");
-        }
-
 
         PHYLayerAbstraction: RfPhysicalInterface {
             parameters:
@@ -63,14 +56,23 @@ module WirelessNodeBasic extends NodeBase
         }
 
 
-        narrowbandRadio: Ieee802154NarrowbandInterface {
+        narrowbandRadio: Ieee802154NarrowbandScalarRadio {
             parameters:
 
                 @display("p=280.84,120.596");
         }
 
 
-		// Ieee802154NarrowbandScalarRadio
+
+// Relevant for MAC & PHY Abstraction
+//        interfaceTable: InterfaceTable {
+//            parameters:
+//                @display("p=125,240;is=s");
+//        }
+
+
+
+		// Ieee802154NarrowbandScalarRadio  // Este solo PHY
         //test: Ieee802154NarrowbandInterface; // Esto tiene MAC y PHY
         //test2: IsotropicAntenna;  // To quickly access the necessary classes 
 
