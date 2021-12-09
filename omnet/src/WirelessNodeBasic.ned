@@ -1,6 +1,6 @@
 // This wireless Node is working but cannot find other MAC addresses
 
-//
+
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -22,11 +22,11 @@ package hybridmeter;
 //
 
 import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
-import inet.physicallayer.wireless.common.antenna.IsotropicAntenna;
-import inet.physicallayer.wireless.ieee802154.packetlevel.Ieee802154NarrowbandScalarRadio;
+import inet.networklayer.common.InterfaceTable;
+import inet.node.base.NodeBase;
 
 
-module WirelessNodeBasic //extends NodeBase
+module WirelessNodeBasic extends NodeBase
 {
     parameters:
 
@@ -34,10 +34,10 @@ module WirelessNodeBasic //extends NodeBase
 
 
 		//mobility.mobilityModule = default("^.^.mobility");
-        //narrowbandRadio.antenna.mobilityModule = default("^.^.mobility"); // https://inet.omnetpp.org/docs/showcases/mobility/combining/doc/index.html
 
 
-//        *.interfaceTableModule = default(absPath(".interfaceTable"));  // Interface table used in combination with mac interface
+        narrowbandRadio.radio.antenna.mobilityModule = default("^.^.^.mobility"); // https://inet.omnetpp.org/docs/showcases/mobility/combining/doc/index.html
+        *.interfaceTableModule = default(absPath(".interfaceTable"));  // Interface table used in combination with mac interface
 
         bool sendMsgOnInitWN = default(false);
         int packetByteLength = default(90);
@@ -51,10 +51,10 @@ module WirelessNodeBasic //extends NodeBase
 
     submodules:
 
-//        interfaceTable: InterfaceTable {
-//            parameters:
-//                @display("p=125,240;is=s");
-//        }
+        interfaceTable: InterfaceTable {
+            parameters:
+                @display("p=125,240;is=s");
+        }
 
 
         PHYLayerAbstraction: RfPhysicalInterface {
@@ -62,17 +62,18 @@ module WirelessNodeBasic //extends NodeBase
                 @display("p=280.84,353.52798");
         }
 
-        
-        narrowbandRadio: Ieee802154NarrowbandScalarRadio {
+
+        narrowbandRadio: Ieee802154NarrowbandInterface {
             parameters:
 
                 @display("p=280.84,120.596");
         }
 
 
-        //test: Ieee802154NarrowbandInterface;
+		// Ieee802154NarrowbandScalarRadio
+        //test: Ieee802154NarrowbandInterface; // Esto tiene MAC y PHY
         //test2: IsotropicAntenna;  // To quickly access the necessary classes 
-        
+
     connections allowunconnected:
 
         // upperLayerIn --> PHYLayerAbstraction.upperLayerIn;  //  Gate "upperLayerIn" is not created yet in the RfPhysicalInterface.c file
