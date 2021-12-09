@@ -22,17 +22,22 @@ package hybridmeter;
 //
 
 import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
-import inet.networklayer.common.InterfaceTable;
-import inet.node.base.NodeBase;
+import inet.physicallayer.wireless.common.antenna.IsotropicAntenna;
+import inet.physicallayer.wireless.ieee802154.packetlevel.Ieee802154NarrowbandScalarRadio;
 
 
-module WirelessNodeBasic extends NodeBase
+module WirelessNodeBasic //extends NodeBase
 {
     parameters:
 
         mobility.typename = default("StationaryMobility");
-        *.interfaceTableModule = default(absPath(".interfaceTable"));
-        narrowbandInterface.radio.antenna.mobilityModule = default("^.^.^.mobility");
+
+
+		//mobility.mobilityModule = default("^.^.mobility");
+        //narrowbandRadio.antenna.mobilityModule = default("^.^.mobility"); // https://inet.omnetpp.org/docs/showcases/mobility/combining/doc/index.html
+
+
+//        *.interfaceTableModule = default(absPath(".interfaceTable"));  // Interface table used in combination with mac interface
 
         bool sendMsgOnInitWN = default(false);
         int packetByteLength = default(90);
@@ -46,10 +51,10 @@ module WirelessNodeBasic extends NodeBase
 
     submodules:
 
-        interfaceTable: InterfaceTable {
-            parameters:
-                @display("p=125,240;is=s");
-        }
+//        interfaceTable: InterfaceTable {
+//            parameters:
+//                @display("p=125,240;is=s");
+//        }
 
 
         PHYLayerAbstraction: RfPhysicalInterface {
@@ -57,24 +62,24 @@ module WirelessNodeBasic extends NodeBase
                 @display("p=280.84,353.52798");
         }
 
-        //Ieee802154NarrowbandInterface
-        narrowbandInterface: Ieee802154NarrowbandInterface {
+        
+        narrowbandRadio: Ieee802154NarrowbandScalarRadio {
             parameters:
 
                 @display("p=280.84,120.596");
         }
 
-//        fakeNarrowbandInterface: WirelessHost {
-//            @display("i=misc/sensor");
-//            wlan[0].typename = "Ieee802154NarrowbandInterface";
-//            numApps = 1;
-//			}
 
-
+        //test: Ieee802154NarrowbandInterface;
+        //test2: IsotropicAntenna;  // To quickly access the necessary classes 
+        
     connections allowunconnected:
 
+        // upperLayerIn --> PHYLayerAbstraction.upperLayerIn;  //  Gate "upperLayerIn" is not created yet in the RfPhysicalInterface.c file
+        PHYLayerAbstraction.rfgateout --> narrowbandRadio.upperLayerIn;  // rfgateout will be renamed to "lowerLayerOut"
 
-        PHYLayerAbstraction.rfgateout --> narrowbandInterface.upperLayerIn;
-        narrowbandInterface.upperLayerOut --> PHYLayerAbstraction.rfgatein;
+
+        narrowbandRadio.upperLayerOut --> PHYLayerAbstraction.rfgatein;  //rfgatein will be renamed to "lowerLayerIn"
+        //PHYLayerAbstraction.uperLayerOut --> upperLayerOut; //  Gate "upperLayerOut" is not created yet in the RfPhysicalInterface.c file 
 
 }
