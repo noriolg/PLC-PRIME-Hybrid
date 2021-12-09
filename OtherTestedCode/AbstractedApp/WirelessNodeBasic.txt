@@ -1,4 +1,5 @@
-// This wireless Node is working but cannot find other MAC addresses
+// Este WirelessNodeBasic tiene la aplicacion abstraida
+
 
 //
 // This program is free software: you can redistribute it and/or modify
@@ -21,21 +22,23 @@ package hybridmeter;
 // TODO auto-generated type
 //
 
-import inet.networklayer.common.InterfaceTable;
-import inet.node.base.NodeBase;
+import inet.applications.contract.IApp;
 import inet.node.inet.WirelessHost;
 
 
-module WirelessNodeBasic extends NodeBase
+module WirelessNodeBasic extends WirelessHost
 {
     parameters:
+        numApps = 1;
+        numWlanInterfaces = 1;
+        wlan[0].typename = "Ieee802154NarrowbandInterface";
 
-        mobility.typename = default("StationaryMobility");
-        *.interfaceTableModule = default(absPath(".interfaceTable"));
-        narrowbandInterface.radio.antenna.mobilityModule = default("^.^.^.mobility");
+        // See https://inet.omnetpp.org/docs/users-guide/ch-other-network-protocols.html for an explanation of this configuration
+        hasGn = false; // Esto en el fondo, quiero que esté a true
+        hasIpv4 = true; // Voy a probar esta configuración
+        hasIpv6 = false;
+        generic.typename = "WiseRouteNetworkLayer";
 
-        bool sendMsgOnInitWN = default(false);
-        int packetByteLength = default(90);
 
         @display("i=misc/sensor2");
         @display("bgb=821.044,695.492");
@@ -46,10 +49,10 @@ module WirelessNodeBasic extends NodeBase
 
     submodules:
 
-        interfaceTable: InterfaceTable {
-            parameters:
-                @display("p=125,240;is=s");
-        }
+//        app[numApps]: <> like IApp {
+//            parameters:
+//                @display("p=485.688,42.952,row,150");
+//        }
 
 
         PHYLayerAbstraction: RfPhysicalInterface {
@@ -58,26 +61,11 @@ module WirelessNodeBasic extends NodeBase
         }
 
 
-//        narrowbandInterface: Ieee802154NarrowbandInterface {
-//            parameters:
-//
-//                @display("p=280.84,120.596");
-//        }
-
-        fakeNarrowbandInterface: WirelessHost{
-        	@display("i=misc/sensor");
-        	wlan[0].typename = "Ieee802154NarrowbandInterface";
-        	numApps = 1;
-        	
-        	
-        	
-        }
-
-
     connections allowunconnected:
 
 
-        PHYLayerAbstraction.rfgateout --> narrowbandInterface.upperLayerIn;
-        narrowbandInterface.upperLayerOut --> PHYLayerAbstraction.rfgatein;
+        //PHYLayerAbstraction.rfgateout --> app[0].socketIn; // Si pongo una aplicación predeterminada, entonces este socket ya está usado. Por eso quiero crear mi aplicación...
+        // app[0].socketOut --> PHYLayerAbstraction.rfgatein;  // Si pongo una aplicación predeterminada, entonces este socket ya está usado. Por eso quiero crear mi aplicación...
 
 }
+
