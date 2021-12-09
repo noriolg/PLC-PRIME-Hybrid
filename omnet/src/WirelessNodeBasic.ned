@@ -21,9 +21,9 @@ package hybridmeter;
 // TODO auto-generated type
 //
 
+import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
 import inet.networklayer.common.InterfaceTable;
 import inet.node.base.NodeBase;
-import inet.node.inet.WirelessHost;
 
 
 module WirelessNodeBasic extends NodeBase
@@ -57,21 +57,18 @@ module WirelessNodeBasic extends NodeBase
                 @display("p=280.84,353.52798");
         }
 
+        //Ieee802154NarrowbandInterface
+        narrowbandInterface: Ieee802154NarrowbandInterface {
+            parameters:
 
-//        narrowbandInterface: Ieee802154NarrowbandInterface {
-//            parameters:
-//
-//                @display("p=280.84,120.596");
-//        }
-
-        fakeNarrowbandInterface: WirelessHost{
-        	@display("i=misc/sensor");
-        	wlan[0].typename = "Ieee802154NarrowbandInterface";
-        	numApps = 1;
-        	
-        	
-        	
+                @display("p=280.84,120.596");
         }
+
+//        fakeNarrowbandInterface: WirelessHost {
+//            @display("i=misc/sensor");
+//            wlan[0].typename = "Ieee802154NarrowbandInterface";
+//            numApps = 1;
+//			}
 
 
     connections allowunconnected:
