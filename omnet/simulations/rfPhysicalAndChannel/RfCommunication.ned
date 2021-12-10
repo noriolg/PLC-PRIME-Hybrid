@@ -48,26 +48,26 @@ network RfCommunication
             @display("p=150,120");
         }
 
-        RfServiceNode[numberOfServiceNodes]: WirelessNodeBasic {
+//        RfServiceNode[numberOfServiceNodes]: WirelessNodeBasic {
+//
+//            @display("p=70,180;row");  // 8.4.3.4 Positioning in Manual
+//
+//        }
 
-            @display("p=70,180;row");  // 8.4.3.4 Positioning in Manual
+        RfServiceNodeA: WirelessNodeBasic {
 
+            @display("p=50,180");
         }
 
-//        RfServiceNodeA: WirelessNodeBasic {
-//
-//            @display("p=50,180");
-//        }
-//
-//        RfServiceNodeB: WirelessNodeBasic {
-//
-//            @display("p=150,180");
-//        }
-//
-//        RfServiceNodeC: WirelessNodeBasic {
-//
-//            @display("p=250,180");
-//        }
+        RfServiceNodeB: WirelessNodeBasic {
+
+            @display("p=150,180");
+        }
+
+        RfServiceNodeC: WirelessNodeBasic {
+
+            @display("p=250,180");
+        }
 
 
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {

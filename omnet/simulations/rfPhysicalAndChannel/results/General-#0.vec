@@ -1,0 +1,64 @@
+version 3
+run General-0-20211210-13:09:05-2545
+attr configname General
+attr datetime 20211210-13:09:05
+attr datetimef 20211210-130905
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RfCommunication
+attr processid 2545
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config debug-on-errors true
+config image-path ../../../../../inet4.3/images
+config network RfCommunication
+config *.BERFilename "\"NRNSC_M_2\""
+config *.numberOfServiceNodes 3
+config *.RfBaseNode.narrowbandRadio.centerFrequency "2450 MHz"
+config *.RfBaseNode.narrowbandRadio.bandwidth "2.8 MHz"
+config *.RfBaseNode.narrowbandRadio.headerLength "(1 *8 + 7 + 1) * 16us"
+config **.transmitter.modulation "\"BPSK\""
+config **.transmitter.bitrate 250kbps
+config **.transmitter.power 2.24mW
+config **.receiver.modulation "\"BPSK\""
+config **.receiver.sensitivity -100dBm
+config **.receiver.minInterferencePower -120dBm
+config *.RfBaseNode.PHYLayerAbstraction.sendMsgOnInit true
+config *.RfBaseNode.PHYLayerAbstraction.packetByteLength 100
+config *.RfBaseNode.mobility.typename StationaryMobility
+config *.RfBaseNode.mobility.mobilityModule "\"\""
+config *.RfServiceNode.PHYLayerAbstraction.packetByteLength 90
+config *.RfServiceNode.mobility.typename StationaryMobility
+
+vector 0 RfCommunication.RfBaseNode.narrowbandRadio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 RfCommunication.RfServiceNodeA.narrowbandRadio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 RfCommunication.RfServiceNodeB.narrowbandRadio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 RfCommunication.RfServiceNodeC.narrowbandRadio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+0	0	0	0
+0	0	0	0
+1	0	0	0
+1	0	0	0
+2	0	0	0
+2	0	0	0
+3	0	0	0
+3	0	0	0
+

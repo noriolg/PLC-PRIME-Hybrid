@@ -21,9 +21,8 @@ package hybridmeter;
 // TODO auto-generated type
 //
 
-import inet.mobility.contract.IMobility;
+import inet.mobility.static.StationaryMobility;
 import inet.physicallayer.wireless.common.contract.packetlevel.IAntenna;
-import inet.physicallayer.wireless.common.contract.packetlevel.IRadio;
 import inet.physicallayer.wireless.ieee802154.packetlevel.Ieee802154NarrowbandScalarRadio;
 
 
@@ -32,10 +31,12 @@ module WirelessNodeBasic //extends NodeBase
     parameters:
 
         //mobility.typename = default("StationaryMobility");
-        //narrowbandRadio.antenna.mobilityModule = default("^.^.^.mobility");
+        antenna.mobilityModule = default("^.^.^.mobility");
 
         *.mobilityModule = default(absPath(".mobility"));
 		//mobility.mobilityModule = default("^.^.mobility");
+//        narronarrowbandRadio.an
+//        antenna.mobilityModule = default("^.^.^.mobility");
 
 		// Valid for MAC & PHY abstraction
         //narrowbandRadio.radio.antenna.mobilityModule = default("^.^.^.mobility"); // https://inet.omnetpp.org/docs/showcases/mobility/combining/doc/index.html
@@ -46,16 +47,18 @@ module WirelessNodeBasic //extends NodeBase
 
         @display("i=misc/sensor2");
         @display("bgb=821.044,695.492");
+                @networkNode();
+        
 
     gates:
-        input upperLayerIn;   // Aquí conectaremos la MAC de PRIME
-        output upperLayerOut; // Aquí conectaremos la MAC de PRIME
+        input upperLayerIn;   // AquÃ­ conectaremos la MAC de PRIME
+        output upperLayerOut; // AquÃ­ conectaremos la MAC de PRIME
 
     submodules:
 
-        mobility: <default("StationaryMobility")> like IMobility {
+        mobility: StationaryMobility {
             parameters:
-                @display("p=100,100");
+                @display("p=100,200;is=s");
         }
 
         antenna: <default("IsotropicAntenna")> like IAntenna {
