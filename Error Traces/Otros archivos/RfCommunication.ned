@@ -18,7 +18,7 @@
 
 package hybridmeter.simulations.rfPhysicalAndChannel;
 
-import hybridmeter.WirelessNodeBasic;
+import hybridmeter.WirelessNodeBasicJavi3;
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
 import inet.visualizer.contract.IIntegratedVisualizer;
@@ -36,15 +36,19 @@ network RfCommunication
 
     submodules:
 
-
-        visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
-            @display("p=580,125");
+ visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
+            parameters:
+                @display("p=100,200;is=s");
         }
+        
+//        visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
+//            @display("p=580,125");
+//        }
 //        configurator: Ipv4NetworkConfigurator {
 //            @display("p=580,200");
 //        }
 
-        RfBaseNode: WirelessNodeBasic {
+        RfBaseNode: WirelessNodeBasicJavi3 {
             @display("p=150,120");
         }
 
@@ -54,20 +58,20 @@ network RfCommunication
 //
 //        }
 
-        RfServiceNodeA: WirelessNodeBasic {
+        RfServiceNodeA: WirelessNodeBasicJavi3 {
 
             @display("p=50,180");
         }
 
-        RfServiceNodeB: WirelessNodeBasic {
-
-            @display("p=150,180");
-        }
-
-        RfServiceNodeC: WirelessNodeBasic {
-
-            @display("p=250,180");
-        }
+//        RfServiceNodeB: WirelessNodeBasic {
+//
+//            @display("p=150,180");
+//        }
+//
+//        RfServiceNodeC: WirelessNodeBasic {
+//
+//            @display("p=250,180");
+//        }
 
 
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {

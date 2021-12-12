@@ -1,9 +1,9 @@
-file 2131 1639138181                                            
+file 2929 1639325367                                            
 version 3
-run General-0-20211210-13:09:05-2545
+run General-0-20211212-16:47:41-17528
 attr configname General
-attr datetime 20211210-13:09:05
-attr datetimef 20211210-130905
+attr datetime 20211212-16:47:41
+attr datetimef 20211212-164741
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network RfCommunication
-attr processid 2545
+attr processid 17528
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -38,24 +38,44 @@ config *.RfBaseNode.mobility.mobilityModule "\"\""
 config *.RfServiceNode.PHYLayerAbstraction.packetByteLength 90
 config *.RfServiceNode.mobility.typename StationaryMobility
 
-vector 0 RfCommunication.RfBaseNode.narrowbandRadio radioMode:vector ETV
+vector 0 RfCommunication.RfBaseNode.wlan.radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 1 RfCommunication.RfServiceNodeA.narrowbandRadio radioMode:vector ETV
+vector 1 RfCommunication.RfServiceNodeA.wlan.radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 2 RfCommunication.RfServiceNodeB.narrowbandRadio radioMode:vector ETV
+vector 2 RfCommunication.RfServiceNodeB.wlan.radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 3 RfCommunication.RfServiceNodeC.narrowbandRadio radioMode:vector ETV
+vector 3 RfCommunication.RfServiceNodeC.wlan.radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-0	2066 16 0 0 0 0 2 0 0 0 0
-1	2082 16 0 0 0 0 2 0 0 0 0
-2	2098 16 0 0 0 0 2 0 0 0 0
-3	2114 16 0 0 0 0 2 0 0 0 0
+vector 4 RfCommunication.RfBaseNode.wlan.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 RfCommunication.RfServiceNodeA.wlan.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 RfCommunication.RfServiceNodeB.wlan.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 RfCommunication.RfServiceNodeC.wlan.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+0	2800 24 0 0 0 0 3 0 2 2 4
+1	2824 24 0 0 0 0 3 0 2 2 4
+2	2848 24 0 0 0 0 3 0 2 2 4
+3	2872 24 0 0 0 0 3 0 2 2 4
+4	2896 8 0 0 0 0 1 1 1 1 1
+5	2904 8 0 0 0 0 1 1 1 1 1
+6	2912 8 0 0 0 0 1 1 1 1 1
+7	2920 8 0 0 0 0 1 1 1 1 1
 

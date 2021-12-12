@@ -1,3 +1,6 @@
+// Problems with the mobility module
+
+
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -23,25 +26,14 @@ import inet.mobility.static.StationaryMobility;
 import inet.networklayer.common.InterfaceTable;
 
 
-module WirelessNodeBasic //extends NodeBase
+module WirelessNodeBasicJavi3 //extends NodeBase
 {
     parameters:
-
+        @display("i=device/wifilaptop");
+        @networkNode();
         *.interfaceTableModule = "^.interfaceTable";
         wlan.radio.antenna.mobilityModule = default("^.^.^.mobility");
-
-        bool sendMsgOnInitWN = default(false);
-        int packetByteLength = default(90);
-
-        @display("i=misc/sensor2");
-        @display("bgb=821.044,695.492");
-
-        @networkNode();
-
-
     gates:
-        input upperLayerIn;   // AquÃ­ conectaremos la MAC de PRIME
-        output upperLayerOut; // AquÃ­ conectaremos la MAC de PRIME
         input radioIn @directIn;
 
     submodules:
@@ -50,7 +42,6 @@ module WirelessNodeBasic //extends NodeBase
             parameters:
                 @display("p=280.84,353.52798");
         }
-
 
         wlan: Ieee802154NarrowbandInterface {
             parameters:
@@ -67,15 +58,13 @@ module WirelessNodeBasic //extends NodeBase
                 @display("p=100,200;is=s");
         }
 
+
+		// Ieee802154NarrowbandScalarRadio  // Este solo PHY
+        //test: Ieee802154NarrowbandInterface;
     connections allowunconnected:
 
-        // upperLayerIn --> PHYLayerAbstraction.upperLayerIn;  //  Gate "upperLayerIn" is not created yet in the RfPhysicalInterface.c file
-        PHYLayerAbstraction.rfgateout --> wlan.upperLayerIn;  // rfgateout will be renamed to "lowerLayerOut"
         wlan.radioIn <-- radioIn;
-
-
-        wlan.upperLayerOut --> PHYLayerAbstraction.rfgatein;  //rfgatein will be renamed to "lowerLayerIn"
-        //PHYLayerAbstraction.uperLayerOut --> upperLayerOut; //  Gate "upperLayerOut" is not created yet in the RfPhysicalInterface.c file
-		         
-
+        PHYLayerAbstraction.rfgateout --> wlan.upperLayerIn;
+        PHYLayerAbstraction.rfgatein <-- wlan.upperLayerOut;
+        
 }
