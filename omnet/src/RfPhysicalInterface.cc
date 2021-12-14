@@ -108,7 +108,7 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
 
     //    packet->addTag<PacketProtocol>()->setProtocol(1);
     //    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(1);
-    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee802154);
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
     long packetByteLength = long(par("packetByteLength")); // This parameter is currently being imported from the .ini file. All defaults are set at different values to test precedence
 
@@ -128,7 +128,8 @@ void RfPhysicalInterface::forwardMessage(cMessage *msg)
     auto data =  makeShared<ByteCountChunk>(B(10));    // Creating a chunk with 10 bytes
     Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
     packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee802154);
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
+    //ieee802154
 
     EV << "Sending new message\n";
 
