@@ -1,9 +1,9 @@
-file 2929 1639325367                                            
+file 5447 1639471504                                            
 version 3
-run General-0-20211212-16:47:41-17528
+run General-0-20211214-09:38:52-4255
 attr configname General
-attr datetime 20211212-16:47:41
-attr datetimef 20211212-164741
+attr datetime 20211214-09:38:52
+attr datetimef 20211214-093852
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network RfCommunication
-attr processid 17528
+attr processid 4255
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -46,36 +46,68 @@ vector 1 RfCommunication.RfServiceNodeA.wlan.radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 2 RfCommunication.RfServiceNodeB.wlan.radio radioMode:vector ETV
-attr interpolationmode sample-hold
-attr source radioModeChanged
-attr title "Radio mode, vector"
-vector 3 RfCommunication.RfServiceNodeC.wlan.radio radioMode:vector ETV
-attr interpolationmode sample-hold
-attr source radioModeChanged
-attr title "Radio mode, vector"
-vector 4 RfCommunication.RfBaseNode.wlan.radio receptionState:vector ETV
+vector 2 RfCommunication.RfBaseNode.wlan.radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
-vector 5 RfCommunication.RfServiceNodeA.wlan.radio receptionState:vector ETV
+vector 3 RfCommunication.RfServiceNodeA.wlan.radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
-vector 6 RfCommunication.RfServiceNodeB.wlan.radio receptionState:vector ETV
+vector 4 RfCommunication.RfBaseNode.wlan.mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 5 RfCommunication.RfBaseNode.wlan.mac.queue queueLength:vector ETV
+attr autoWarmupFilter false
 attr interpolationmode sample-hold
-attr source receptionStateChanged
-attr title "Radio reception state, vector"
-vector 7 RfCommunication.RfServiceNodeC.wlan.radio receptionState:vector ETV
+attr source "warmup(count(packetPushed) - count(packetPulled) - count(packetRemoved) - count(packetDropped))"
+attr title "queue length, vector"
+attr type int
+vector 6 RfCommunication.RfBaseNode.wlan.radio transmissionState:vector ETV
 attr interpolationmode sample-hold
-attr source receptionStateChanged
-attr title "Radio reception state, vector"
-0	2800 24 0 0 0 0 3 0 2 2 4
-1	2824 24 0 0 0 0 3 0 2 2 4
-2	2848 24 0 0 0 0 3 0 2 2 4
-3	2872 24 0 0 0 0 3 0 2 2 4
-4	2896 8 0 0 0 0 1 1 1 1 1
-5	2904 8 0 0 0 0 1 1 1 1 1
-6	2912 8 0 0 0 0 1 1 1 1 1
-7	2920 8 0 0 0 0 1 1 1 1 1
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 7 RfCommunication.RfBaseNode.wlan.mac.queue packetPulled:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pulled, vector(packetBytes)"
+vector 8 RfCommunication.RfBaseNode.wlan.mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPulled)
+attr title "queueing times, vector"
+attr unit s
+vector 9 RfCommunication.RfServiceNodeA.wlan.mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 10 RfCommunication.RfServiceNodeA.wlan.mac.queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr source "warmup(count(packetPushed) - count(packetPulled) - count(packetRemoved) - count(packetDropped))"
+attr title "queue length, vector"
+attr type int
+vector 11 RfCommunication.RfServiceNodeA.wlan.radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 12 RfCommunication.RfServiceNodeA.wlan.mac.queue packetPulled:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pulled, vector(packetBytes)"
+vector 13 RfCommunication.RfServiceNodeA.wlan.mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPulled)
+attr title "queueing times, vector"
+attr unit s
+0	4122 97 0 25 0 1.006240777998 7 0 3 12 30
+1	4219 112 0 34 0 1.008641166997 7 0 3 12 30
+2	4331 169 0 35 0 1.008641555996 9 0 3 11 23
+3	4500 182 0 34 0 1.008641166997 9 0 3 11 23
+4	4682 32 2 20 1 1.003520777998 2 19 19 38 722
+5	4714 67 2 22 1 1.005248777998 4 0 1 2 2
+6	4781 145 4 25 1.001088 1.006240777998 8 0 2 8 12
+7	4926 39 4 22 1.001088 1.005248777998 2 19 19 38 722
+8	4965 51 4 22 1.001088 1.005248777998 2 0.001088 0.001728 0.002816 4.169728e-06
+9	5016 46 11 29 1.002080388999 1.006241166997 2 19 19 38 722
+10	5062 92 11 31 1.002080388999 1.007649166997 4 0 1 2 2
+11	5154 184 13 34 1.002528388999 1.008641166997 8 0 2 8 12
+12	5338 48 13 31 1.002528388999 1.007649166997 2 19 19 38 722
+13	5386 60 13 31 1.002528388999 1.007649166997 2 0.000448 0.001408 0.001856 2.183168e-06
 

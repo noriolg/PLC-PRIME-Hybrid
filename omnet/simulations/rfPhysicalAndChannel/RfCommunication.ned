@@ -59,15 +59,15 @@ network RfCommunication
             @display("p=50,180");
         }
 
-        RfServiceNodeB: WirelessNodeBasic {
-
-            @display("p=150,180");
-        }
-
-        RfServiceNodeC: WirelessNodeBasic {
-
-            @display("p=250,180");
-        }
+//        RfServiceNodeB: WirelessNodeBasic {
+//
+//            @display("p=150,180");
+//        }
+//
+//        RfServiceNodeC: WirelessNodeBasic {
+//
+//            @display("p=250,180");
+//        }
 
 
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {

@@ -34,7 +34,16 @@
  ../../../../inet4.3/src/inet/linklayer/common/MacAddressTag_m.h \
  ../../../../inet4.3/src/inet/common/INETDefs_m.h \
  ../../../../inet4.3/src/inet/common/TagBase_m.h \
- ../../../../inet4.3/src/inet/linklayer/common/MacAddress_m.h
+ ../../../../inet4.3/src/inet/linklayer/common/MacAddress_m.h \
+ ../../../../inet4.3/src/inet/common/Protocol.h \
+ ../../../../inet4.3/src/inet/common/ProtocolTag_m.h \
+ ../../../../inet4.3/src/inet/common/Protocol_m.h \
+ ../../../../inet4.3/src/inet/common/packet/chunk/Chunk_m.h \
+ ../../../../inet4.3/src/inet/common/Units_m.h \
+ ../../../../inet4.3/src/inet/common/packet/chunk/BitCountChunk.h \
+ ../../../../inet4.3/src/inet/common/packet/chunk/cPacketChunk.h \
+ ../../../../inet4.3/src/inet/common/packet/chunk/EncryptedChunk.h \
+ ../../../../inet4.3/src/inet/common/packet/chunk/FieldsChunk.h
 
 RfPhysicalInterface.h:
 
@@ -111,3 +120,21 @@ global_variables.h:
 ../../../../inet4.3/src/inet/common/TagBase_m.h:
 
 ../../../../inet4.3/src/inet/linklayer/common/MacAddress_m.h:
+
+../../../../inet4.3/src/inet/common/Protocol.h:
+
+../../../../inet4.3/src/inet/common/ProtocolTag_m.h:
+
+../../../../inet4.3/src/inet/common/Protocol_m.h:
+
+../../../../inet4.3/src/inet/common/packet/chunk/Chunk_m.h:
+
+../../../../inet4.3/src/inet/common/Units_m.h:
+
+../../../../inet4.3/src/inet/common/packet/chunk/BitCountChunk.h:
+
+../../../../inet4.3/src/inet/common/packet/chunk/cPacketChunk.h:
+
+../../../../inet4.3/src/inet/common/packet/chunk/EncryptedChunk.h:
+
+../../../../inet4.3/src/inet/common/packet/chunk/FieldsChunk.h:

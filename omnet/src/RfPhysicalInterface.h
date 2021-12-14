@@ -22,6 +22,8 @@
 #include <inet/common/packet/chunk/ByteCountChunk.h>
 #include <inet/linklayer/common/MacAddress.h>
 #include <inet/linklayer/common/MacAddressTag_m.h>
+#include "inet/common/Protocol.h"
+#include "inet/common/ProtocolTag_m.h"
 
 
 using namespace inet;

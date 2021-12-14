@@ -101,9 +101,17 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
     Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
 
     //packet->addTagIfAbsent<MacAddressReq>()->setSrcAddress("RfServiceNode");
+    //packet->addTagIfAbsent<MacAddressReq>()->setSrcAddress("RfServiceNode");
+    //MacAddress * madAddress = new MacAddress(MacAddress::BROADCAST_ADDRESS);
+    packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
 
+
+    //    packet->addTag<PacketProtocol>()->setProtocol(1);
+    //    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(1);
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee802154);
 
     long packetByteLength = long(par("packetByteLength")); // This parameter is currently being imported from the .ini file. All defaults are set at different values to test precedence
+
 
     EV << "Creating packet with a length of " << packetByteLength << " bytes (not really, still to be implemented)\n";
 
@@ -115,8 +123,16 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
 
 void RfPhysicalInterface::forwardMessage(cMessage *msg)
 {
-    EV << "Sending message again\n";
-    send(msg, "rfgateout");
+    EV << "Deleting received message and creating a new one\n";
+
+    auto data =  makeShared<ByteCountChunk>(B(10));    // Creating a chunk with 10 bytes
+    Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
+    packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee802154);
+
+    EV << "Sending new message\n";
+
+    send(packet, "rfgateout");
 
     //    cPacket* packet = dynamic_cast<cPacket*>(msg);
     //
