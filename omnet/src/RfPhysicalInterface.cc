@@ -94,26 +94,14 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
     EV << "We are now about to create the initial network message";
 
     //auto rfMsg= makeShared<RfMsg>();                  //I will be able to create by own messages at some point
-    auto data =  makeShared<ByteCountChunk>(B(10));    // Creating a chunk with 10 bytes
-
-    //data -> setChunkLength(B(packetByteLength))       // I can edit several data properties before inserting in packet
+    long packetByteLength = long(par("packetByteLength"));
+    auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
 
     Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
-
-    //packet->addTagIfAbsent<MacAddressReq>()->setSrcAddress("RfServiceNode");
-    //packet->addTagIfAbsent<MacAddressReq>()->setSrcAddress("RfServiceNode");
-    //MacAddress * madAddress = new MacAddress(MacAddress::BROADCAST_ADDRESS);
     packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-
-
-    //    packet->addTag<PacketProtocol>()->setProtocol(1);
-    //    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(1);
     packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
-    long packetByteLength = long(par("packetByteLength")); // This parameter is currently being imported from the .ini file. All defaults are set at different values to test precedence
-
-
-    EV << "Creating packet with a length of " << packetByteLength << " bytes (not really, still to be implemented)\n";
+    EV << "Creating packet with a length of " << packetByteLength << " bytes\n";
 
     send(packet, "rfgateout");
     //sendPacket(packet, "rfgateout")
@@ -123,38 +111,55 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
 
 void RfPhysicalInterface::forwardMessage(cMessage *msg)
 {
-    EV << "Deleting received message and creating a new one\n";
 
-    auto data =  makeShared<ByteCountChunk>(B(10));    // Creating a chunk with 10 bytes
-    Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
-    packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
-    //ieee802154
+    EV << "Simulating error for received message\n";
+    bool hasBitError = simulateBER(msg);
 
-    EV << "Sending new message\n";
 
-    send(packet, "rfgateout");
+    if (hasBitError){
 
-    //    cPacket* packet = dynamic_cast<cPacket*>(msg);
-    //
-    //    if (packet -> hasBitError()){
-    //        EV << "Packet has bit error\n";
-    //
-    //
-    //        delete packet;
-    //        // Esto habr�a que ser capaz de meterlo en una funci�n separada
-    //        cPacket *packet_new = new cPacket("RFPacket_alt");
-    //        long packetByteLength = long(par("packetByteLength"));
-    //        packet_new->setByteLength(packetByteLength);
-    //        EV << "New packet created\n";
-    //
-    //        forwardMessage(packet_new);
-    //
-    //    }else{
-    //        EV << "Packet has arrived correctly\n";
-    //        forwardMessage(packet);
-    //    }
 
+        EV << "Packet has bit error. Deleting received message and creating a new one\n";
+        delete msg;
+
+        long packetByteLength = long(par("packetByteLength"));
+        auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
+
+        Packet *packet = new Packet("RFPHYPacket_alt", data);   // I create a packet with the "data" defined above
+        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+        packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
+
+
+        EV << "Sending new message\n";
+        send(packet, "rfgateout");
+    }else{
+
+        EV << "Packet does not have bit error. Returning same message\n";
+
+        Packet *packet = dynamic_cast<Packet*>(msg);
+        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+        packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
+
+        EV << "Sending new message\n";
+        send(packet, "rfgateout");
+    }
+
+}
+
+bool RfPhysicalInterface::simulateBER(cMessage *msg){
+
+    bool errorInMsg;
+
+    if (uniform(0,1) < 0.5){
+        EV << "Error in message\n";
+        errorInMsg = true;
+
+    }else{
+        EV << "No error in message\n";
+        errorInMsg = false;
+    }
+
+    return errorInMsg;
 }
 
 

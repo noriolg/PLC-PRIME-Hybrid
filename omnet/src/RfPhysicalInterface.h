@@ -54,9 +54,14 @@ public:
         */
         void sendInitialNetworkMessage();
 
+
+        /**
+         * Obtains BER from SNR/BER curves and returns a boolean indicating whether the message has been correctly received.
+         */
+        bool simulateBER(cMessage *msg);
+
         //long double readBERDataFromFile();
 
-        //cPacket RfPhysicalInterface::createPacket();
 };
 
 #endif /* RFPHYSICALINTERFACE_H_ */
