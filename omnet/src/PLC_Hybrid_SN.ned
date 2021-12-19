@@ -69,16 +69,6 @@ module PLC_Hybrid_SN
         }
 
 
-//        PHYLayerAbstraction: RfPhysicalInterface {
-//            parameters:
-//                @display("p=280.84,353.52798");
-//        }
-
-        li: MessageDispatcher {
-            parameters:
-                @display("p=153,293;b=263,12,,,,1");
-        }
-
         wlan: Ieee802154NarrowbandInterface {
             parameters:
                 @display("p=108,362;q=queue");
@@ -101,28 +91,20 @@ module PLC_Hybrid_SN
         llc.lowerLayerOut --> mac.upperLayerIn;
 
 
-
         BNApp.out --> llc.upperLayerIn;
         BNApp.in <-- llc.upperLayerOut;
 
 
-//        PHYLayerAbstraction.rfgateout --> wlan.upperLayerIn;
-//        PHYLayerAbstraction.rfgatein <-- wlan.upperLayerOut;
-
-        li.in++ <-- mac.physOut;
-        li.out++ --> mac.physIn;
+        plclan.upperLayerIn <-- mac.physOut++;
+        plclan.upperLayerOut --> mac.physIn++;
 
 
-        li.in++ <-- wlan.upperLayerOut;
-        li.out++ --> wlan.upperLayerIn;
+        mac.physIn++ <-- wlan.upperLayerOut;
+        mac.physOut++ --> wlan.upperLayerIn;
 
-        plclan.upperLayerOut --> li.in++;
-        plclan.upperLayerIn <-- li.out++;
 
         ethg <--> { @display("m=s"); } <--> plclan.phys;
         wlan.radioIn <-- radioIn;
-
-
 }
 
 
