@@ -20,7 +20,6 @@ package hybridmeter;
 //
 
 
-import inet.common.MessageDispatcher;
 import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
 import inet.mobility.static.StationaryMobility;
 import inet.networklayer.common.InterfaceTable;
@@ -38,13 +37,14 @@ module PLC_Hybrid_BN
         @display("i=device/server2");
 
         bool hasRF = default(firstAvailableOrEmpty("RF") != "");
+        bool hasPRIME = default(firstAvailableOrEmpty("PRIME") != "");
 
         *.interfaceTableModule = "^.interfaceTable";
         wlan.radio.antenna.mobilityModule = default("^.^.^.mobility");
 
     gates:
-        inout ethg @labels(EtherFrame-conn);
-        input radioIn @directIn;
+      inout ethg @labels(EtherFrame-conn) ;
+        input radioIn @directIn ;
 
     submodules:
         BNApp: DLMSCOSEMBN {
@@ -66,7 +66,7 @@ module PLC_Hybrid_BN
         }
 
 
-        plclan: PLCPHYBN {
+        plclan: PLCPHYBN if hasPRIME {
             parameters:
                 @display("p=242,310,row,150;q=txQueue");
         }
@@ -83,7 +83,7 @@ module PLC_Hybrid_BN
 //                @display("p=153,293;b=263,12,,,,1");
 //        }
 
-        wlan: Ieee802154NarrowbandInterface {
+        wlan: Ieee802154NarrowbandInterface if hasRF {
             parameters:
                 @display("p=100,309;q=queue");
                 mgmt.typename = "Ieee80211MgmtStaSimplified";
@@ -93,13 +93,13 @@ module PLC_Hybrid_BN
             parameters:
                 @display("p=61,40;is=s");
         }
-        mobility: StationaryMobility {
+        mobility: StationaryMobility if hasRF {
             parameters:
                 @display("p=100,200;is=s");
         }
 
 
-    connections:
+    connections allowunconnected:
         llc.lowerLayerIn <-- mac.upperLayerOut;
         llc.lowerLayerOut --> mac.upperLayerIn;
 
@@ -108,14 +108,14 @@ module PLC_Hybrid_BN
         BNApp.in <-- llc.upperLayerOut;
 
 
-        plclan.upperLayerIn <-- mac.physOut++;
-        plclan.upperLayerOut --> mac.physIn++;
+        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
+        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
 
 
-        mac.physIn++ <-- wlan.upperLayerOut;
-        mac.physOut++ --> wlan.upperLayerIn;
+        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
+        mac.physOut++ --> wlan.upperLayerIn if hasRF;
 
 
-        ethg <--> { @display("m=s"); } <--> plclan.phys;
-        wlan.radioIn <-- radioIn;
+        ethg <--> { @display("m=s"); } <--> plclan.phys if hasPRIME;
+        wlan.radioIn <-- radioIn if hasRF;
 }
