@@ -159,66 +159,71 @@ bool RfPhysicalInterface::simulateBER(cMessage *msg){
         errorInMsg = false;
     }
 
+    // Esto por ahora es de prueba para ver que accedemos al valor correcto
+    float BERleida = leerBERSNR();
+    EV << "Ber leida: " << BERleida << endl;
+
+
     return errorInMsg;
 }
 
 
-//long double RfPhysicalInterface::readBERDataFromFile(){
-//
-//    std::string fileName = par("BERFilename"); // Esto hay que ver el path donde lo buscamos
-//
-//    // Estos son los datos leídos
-//    bool FEC;
-//
-//
-//    std::ifstream inf(fileName.c_str());
-//
-//    if (inf.is_open()){
-//
-//        std::string BER;
-//        std::string SNR;
-//
-//        std::string aucComMode;
-//        getline(inf,auxComMode);
-//        EV << "Leo Communication Mode: " << auxComMode << "\n";
-//
-//        std::string auxFEC;
-//        getline(inf,auxFEC);
-//        EV << "Leo FEC: " << auxFEC<< "\n";
-//
-//        if (auxFEC.compare("false")==0){
-//            FEC=false;
-//        }
-//
-//        if (auxFEC.compare("true")==0){
-//            FEC=true;
-//        }
-//
-//        std::string auxModulation;
-//        getline(inf,auxModulation);
-//        EV << "Leo Modulation: " << auxModulation<< endl;
-//
-//        // Aquí empiezo a leer todos los puntos de BER para esta modulación
-//
-//        // Falta terminar de ajustar esta parte de la lectura
-//        while(!std::getline(inf,BER,'|').eof())
-//            //while(!inf.eof())
-//        {
-//            getline(inf,SNR);
-//
-//            EV << "Leo BER: " << BER << "Leo SNR: " << SNR << endl;
-//
-//            from_string<float>(auxBER, BER, std::dec);
-//            from_string<float>(auxSNR, SNR, std::dec);
-//            //BERvector.push_back(auxBER);
-//            //SNRvector.push_back(auxSNR);
-//        }
-//
-//        //EV <<"Inserting data in berData list" <<endl;
-//        //berData->insert(new BERData(auxComMode, FEC,auxModulation, SNRvector, BERvector ));
-//    }
-//    else {
-//        error("File not found");
-//    }
-//
-//}
+
+//float leerBERSNR(float SNR_a_leer)
+float RfPhysicalInterface::leerBERSNR()
+{
+    float SNR_a_leer = 5.50; // Esto es un ejemplo de la SNR a leer. Esto debería ser la SNR particular de este mensaje
+
+    std::string filename = "NRNSC_M_2.txt";  // Esto debería depender de la modulación. Ojo con el PATH. Tendremos que editarlo
+    std::map<float, float> snrBerMap;
+
+    std::string auxComMode;
+    std::string auxFEC;
+    std::string auxModulation;
+
+    std::string BER;
+    std::string SNR;
+    float fBER;
+    float fSNR;
+
+    std::ifstream file(filename);
+    if (file.is_open())
+    {
+
+        getline(file, auxComMode);
+        //std::cout << "Leo Communication Mode: " << auxComMode << std::endl;
+        EV << "Leo Communication Mode: " << auxComMode << endl;
+
+        getline(file, auxFEC);
+        //std::cout << "Leo FEC: " << auxFEC << std::endl;
+        EV << "Leo FEC: " << auxComMode << endl;
+
+        getline(file, auxModulation);
+        //std::cout << "Leo Modulation: " << auxModulation << std::endl;
+        EV << "Leo Modulation: " << auxComMode << endl;
+
+        while (std::getline(file, BER, '|'))
+        {
+            getline(file, SNR);
+            //std::cout << "Leo BER: " << BER << " Leo SNR: " << SNR << std::endl;
+            EV  << "Leo BER: " << BER << " Leo SNR: " << SNR << endl;
+
+            fSNR = std::stof(SNR);
+            fBER = std::stof(BER);
+
+            // Anadimos los datos a un map que relaciona SNR con BER
+            snrBerMap[fSNR] = fBER;
+        }
+
+        //std::cout << "snrBerMap[5.50] is " << snrBerMap[5.50] << '\n' << std:endl;
+        //EV << "snrBerMap[5.50] is " << snrBerMap[5.50] << '\n'<< endl;
+    }
+    else
+    {
+        //std::cout << "Error al abrir el archivo de datos de la curva BER" << std::endl;
+        EV << "Error al abrir el archivo de datos de la curva BER\n"  << endl;
+    }
+    file.close();
+
+    return snrBerMap[SNR_a_leer];
+}

@@ -17,6 +17,9 @@
 #define RFPHYSICALINTERFACE_H_
 
 #include <omnetpp.h>
+#include <fstream>
+#include <string>
+#include <map>
 #include "global_variables.h"
 #include "inet/common/packet/Packet.h"
 #include <inet/common/packet/chunk/ByteCountChunk.h>
@@ -60,7 +63,7 @@ public:
          */
         bool simulateBER(cMessage *msg);
 
-        //long double readBERDataFromFile();
+        float leerBERSNR();
 
 };
 
