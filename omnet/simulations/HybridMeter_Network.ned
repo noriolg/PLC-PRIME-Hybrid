@@ -22,23 +22,23 @@ network HybridMeter_Net
         @display("bgi=background/streetmap,s;bgb=1600,1000");
 
     submodules:
+        
         // ------------------------------------ RADIO ---------------------------------------------------------------
         visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
             parameters:
                 @display("p=100,200;is=s");
         }
-         // This configurator assigns addresses to the hosts of the network
-        configurator: Ipv4NetworkConfigurator {
-            @display("p=580,200");
-        }
 
-        //        radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium {
-        //            @display("p=580,275");
-        //        }
 
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
             @display("p=218,49");
         }
+        
+        
+//        configurator: Ipv4NetworkConfigurator {
+//            @display("p=580,200");
+//        }
+
 //        RfBaseNode: WirelessNodeBasicJavi3 {
 //            @display("p=150,120");
 //        }
@@ -64,6 +64,9 @@ network HybridMeter_Net
             gates:
                 ethg[parent.nBranches+1];
         }
+
+
+		// ------------------------------------ Hybrid  ---------------------------------------------------------------
 
         PLC_BN: PLC_Hybrid_BN {
             parameters:

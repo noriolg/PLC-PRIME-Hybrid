@@ -19,8 +19,9 @@
 package hybridmeter.simulations.rfPhysicalAndChannel;
 
 import hybridmeter.WirelessNodeBasic;
-import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+import inet.physicallayer.wireless.common.backgroundnoise.IsotropicScalarBackgroundNoise;
 import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
+import inet.physicallayer.wireless.ieee802154.packetlevel.Ieee802154NarrowbandScalarRadioMedium;
 import inet.visualizer.contract.IIntegratedVisualizer;
 
 
@@ -59,17 +60,17 @@ network RfCommunication
             @display("p=50,180");
         }
 
-//        RfServiceNodeB: WirelessNodeBasic {
-//
-//            @display("p=150,180");
-//        }
-//
-//        RfServiceNodeC: WirelessNodeBasic {
-//
-//            @display("p=250,180");
-//        }
-
-
+        //        RfServiceNodeB: WirelessNodeBasic {
+        //
+        //            @display("p=150,180");
+        //        }
+        //
+        //        RfServiceNodeC: WirelessNodeBasic {
+        //
+        //            @display("p=250,180");
+        //        }
+        a: IsotropicScalarBackgroundNoise;
+        radioMe: Ieee802154NarrowbandScalarRadioMedium;
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
             @display("p=218,49");
         }

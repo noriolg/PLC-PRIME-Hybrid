@@ -45,12 +45,17 @@ public:
         virtual void handleMessage(cMessage *msg) override;
         void forwardMessage(cMessage *msg);
         /**
-            Describes the treatment of all handle
-
-            @param msg The received self message
+            Describes the treatment of all self messages
         */
         void handleSelfMessage(cMessage *msg);
 
+        /**
+            For not self messages, we check if they are from upper layers or network
+        */
+        void checkArrivalGate(cMessage *msg);
+
+        void processMsgFromUpperLayer(cMessage *msg);
+        void processMsgFromNetwork(cMessage *msg);
 
         /**
             When a node receives the inisitalization self message (INITSELFMSG) it creates and sends an initial network message.
@@ -61,9 +66,10 @@ public:
         /**
          * Obtains BER from SNR/BER curves and returns a boolean indicating whether the message has been correctly received.
          */
-        bool simulateBER(cMessage *msg);
+        bool simulateError(cMessage *msg);
 
-        float leerBERSNR();
+        float computeSNR(cMessage *msg);
+        float obtainBERforSNR(float SNR_a_leer);
 
 };
 

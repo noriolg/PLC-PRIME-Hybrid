@@ -69,13 +69,13 @@ module WirelessNodeBasic //extends NodeBase
 
     connections allowunconnected:
 
-        // upperLayerIn --> PHYLayerAbstraction.upperLayerIn;  //  Gate "upperLayerIn" is not created yet in the RfPhysicalInterface.c file
+        upperLayerIn --> PHYLayerAbstraction.upperLayerIn; // Comment this line when running RfCommunication.ned. This is only for hybrid connectivity
         PHYLayerAbstraction.rfgateout --> wlan.upperLayerIn;  // rfgateout will be renamed to "lowerLayerOut"
         wlan.radioIn <-- radioIn;
 
 
         wlan.upperLayerOut --> PHYLayerAbstraction.rfgatein;  //rfgatein will be renamed to "lowerLayerIn"
-        //PHYLayerAbstraction.uperLayerOut --> upperLayerOut; //  Gate "upperLayerOut" is not created yet in the RfPhysicalInterface.c file
+        PHYLayerAbstraction.upperLayerOut --> upperLayerOut; // Comment this line when running RfCommunication.ned. This is only for hybrid connectivity
 		         
 
 }

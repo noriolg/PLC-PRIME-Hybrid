@@ -39,8 +39,8 @@ module PLC_Hybrid_SN
         bool hasRF = default(firstAvailableOrEmpty("RF") != "");
         bool hasPRIME = default(firstAvailableOrEmpty("PRIME") != "");
 
-        *.interfaceTableModule = "^.interfaceTable";
-        wlan.radio.antenna.mobilityModule = default("^.^.^.mobility");
+        //*.interfaceTableModule = "^.interfaceTable"; // Already defined in WirelessNodeBasic
+        //wlan.radio.antenna.mobilityModule = default("^.^.^.mobility"); // Already defined in WirelessNodeBasic
     gates:
         inout ethg @labels(EtherFrame-conn) ;
         input radioIn @directIn ;
@@ -68,21 +68,26 @@ module PLC_Hybrid_SN
                 @display("p=242,362,row,150;q=txQueue");
         }
 
+		
+		// Podemos sustituir todo esto por un WirelessNodeBasic
+//        wlan: Ieee802154NarrowbandInterface if hasRF {
+//            parameters:
+//                @display("p=108,362;q=queue");
+//                mgmt.typename = "Ieee80211MgmtStaSimplified";
+//                agent.typename = "";
+//        }
+//        interfaceTable: InterfaceTable {
+//            parameters:
+//                @display("p=100,100;is=s");
+//        }
+//        mobility: StationaryMobility if hasRF {
+//            parameters:
+//                @display("p=100,200;is=s");
+//        }
 
-        wlan: Ieee802154NarrowbandInterface if hasRF {
-            parameters:
-                @display("p=108,362;q=queue");
-                mgmt.typename = "Ieee80211MgmtStaSimplified";
-                agent.typename = "";
-        }
-        interfaceTable: InterfaceTable {
-            parameters:
-                @display("p=100,100;is=s");
-        }
-        mobility: StationaryMobility if hasRF {
-            parameters:
-                @display("p=100,200;is=s");
-        }
+		wlan: WirelessNodeBasic if hasRF{
+		    
+		}
 
 
 
@@ -95,12 +100,21 @@ module PLC_Hybrid_SN
         BNApp.in <-- llc.upperLayerOut;
 
 
-        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
-        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
+		// Cambios aquí porque las puertas de mac NO son vectoriales.
+		// No he querido cambiar el código de simPRIME2 
+
+//        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
+//        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
+        plclan.upperLayerIn <-- mac.physOut if hasPRIME;
+        plclan.upperLayerOut --> mac.physIn if hasPRIME;
 
 
-        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
-        mac.physOut++ --> wlan.upperLayerIn if hasRF;
+
+//        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
+//        mac.physOut++ --> wlan.upperLayerIn if hasRF;
+        mac.physIn <-- wlan.upperLayerOut if hasRF;
+        mac.physOut --> wlan.upperLayerIn if hasRF;
+
 
 
         ethg <--> { @display("m=s"); } <--> plclan.phys if hasPRIME;

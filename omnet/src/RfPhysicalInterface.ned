@@ -26,6 +26,8 @@ simple RfPhysicalInterface
         int packetByteLength = default(80);
         bool sendMsgOnInit = default(false);
     gates:
-        input rfgatein;
-		output rfgateout;
+        input rfgatein; //lowerLayerIn
+		output rfgateout;//lowerLayerOut
+		input upperLayerIn;
+		output upperLayerOut;
 }

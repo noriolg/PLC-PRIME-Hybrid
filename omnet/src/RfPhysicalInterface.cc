@@ -51,7 +51,9 @@ void RfPhysicalInterface::handleMessage(cMessage *msg){
         handleSelfMessage(msg);
     }
     else{
-        forwardMessage(msg);
+
+        checkArrivalGate(msg); // To determine if the message is from upper layers or radio
+        //forwardMessage(msg);
     }
 
 }
@@ -109,11 +111,53 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
 
 }
 
+
+void RfPhysicalInterface::checkArrivalGate(cMessage *msg){
+
+    if (msg->getArrivalGate() == gate("upperLayerIn"))
+        processMsgFromUpperLayer(msg);
+    else // Viene de Ieee802154NarrowbandInterface
+        processMsgFromNetwork(msg);
+}
+
+
+void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
+
+    EV << "Message received from upper layer at RfPhysicalInterface\n";
+
+    // The packet is created. Destination address is supposedly already set? // PREGUNTAR
+    Packet *packet = dynamic_cast<Packet*>(msg);
+    //packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
+
+    EV << "Sending new message\n";
+    send(packet, "rfgateout");
+
+}
+
+void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
+
+    EV << "Message received from lower layer at RfPhysicalInterface\n";
+    Packet *packet = dynamic_cast<Packet*>(msg);
+
+    EV << "Simulating error for received message\n";
+    bool hasBitError = simulateError(msg);
+
+
+    if (hasBitError){
+        packet->setBitError(true);
+    }
+    // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
+    send(packet, "upperLayerOut");
+}
+
+
 void RfPhysicalInterface::forwardMessage(cMessage *msg)
 {
 
     EV << "Simulating error for received message\n";
-    bool hasBitError = simulateBER(msg);
+    bool hasBitError = simulateError(msg);
 
 
     if (hasBitError){
@@ -146,7 +190,8 @@ void RfPhysicalInterface::forwardMessage(cMessage *msg)
 
 }
 
-bool RfPhysicalInterface::simulateBER(cMessage *msg){
+
+bool RfPhysicalInterface::simulateError(cMessage *msg){
 
     bool errorInMsg;
 
@@ -160,19 +205,65 @@ bool RfPhysicalInterface::simulateBER(cMessage *msg){
     }
 
     // Esto por ahora es de prueba para ver que accedemos al valor correcto
-    float BERleida = leerBERSNR();
+    float SNR = computeSNR(msg);
+    EV<< "SNR calculado: " << SNR << endl;
+
+    float BERleida = obtainBERforSNR(SNR);
     EV << "Ber leida: " << BERleida << endl;
 
+
+    //Considerar esto:
+    //auto length = packet->getTotalLength();
+    //auto hasErrors = hasProbabilisticError(length, ber); // decide randomly
+    // https://inet.omnetpp.org/docs/developers-guide/ch-packets.html#:~:text=raw%20chunks%20(accurate)-,The,-first%20example%20shows
 
     return errorInMsg;
 }
 
 
-
-//float leerBERSNR(float SNR_a_leer)
-float RfPhysicalInterface::leerBERSNR()
+float RfPhysicalInterface::computeSNR(cMessage *msg)
 {
-    float SNR_a_leer = 5.50; // Esto es un ejemplo de la SNR a leer. Esto debería ser la SNR particular de este mensaje
+
+    float SNR;
+
+    Packet *packet = dynamic_cast<Packet*>(msg);
+
+
+    float rxPower = 15.5; // Esto falta conseguirlo
+
+    // Opción 1 - proabada y fallo en compilación
+    // auto signalPowerInd = packet->getTag<signalPowerInd>();
+    //auto rxPower = signalPowerInd->getPower().get();
+
+    // Opción 2 - no probada aun
+    // float rxPower = msg->getMsgPower();
+
+    EV<< "RX power= " << rxPower << "W" << endl;
+
+
+    // EV << "Packet received with Pot=" << potRx << endl;
+
+
+
+    // The background noise level in dB is obtained from wireless model
+    SNR = rxPower - 10; // Esto hay que sacarlo de: (el 10 es placeholder)
+    // Ieee802154NarrowbandScalarRadioMedium  -> RadioMedium -> IsotropicScalarBackgroundNoise -> power
+
+    return SNR;
+}
+
+
+
+
+
+// Esto estaría bien crearlo en la inicialización y dejar el mapa creado como variable global
+float RfPhysicalInterface::obtainBERforSNR(float SNR_a_leer)
+{
+
+
+    // Haría falta redondear (o interpolar) SNR_a_leer para que concuerde con las curvas obtenidas
+    // Por ahora, lo dejamos harcodeado
+    SNR_a_leer = 5.50;
 
     std::string filename = "NRNSC_M_2.txt";  // Esto debería depender de la modulación. Ojo con el PATH. Tendremos que editarlo
     std::map<float, float> snrBerMap;
@@ -206,7 +297,7 @@ float RfPhysicalInterface::leerBERSNR()
         {
             getline(file, SNR);
             //std::cout << "Leo BER: " << BER << " Leo SNR: " << SNR << std::endl;
-            EV  << "Leo BER: " << BER << " Leo SNR: " << SNR << endl;
+            //EV  << "Leo BER: " << BER << " Leo SNR: " << SNR << endl;
 
             fSNR = std::stof(SNR);
             fBER = std::stof(BER);
