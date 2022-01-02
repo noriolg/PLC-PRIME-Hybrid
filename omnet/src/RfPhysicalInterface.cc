@@ -271,6 +271,7 @@ float RfPhysicalInterface::obtainBERforSNR(float SNR_a_leer)
     // Por ahora, lo dejamos harcodeado
     SNR_a_leer = 5.50;
 
+
     //std::string filename = "../BERDATA/RSC_M_2.txt";
     std::string filename  = par("BERFilename");
 
