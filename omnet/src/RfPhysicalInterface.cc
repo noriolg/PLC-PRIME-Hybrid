@@ -106,7 +106,6 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
     EV << "Creating packet with a length of " << packetByteLength << " bytes\n";
 
     send(packet, "rfgateout");
-    //sendPacket(packet, "rfgateout")
 
 
 }
@@ -148,17 +147,28 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
     if (hasBitError){
         packet->setBitError(true);
     }
-    // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
-    send(packet, "upperLayerOut");
+
+
+    if( par("standaloneRFNetwork").boolValue() == true) {
+        // Utilizado cuando probamos RfCommuncation de manera individual
+        forwardMessage(packet);
+
+    }else{
+        // Utilizado para la integración hybrid
+        send(packet, "upperLayerOut");
+        // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
+
+    }
 }
 
-
+// Esto ahora mismo solo está en uso para cuando corremos RfCommunication de manera aislada
 void RfPhysicalInterface::forwardMessage(cMessage *msg)
 {
 
-    EV << "Simulating error for received message\n";
-    bool hasBitError = simulateError(msg);
 
+    Packet *packet = dynamic_cast<Packet*>(msg);
+    bool hasBitError = packet->hasBitError();
+    bubble("Test");
 
     if (hasBitError){
 
@@ -231,7 +241,7 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
 
     float rxPower = 15.5; // Esto falta conseguirlo
 
-    // Opción 1 - proabada y fallo en compilación
+    // Opción 1 - probada y fallo en compilación
     // auto signalPowerInd = packet->getTag<signalPowerInd>();
     //auto rxPower = signalPowerInd->getPower().get();
 
@@ -239,10 +249,6 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
     // float rxPower = msg->getMsgPower();
 
     EV<< "RX power= " << rxPower << "W" << endl;
-
-
-    // EV << "Packet received with Pot=" << potRx << endl;
-
 
 
     // The background noise level in dB is obtained from wireless model
@@ -265,7 +271,10 @@ float RfPhysicalInterface::obtainBERforSNR(float SNR_a_leer)
     // Por ahora, lo dejamos harcodeado
     SNR_a_leer = 5.50;
 
-    std::string filename = "NRNSC_M_2.txt";  // Esto debería depender de la modulación. Ojo con el PATH. Tendremos que editarlo
+    //std::string filename = "../BERDATA/RSC_M_2.txt";
+    std::string filename  = par("BERFilename");
+
+
     std::map<float, float> snrBerMap;
 
     std::string auxComMode;
@@ -287,11 +296,11 @@ float RfPhysicalInterface::obtainBERforSNR(float SNR_a_leer)
 
         getline(file, auxFEC);
         //std::cout << "Leo FEC: " << auxFEC << std::endl;
-        EV << "Leo FEC: " << auxComMode << endl;
+        EV << "Leo FEC: " << auxFEC << endl;
 
         getline(file, auxModulation);
         //std::cout << "Leo Modulation: " << auxModulation << std::endl;
-        EV << "Leo Modulation: " << auxComMode << endl;
+        EV << "Leo Modulation: " << auxModulation << endl;
 
         while (std::getline(file, BER, '|'))
         {

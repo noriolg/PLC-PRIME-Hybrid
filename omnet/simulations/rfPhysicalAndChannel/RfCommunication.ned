@@ -30,7 +30,6 @@ network RfCommunication
     parameters:
 
         int numberOfServiceNodes = default(2);
-        string BERFilename = default("");
         @display("bgb=391.68997,239.19998");
 
 
@@ -69,8 +68,7 @@ network RfCommunication
         //
         //            @display("p=250,180");
         //        }
-        a: IsotropicScalarBackgroundNoise;
-        radioMe: Ieee802154NarrowbandScalarRadioMedium;
+
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
             @display("p=218,49");
         }

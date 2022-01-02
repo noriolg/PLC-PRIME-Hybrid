@@ -25,6 +25,11 @@ simple RfPhysicalInterface
         
         int packetByteLength = default(80);
         bool sendMsgOnInit = default(false);
+		
+		// Esto es un poco lío pero no sé cómo acceder a parámetros del .ini directamente        
+        string BERFilename = default("");
+        bool standaloneRFNetwork = default(true);
+        
     gates:
         input rfgatein; //lowerLayerIn
 		output rfgateout;//lowerLayerOut
