@@ -280,10 +280,10 @@ float RfPhysicalInterface::obtainBERforSNR(float SNR_mensaje)
     float SNR_limite_superior = obtenerSNRValidaSuperior(SNR_mensaje);
     float SNR_limite_inferior = SNR_limite_superior - 0.25;
 
-    float BER_leida_superior = leerBERSNR(SNR_limite_superior);
-    float BER_leida_inferior = leerBERSNR(SNR_limite_inferior);
+    float BER_leida_superior = leerBERforSNRfromFile(SNR_limite_superior);
+    float BER_leida_inferior = leerBERforSNRfromFile(SNR_limite_inferior);
 
-    float BER_interpolada = BER_leida_inferior + (SNR_a_leer - SNR_limite_inferior) * (BER_leida_superior - BER_leida_inferior) / (SNR_limite_superior - SNR_limite_inferior);
+    float BER_interpolada = BER_leida_inferior + (SNR_mensaje - SNR_limite_inferior) * (BER_leida_superior - BER_leida_inferior) / (SNR_limite_superior - SNR_limite_inferior);
 
     return BER_interpolada;
 }
