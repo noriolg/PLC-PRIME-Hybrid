@@ -46,6 +46,22 @@ void RfPhysicalInterface::initialize(){
     std::string parentVariable= parent -> par("dummyVar");
     EV << "This is my father: " << parentName << "\n";
     EV << "This is his variable: " << parentVariable << "\n";
+
+
+    cModule *rfCommunication = getParentModule() -> getParentModule();
+    std::string grandParentName = rfCommunication -> getName();
+    EV << "This is my grandfather: " << grandParentName << "\n";
+
+    cModule *medioRadio = getParentModule() -> getParentModule() -> getSubmodule("radioMedium");
+    std::string uncleName = medioRadio -> getName();
+    EV << "This is my uncle: " << uncleName << "\n";
+
+    cModule *ruidoFondo = getParentModule() -> getParentModule() -> getSubmodule("radioMedium") -> getSubmodule("backgroundNoise");
+    std::string cousinName = ruidoFondo -> getName();
+    double cousinVariable= ruidoFondo -> par("power");
+    EV << "This is my cousin: " << cousinName << "\n";
+    EV << "This is his variable: " << cousinVariable << "\n";
+
 //    cModule *mod = getParentModule()->getSubmodule("fooStatus");
 //    NodeStatus *status = check_and_cast<NodeStatus*>(mod);
 //    if(status->getValueA() == test1)
@@ -253,14 +269,25 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
     Packet *packet = dynamic_cast<Packet*>(msg);
 
 
+//    cModule *parent = getParentModule();
+//    std::string parentName = parent -> getName();
+//    std::string parentVariable= parent -> par("dummyVar");
+//    EV << "This is my father: " << parentName << "\n";
+//    EV << "This is his variable: " << parentVariable << "\n";
+//    cModule *mod = getParentModule()->getSubmodule("fooStatus");
+
+
+
+
     float rxPower = 15.5; // Esto falta conseguirlo
 
     // Opción 1 - probada y fallo en compilación
     // auto signalPowerInd = packet->getTag<signalPowerInd>();
     //auto rxPower = signalPowerInd->getPower().get();
 
-    // Opción 2 - no probada aun
-    // float rxPower = msg->getMsgPower();
+    // Opción 2 - probada. Para esto habría que hacer le power manualmente
+    //float testRxPower = packet->getMsgPower();
+
 
     EV<< "RX power= " << rxPower << "W" << endl;
 

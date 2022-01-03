@@ -19,9 +19,7 @@
 package hybridmeter.simulations.rfPhysicalAndChannel;
 
 import hybridmeter.WirelessNodeBasic;
-import inet.physicallayer.wireless.common.backgroundnoise.IsotropicScalarBackgroundNoise;
 import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
-import inet.physicallayer.wireless.ieee802154.packetlevel.Ieee802154NarrowbandScalarRadioMedium;
 import inet.visualizer.contract.IIntegratedVisualizer;
 
 
@@ -48,11 +46,11 @@ network RfCommunication
             @display("p=150,120");
         }
 
-//        RfServiceNode[numberOfServiceNodes]: WirelessNodeBasic {
-//
-//            @display("p=70,180;row");  // 8.4.3.4 Positioning in Manual
-//
-//        }
+        //        RfServiceNode[numberOfServiceNodes]: WirelessNodeBasic {
+        //
+        //            @display("p=70,180;row");  // 8.4.3.4 Positioning in Manual
+        //
+        //        }
 
         RfServiceNodeA: WirelessNodeBasic {
 
