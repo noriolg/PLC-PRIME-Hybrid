@@ -32,10 +32,13 @@ module WirelessNodeBasic //extends NodeBase
 
         bool sendMsgOnInitWN = default(false);
         int packetByteLength = default(90);
+		string dummyVar = "This is dummy"; // Delete this variable. It is for testing accessing variables
+
 
         @display("i=misc/sensor2");
         @display("bgb=821.044,695.492");
-
+		
+		
         @networkNode();
 
 

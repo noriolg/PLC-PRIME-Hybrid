@@ -41,6 +41,17 @@ void RfPhysicalInterface::initialize(){
 
     }
 
+    cModule *parent = getParentModule();
+    std::string parentName = parent -> getName();
+    std::string parentVariable= parent -> par("dummyVar");
+    EV << "This is my father: " << parentName << "\n";
+    EV << "This is his variable: " << parentVariable << "\n";
+//    cModule *mod = getParentModule()->getSubmodule("fooStatus");
+//    NodeStatus *status = check_and_cast<NodeStatus*>(mod);
+//    if(status->getValueA() == test1)
+//        bubble("Value is the same");
+
+
 }
 
 
@@ -84,7 +95,6 @@ void RfPhysicalInterface::handleSelfMessage(cMessage *msg){
 void RfPhysicalInterface::sendInitialNetworkMessage(){
 
 
-    //Tested option 3
     if( par("standaloneRFNetwork").boolValue() == true) {
         // Utilizado cuando probamos RfCommuncation de manera individual
         EV << "We are now about to create the initial network message";
