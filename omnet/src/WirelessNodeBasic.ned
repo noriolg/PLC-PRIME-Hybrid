@@ -48,9 +48,10 @@ module WirelessNodeBasic //extends NodeBase
 
     submodules:
 
+
         PHYLayerAbstraction: RfPhysicalInterface {
             parameters:
-                @display("p=280.84,353.52798");
+                @display("p=250,351");
         }
 
 

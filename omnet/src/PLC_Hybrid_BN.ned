@@ -43,8 +43,8 @@ module PLC_Hybrid_BN
         //wlan.radio.antenna.mobilityModule = default("^.^.^.mobility"); // Already defined in WirelessNodeBasic
 
     gates:
-      inout ethg @labels(EtherFrame-conn) ;
-        input radioIn @directIn ;
+        inout ethg @labels(EtherFrame-conn);
+        input radioIn @directIn;
 
     submodules:
         BNApp: DLMSCOSEMBN {
@@ -99,9 +99,10 @@ module PLC_Hybrid_BN
 //                @display("p=100,200;is=s");
 //        }
 
-		wlan: WirelessNodeBasic if hasRF{
-		    
-		}
+        wlan: WirelessNodeBasic if hasRF {
+
+            @display("p=99,302");
+        }
 
 
 
@@ -117,14 +118,14 @@ module PLC_Hybrid_BN
 		// Cambios aquí porque las puertas de mac NO son vectoriales.
 		// No he querido cambiar el código de simPRIME2 
 
-//        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
-//        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
+        //        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
+        //        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
         plclan.upperLayerIn <-- mac.physOut if hasPRIME;
         plclan.upperLayerOut --> mac.physIn if hasPRIME;
 
 
-//        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
-//        mac.physOut++ --> wlan.upperLayerIn if hasRF;
+        //        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
+        //        mac.physOut++ --> wlan.upperLayerIn if hasRF;
         mac.physIn <-- wlan.upperLayerOut if hasRF;
         mac.physOut --> wlan.upperLayerIn if hasRF;
 

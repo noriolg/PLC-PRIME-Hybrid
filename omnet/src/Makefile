@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for HybridMeter
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -KINET4_3_PROJ=../../../../inet4.3 -KSIMPRIME2_PROJ=../../../../simprime2/omnet/simPRIME2 -DINET_IMPORT -I$$\(INET4_3_PROJ\)/src -I$$\(SIMPRIME2_PROJ\)/src -L$$\(INET4_3_PROJ\)/src -lINET$$\(D\)
+#  opp_makemake -f --deep -KINET4_3_PROJ=../../../../inet4.3 -KSIMPRIME2_PROJ=../../../../simprime2/omnet/simPRIME2 -DINET_IMPORT -I$$\(INET4_3_PROJ\)/src -I$$\(SIMPRIME2_PROJ\)/src -L$$\(INET4_3_PROJ\)/src -L$$\(SIMPRIME2_PROJ\)/src -lINET$$\(D\) -lsimPRIME2$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -25,7 +25,7 @@ INCLUDE_PATH = -I$(INET4_3_PROJ)/src -I$(SIMPRIME2_PROJ)/src
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = $(LDFLAG_LIBPATH)$(INET4_3_PROJ)/src  -lINET$(D)
+LIBS = $(LDFLAG_LIBPATH)$(INET4_3_PROJ)/src $(LDFLAG_LIBPATH)$(SIMPRIME2_PROJ)/src  -lINET$(D) -lsimPRIME2$(D)
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out
@@ -64,7 +64,7 @@ include $(CONFIGFILE)
 # Simulation kernel and user interface libraries
 OMNETPP_LIBS = $(OPPMAIN_LIB) $(USERIF_LIBS) $(KERNEL_LIBS) $(SYS_LIBS)
 ifneq ($(PLATFORM),win32.x86_64)
-LIBS += -Wl,-rpath,$(abspath $(INET4_3_PROJ)/src)
+LIBS += -Wl,-rpath,$(abspath $(INET4_3_PROJ)/src) -Wl,-rpath,$(abspath $(SIMPRIME2_PROJ)/src)
 endif
 
 COPTS = $(CFLAGS) $(IMPORT_DEFINES) -DINET_IMPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)

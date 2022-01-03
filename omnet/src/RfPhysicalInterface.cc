@@ -157,7 +157,6 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
         // Utilizado para la integración hybrid
         send(packet, "upperLayerOut");
         // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
-
     }
 }
 
@@ -264,10 +263,9 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
 
     // EV << "OJO TAGS= " << receptorName << "W" << endl;
 
+
     // We compute received power
     float rxPower = 2.24; // Esto falta conseguirlo
-
-
 
     EV<< "RX power= " << rxPower << "mW" << endl;
 
