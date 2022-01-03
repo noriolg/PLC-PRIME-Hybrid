@@ -41,32 +41,12 @@ void RfPhysicalInterface::initialize(){
 
     }
 
-    cModule *parent = getParentModule();
-    std::string parentName = parent -> getName();
-    std::string parentVariable= parent -> par("dummyVar");
-    EV << "This is my father: " << parentName << "\n";
-    EV << "This is his variable: " << parentVariable << "\n";
 
-
-    cModule *rfCommunication = getParentModule() -> getParentModule();
-    std::string grandParentName = rfCommunication -> getName();
-    EV << "This is my grandfather: " << grandParentName << "\n";
-
-    cModule *medioRadio = getParentModule() -> getParentModule() -> getSubmodule("radioMedium");
-    std::string uncleName = medioRadio -> getName();
-    EV << "This is my uncle: " << uncleName << "\n";
-
-    cModule *ruidoFondo = getParentModule() -> getParentModule() -> getSubmodule("radioMedium") -> getSubmodule("backgroundNoise");
-    std::string cousinName = ruidoFondo -> getName();
-    double cousinVariable= ruidoFondo -> par("power");
-    EV << "This is my cousin: " << cousinName << "\n";
-    EV << "This is his variable: " << cousinVariable << "\n";
-
-//    cModule *mod = getParentModule()->getSubmodule("fooStatus");
-//    NodeStatus *status = check_and_cast<NodeStatus*>(mod);
-//    if(status->getValueA() == test1)
-//        bubble("Value is the same");
-
+    //cModule *radioReceiver = getParentModule() -> getSubmodule("wlan") -> getSubmodule("radio") -> getSubmodule("receiver");
+    //std::string radioName = radioReceiver -> getName();
+    ////double radioVar= radioReceiver -> par("power");
+    //EV << "This is my receiver: " << parentName << "\n";
+    //EV << "This is his variable: " << radioVar << "\n";
 
 }
 
@@ -264,37 +244,52 @@ bool RfPhysicalInterface::simulateError(cMessage *msg){
 float RfPhysicalInterface::computeSNR(cMessage *msg)
 {
 
-    float SNR;
+    // Intento 1 - No funciona
+    //auto signalPowerInd = packet-> getTags<SignalPowerInd>();
+    //auto rxPower_aux = signalPowerInd->getPower().get();
 
-    Packet *packet = dynamic_cast<Packet*>(msg);
-
-
-//    cModule *parent = getParentModule();
-//    std::string parentName = parent -> getName();
-//    std::string parentVariable= parent -> par("dummyVar");
-//    EV << "This is my father: " << parentName << "\n";
-//    EV << "This is his variable: " << parentVariable << "\n";
-//    cModule *mod = getParentModule()->getSubmodule("fooStatus");
+    // Intento 2 - No funciona
+    //Packet *packet = dynamic_cast<Packet*>(msg);
+    //auto rxPower_aux = packet -> par("reception");
 
 
+    // Intento 3 - No funciona
+    //cModule *receptor = this -> getSubmodule("RFPHYPacket") -> getSubmodule("reception");
+    //std::string receptorName = receptor -> getName();
+
+    // Intento 4 - No funciona
+    //cObject *obj  = msg -> getObject("reception");
+    //EV << "Obtenido" << endl;
+    //std::string receptorName = obj -> getName();
+
+    // EV << "OJO TAGS= " << receptorName << "W" << endl;
+
+    // We compute received power
+    float rxPower = 2.24; // Esto falta conseguirlo
 
 
-    float rxPower = 15.5; // Esto falta conseguirlo
 
-    // Opción 1 - probada y fallo en compilación
-    // auto signalPowerInd = packet->getTag<signalPowerInd>();
-    //auto rxPower = signalPowerInd->getPower().get();
+    EV<< "RX power= " << rxPower << "mW" << endl;
 
-    // Opción 2 - probada. Para esto habría que hacer le power manualmente
-    //float testRxPower = packet->getMsgPower();
+    float rxPowerdB = 10 * log10(rxPower/1000);
+    EV<< "RX power= " << rxPowerdB << "dB" << endl;
 
 
-    EV<< "RX power= " << rxPower << "W" << endl;
-
+    // We compute background noise level
 
     // The background noise level in dB is obtained from wireless model
-    SNR = rxPower - 10; // Esto hay que sacarlo de: (el 10 es placeholder)
-    // Ieee802154NarrowbandScalarRadioMedium  -> RadioMedium -> IsotropicScalarBackgroundNoise -> power
+    cModule *ruidoFondo = getParentModule() -> getParentModule() -> getSubmodule("radioMedium") -> getSubmodule("backgroundNoise");
+    // std::string backgroundNoisePower = ruidoFondo -> getName(); // Para comprobar que estoy cogiendo el módulo correcto
+
+    double backgroundNoisePowerdBm = ruidoFondo -> par("power");
+    double backgroundNoisePowerdB = backgroundNoisePowerdBm - 30; // We transform to dB
+    EV<< "Noise power= " << backgroundNoisePowerdB << "dB" << endl;
+
+
+    float SNR = rxPowerdB - backgroundNoisePowerdB;
+
+    // This is only for testing purposes
+    SNR = 5.4;
 
     return SNR;
 }

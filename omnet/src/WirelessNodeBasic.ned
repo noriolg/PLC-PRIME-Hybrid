@@ -32,13 +32,12 @@ module WirelessNodeBasic //extends NodeBase
 
         bool sendMsgOnInitWN = default(false);
         int packetByteLength = default(90);
-		string dummyVar = "This is dummy"; // Delete this variable. It is for testing accessing variables
 
 
         @display("i=misc/sensor2");
         @display("bgb=821.044,695.492");
-		
-		
+
+
         @networkNode();
 
 
@@ -65,6 +64,8 @@ module WirelessNodeBasic //extends NodeBase
             parameters:
                 @display("p=100,100;is=s");
         }
+
+
         mobility: StationaryMobility {
             parameters:
                 @display("p=100,200;is=s");
@@ -79,6 +80,6 @@ module WirelessNodeBasic //extends NodeBase
 
         wlan.upperLayerOut --> PHYLayerAbstraction.rfgatein;  //rfgatein will be renamed to "lowerLayerIn"
         PHYLayerAbstraction.upperLayerOut --> upperLayerOut; // Comment this line when running RfCommunication.ned. This is only for hybrid connectivity
-		         
+
 
 }

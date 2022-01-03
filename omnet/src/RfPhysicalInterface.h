@@ -17,6 +17,7 @@
 #define RFPHYSICALINTERFACE_H_
 
 #include <omnetpp.h>
+#include <math.h>
 #include <fstream>
 #include <string>
 #include <map>
