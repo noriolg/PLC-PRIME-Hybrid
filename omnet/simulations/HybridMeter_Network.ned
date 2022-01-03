@@ -2,7 +2,6 @@ package hybridmeter.simulations;
 
 import hybridmeter.PLC_Hybrid_BN;
 import hybridmeter.PLC_Hybrid_SN;
-import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
 import inet.visualizer.contract.IIntegratedVisualizer;
 import simprime2.PLCBus;
@@ -22,7 +21,7 @@ network HybridMeter_Net
         @display("bgi=background/streetmap,s;bgb=1600,1000");
 
     submodules:
-        
+
         // ------------------------------------ RADIO ---------------------------------------------------------------
         visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
             parameters:
@@ -33,8 +32,8 @@ network HybridMeter_Net
         radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
             @display("p=218,49");
         }
-        
-        
+
+
 //        configurator: Ipv4NetworkConfigurator {
 //            @display("p=580,200");
 //        }

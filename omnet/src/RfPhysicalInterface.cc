@@ -83,30 +83,24 @@ void RfPhysicalInterface::handleSelfMessage(cMessage *msg){
 
 void RfPhysicalInterface::sendInitialNetworkMessage(){
 
-    // Tested option 1
-    // cMessage *msg = new cMessage("RFMessage", TESTPHYMSG);
-    // Packet *packet = dynamic_cast<Packet*>(msg);
-
-    // Tested option 2
-    //Packet *packet = new Packet("RFPHYPacket");
-    //long packetByteLength = long(par("packetByteLength"));
-    //packet->setByteLength(packetByteLength);
 
     //Tested option 3
-    EV << "We are now about to create the initial network message";
+    if( par("standaloneRFNetwork").boolValue() == true) {
+        // Utilizado cuando probamos RfCommuncation de manera individual
+        EV << "We are now about to create the initial network message";
 
-    //auto rfMsg= makeShared<RfMsg>();                  //I will be able to create by own messages at some point
-    long packetByteLength = long(par("packetByteLength"));
-    auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
+        //auto rfMsg= makeShared<RfMsg>();                  //I will be able to create by own messages at some point
+        long packetByteLength = long(par("packetByteLength"));
+        auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
 
-    Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
-    packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
+        Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
+        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+        packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
-    EV << "Creating packet with a length of " << packetByteLength << " bytes\n";
+        EV << "Creating packet with a length of " << packetByteLength << " bytes\n";
 
-    send(packet, "rfgateout");
-
+        send(packet, "rfgateout");
+    }
 
 }
 
@@ -200,7 +194,12 @@ void RfPhysicalInterface::forwardMessage(cMessage *msg)
 
 }
 
-
+/**
+ * Simulates whether message has error or not by looking at
+ * the corresponding BER curve. Returns true if there is an error.
+ *
+ * @param msg the message for which the error is simulated
+ */
 bool RfPhysicalInterface::simulateError(cMessage *msg){
 
     bool errorInMsg;
@@ -230,7 +229,12 @@ bool RfPhysicalInterface::simulateError(cMessage *msg){
     return errorInMsg;
 }
 
-
+/**
+ * Calculates the SNR of the received message by looking at
+ * Px and noise power.
+ *
+ * @param msg the message for which SNR is calculated
+ */
 float RfPhysicalInterface::computeSNR(cMessage *msg)
 {
 
@@ -260,16 +264,79 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
 
 
 
-
-
-// Esto estaría bien crearlo en la inicialización y dejar el mapa creado como variable global
-float RfPhysicalInterface::obtainBERforSNR(float SNR_a_leer)
+/**
+ * Returns a BER value for a specific SNR
+ * The BER curve is specified in the .ini file
+ * If the SNR value is not a point in the SNR/BER curve,
+ * the corresponding BER is obteined by interpolation
+ *
+ * @param msg the message for which the BER is obtained
+ */
+float RfPhysicalInterface::obtainBERforSNR(float SNR_mensaje)
 {
+    // Esto estaría bien crearlo en la inicialización y dejar el mapa creado como variable global
+
+    // We will now interpolate the message's SNR between to valid points in the curve. The points in the curve are separated .25
+    float SNR_limite_superior = obtenerSNRValidaSuperior(SNR_mensaje);
+    float SNR_limite_inferior = SNR_limite_superior - 0.25;
+
+    float BER_leida_superior = leerBERSNR(SNR_limite_superior);
+    float BER_leida_inferior = leerBERSNR(SNR_limite_inferior);
+
+    float BER_interpolada = BER_leida_inferior + (SNR_a_leer - SNR_limite_inferior) * (BER_leida_superior - BER_leida_inferior) / (SNR_limite_superior - SNR_limite_inferior);
+
+    return BER_interpolada;
+}
+
+/**
+ * Returns an SNR value that is defined in the SNR/BER curve.
+ * This value is the closest higher point to the introduced SNR.
+ *
+ * @param SNR_a_redondear SNR to round up to the nearest valid point
+ */
+float RfPhysicalInterface::obtenerSNRValidaSuperior(float SNR_a_redondear)
+{
+    // We round upwards to required decimal precision (two positions) and multiply by 100 to get integers - necessary for roundUp()
+    int SNR_int = (int)((SNR_a_redondear + 0.005) * 100);
+
+    // Now we round to the closest "25". This is because SNR/BER pairs have been obtained to a precision of .25
+    int SNR_redondeada_int = roundUp(SNR_int, 25);
+
+    // Finally, we divide by 100 to get back to the true SNR value
+    float SNR_redondeada_float = (float)SNR_redondeada_int / 100;
+
+    // The returned value is a valid value of SNR (in intervals of .25) rounded upwards from the read value
+    return SNR_redondeada_float;
+}
 
 
-    // Haría falta redondear (o interpolar) SNR_a_leer para que concuerde con las curvas obtenidas
-    // Por ahora, lo dejamos harcodeado
-    SNR_a_leer = 5.50;
+/**
+ * Simple rounding function that rounds a given integer to the
+ * closest specified multiple.
+ *
+ * @param numToRound number to round
+ * @param multiple the rounding will be done to a multiple of this parameter
+ */
+int RfPhysicalInterface::roundUp(int numToRound, int multiple)
+{
+    if (multiple == 0)
+
+        return numToRound;
+
+    int remainder = numToRound % multiple;
+    if (remainder == 0)
+        return numToRound;
+
+    return numToRound + multiple - remainder;
+}
+
+/**
+ * Looks up BER for given SNR value within the BER
+ * curve specified in the .ini file
+ *
+ * @param SNR_a_leer SNR value to look ip in the BER curve values
+ */
+float RfPhysicalInterface::leerBERforSNRfromFile(float SNR_a_leer){
 
 
     //std::string filename = "../BERDATA/RSC_M_2.txt";

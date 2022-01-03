@@ -62,14 +62,12 @@ public:
         */
         void sendInitialNetworkMessage();
 
-
-        /**
-         * Obtains BER from SNR/BER curves and returns a boolean indicating whether the message has been correctly received.
-         */
         bool simulateError(cMessage *msg);
-
         float computeSNR(cMessage *msg);
-        float obtainBERforSNR(float SNR_a_leer);
+        float obtainBERforSNR(float SNR_mensaje);
+        float obtenerSNRValidaSuperior(float SNR_a_redondear);
+        int roundUp(int numToRound, int multiple);
+        float leerBERforSNRfromFile(float SNR_a_leer);
 
 };
 
