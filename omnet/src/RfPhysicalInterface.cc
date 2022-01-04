@@ -449,7 +449,7 @@ float RfPhysicalInterface::leerBERforSNRfromFile(float SNR_a_leer){
     return snrBerMap[SNR_a_leer];
 }
 
-void RfPhysicalInterface::finish(float SNR_a_leer){
+void RfPhysicalInterface::finish(){
 
     recordScalar("#ReceivedMessages", numReceivedMessages);
     recordScalar("#ErroneousMessages", numErroneousMessages);
