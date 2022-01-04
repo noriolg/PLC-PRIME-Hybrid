@@ -5,6 +5,11 @@ nedLibraries = '-n ../src -n ./ -n ../../../inet4.3/src -n ../../../inet4.3/exam
 
 
 os.system('../out/gcc-release/src/HybridMeter omnetpp.ini '+ nedLibraries +' -u Cmdenv -c NicosConfigurationTest --sim-time-limit=40s')
+os.system('../out/gcc-release/src/HybridMeter omnetpp.ini '+ nedLibraries +' -u Cmdenv -c RSCM2 --sim-time-limit=40s')
+os.system('../out/gcc-release/src/HybridMeter omnetpp.ini '+ nedLibraries +' -u Cmdenv -c RSCM4 --sim-time-limit=40s')
+os.system('../out/gcc-release/src/HybridMeter omnetpp.ini '+ nedLibraries +' -u Cmdenv -c NRNSCM2 --sim-time-limit=40s')
+os.system('../out/gcc-release/src/HybridMeter omnetpp.ini '+ nedLibraries +' -u Cmdenv -c NRNSCM2 --sim-time-limit=40s')
+
 #os.system('valgrind --tool=memcheck --log-file=valgrindlog.txt ../out/gcc-release/src/HybridMeter finalTest.ini -n ../src -n ./ -n ../../../inet4.3/src -n ../../../inet4.3/examples -n ../../../inet4.3/tutorials -n ../../../inet4.3/showcases -u Cmdenv -c num27 --sim-time-limit=28800s')
 
 os.chdir('./results')

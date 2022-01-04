@@ -32,15 +32,10 @@ RfPhysicalInterface::~RfPhysicalInterface() {
 void RfPhysicalInterface::initialize(){
 
     EV << "I am initialized\n";
-    if( par("sendMsgOnInit").boolValue() == true) {
 
-        // We schedule an initial auto-message. When it arrives, we will send the first network message
-        EV << "Creating INITSELFMSG\n";
-        cMessage * msg = new cMessage("InitialSelfMessage", INITSELFMSG);
-        scheduleAt(simTime()+ 1.0,msg );
 
-    }
-
+    // Load BER Curve Data
+    loadBERCurveFile();
 
     // Statistics collection
     numReceivedMessages = 0;
@@ -49,6 +44,15 @@ void RfPhysicalInterface::initialize(){
     WATCH(numReceivedMessages);
     WATCH(numErroneousMessages);
 
+
+    if( par("sendMsgOnInit").boolValue() == true) {
+
+        // We schedule an initial auto-message. When it arrives, we will send the first network message
+        EV << "Creating INITSELFMSG\n";
+        cMessage * msg = new cMessage("InitialSelfMessage", INITSELFMSG);
+        scheduleAt(simTime()+ 1.0,msg );
+
+    }
 
 
     //cModule *radioReceiver = getParentModule() -> getSubmodule("wlan") -> getSubmodule("radio") -> getSubmodule("receiver");
@@ -216,7 +220,7 @@ void RfPhysicalInterface::forwardMessage(cMessage *msg)
         packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
         packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
-        EV << "Sending new message\n";
+        EV << "Sending same message again\n";
         send(packet, "rfgateout");
     }
 
@@ -383,20 +387,15 @@ int RfPhysicalInterface::roundUp(int numToRound, int multiple)
     return numToRound + multiple - remainder;
 }
 
+
 /**
- * Looks up BER for given SNR value within the BER
- * curve specified in the .ini file
+ * It loads the data from the SNR BER curve into a global
+ * variable for later lookup
  *
- * @param SNR_a_leer SNR value to look ip in the BER curve values
  */
-float RfPhysicalInterface::leerBERforSNRfromFile(float SNR_a_leer){
-
-
+void RfPhysicalInterface::loadBERCurveFile(){
     //std::string filename = "../BERDATA/RSC_M_2.txt";
     std::string filename  = par("BERFilename");
-
-
-    std::map<float, float> snrBerMap;
 
     std::string auxComMode;
     std::string auxFEC;
@@ -446,7 +445,20 @@ float RfPhysicalInterface::leerBERforSNRfromFile(float SNR_a_leer){
     }
     file.close();
 
-    return snrBerMap[SNR_a_leer];
+}
+
+
+/**
+ * Looks up BER for given SNR value within the BER
+ * curve specified in the .ini file
+ *
+ * @param SNR_a_leer SNR value to look ip in the BER curve values
+ */
+float RfPhysicalInterface::leerBERforSNRfromFile(float SNR_a_leer){
+
+    float BER_leida = snrBerMap[SNR_a_leer];
+
+    return BER_leida;
 }
 
 void RfPhysicalInterface::finish(){

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <map>
 using namespace std;
 
 
@@ -13,7 +14,7 @@ using namespace std;
 #define TESTPHYMSG 2000
 
 
-
+std::map<float, float> snrBerMap;
 
 
 
