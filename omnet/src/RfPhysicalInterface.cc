@@ -42,6 +42,15 @@ void RfPhysicalInterface::initialize(){
     }
 
 
+    // Statistics collection
+    numReceivedMessages = 0;
+    numErroneousMessages = 0;
+
+    WATCH(numReceivedMessages);
+    WATCH(numErroneousMessages);
+
+
+
     //cModule *radioReceiver = getParentModule() -> getSubmodule("wlan") -> getSubmodule("radio") -> getSubmodule("receiver");
     //std::string radioName = radioReceiver -> getName();
     ////double radioVar= radioReceiver -> par("power");
@@ -59,13 +68,19 @@ void RfPhysicalInterface::handleMessage(cMessage *msg){
     }
     else{
 
+        // We add to the counter of received messages
+        numReceivedMessages++;
+
+
         checkArrivalGate(msg); // To determine if the message is from upper layers or radio
         //forwardMessage(msg);
     }
 
 }
 
-
+/**
+            Describes the treatment of all self messages
+*/
 void RfPhysicalInterface::handleSelfMessage(cMessage *msg){
 
     switch (msg->getKind()){
@@ -87,6 +102,9 @@ void RfPhysicalInterface::handleSelfMessage(cMessage *msg){
 
 }
 
+/**
+    When a node receives the initialization self message (INITSELFMSG) it creates and sends an initial network message.
+*/
 
 void RfPhysicalInterface::sendInitialNetworkMessage(){
 
@@ -111,6 +129,9 @@ void RfPhysicalInterface::sendInitialNetworkMessage(){
 }
 
 
+/**
+    For not self messages, we check if they are from upper layers or network
+*/
 void RfPhysicalInterface::checkArrivalGate(cMessage *msg){
 
     if (msg->getArrivalGate() == gate("upperLayerIn"))
@@ -145,6 +166,8 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
 
 
     if (hasBitError){
+        // We add to the counter of erroneous messages
+        numErroneousMessages++;
         packet->setBitError(true);
     }
 
@@ -404,7 +427,7 @@ float RfPhysicalInterface::leerBERforSNRfromFile(float SNR_a_leer){
         {
             getline(file, SNR);
             //std::cout << "Leo BER: " << BER << " Leo SNR: " << SNR << std::endl;
-            //EV  << "Leo BER: " << BER << " Leo SNR: " << SNR << endl;
+            //EV  << "Leo BER: " << BER << " Leo SNR: " << SNR << endl;finish
 
             fSNR = std::stof(SNR);
             fBER = std::stof(BER);
@@ -424,4 +447,11 @@ float RfPhysicalInterface::leerBERforSNRfromFile(float SNR_a_leer){
     file.close();
 
     return snrBerMap[SNR_a_leer];
+}
+
+void RfPhysicalInterface::finish(float SNR_a_leer){
+
+    recordScalar("#ReceivedMessages", numReceivedMessages);
+    recordScalar("#ErroneousMessages", numErroneousMessages);
+
 }

@@ -34,34 +34,32 @@ using namespace inet;
 
 
 class INET_API RfPhysicalInterface : public cSimpleModule {
-public:
-    int address;
+
+    private:
+
+        // For statistics collection
+        int numReceivedMessages;
+        int numErroneousMessages;
 
     public:
+        int address;
         RfPhysicalInterface();
         virtual ~RfPhysicalInterface();
 
     protected:
         virtual void initialize() override;
+        virtual void finish() override;
         virtual void handleMessage(cMessage *msg) override;
-        void forwardMessage(cMessage *msg);
-        /**
-            Describes the treatment of all self messages
-        */
+
+
         void handleSelfMessage(cMessage *msg);
+        void sendInitialNetworkMessage();
 
-        /**
-            For not self messages, we check if they are from upper layers or network
-        */
         void checkArrivalGate(cMessage *msg);
-
         void processMsgFromUpperLayer(cMessage *msg);
         void processMsgFromNetwork(cMessage *msg);
 
-        /**
-            When a node receives the inisitalization self message (INITSELFMSG) it creates and sends an initial network message.
-        */
-        void sendInitialNetworkMessage();
+        void forwardMessage(cMessage *msg);
 
         bool simulateError(cMessage *msg);
         float computeSNR(cMessage *msg);
