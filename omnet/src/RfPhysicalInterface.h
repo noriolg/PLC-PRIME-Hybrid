@@ -60,10 +60,10 @@ class INET_API RfPhysicalInterface : public cSimpleModule {
         void processMsgFromUpperLayer(cMessage *msg);
         void processMsgFromNetwork(cMessage *msg);
 
-        void forwardMessage(cMessage *msg);
+        void forwardMessage(Packet *packet);
 
-        bool simulateError(cMessage *msg);
-        float computeSNR(cMessage *msg);
+        bool simulateError(Packet *packet);
+        float computeSNR(Packet *packet);
         float obtainBERforSNR(float SNR_mensaje);
         float obtenerSNRValidaSuperior(float SNR_a_redondear);
         int roundUp(int numToRound, int multiple);

@@ -166,7 +166,7 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
     Packet *packet = dynamic_cast<Packet*>(msg);
 
     EV << "Simulating error for received message\n";
-    bool hasBitError = simulateError(msg);
+    bool hasBitError = simulateError(packet);
 
 
     if (hasBitError){
@@ -188,19 +188,18 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
 }
 
 // Esto ahora mismo solo está en uso para cuando corremos RfCommunication de manera aislada
-void RfPhysicalInterface::forwardMessage(cMessage *msg)
+void RfPhysicalInterface::forwardMessage(Packet *packet)
 {
 
 
-    Packet *packet = dynamic_cast<Packet*>(msg);
+    //Packet *packet = dynamic_cast<Packet*>(msg);
     bool hasBitError = packet->hasBitError();
-    bubble("Test");
 
     if (hasBitError){
 
 
         EV << "Packet has bit error. Deleting received message and creating a new one\n";
-        delete msg;
+        delete packet;
 
         long packetByteLength = long(par("packetByteLength"));
         auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
@@ -216,7 +215,7 @@ void RfPhysicalInterface::forwardMessage(cMessage *msg)
 
         EV << "Packet does not have bit error. Returning same message\n";
 
-        Packet *packet = dynamic_cast<Packet*>(msg);
+        //Packet *packet = dynamic_cast<Packet*>(msg);
         packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
         packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
@@ -232,7 +231,7 @@ void RfPhysicalInterface::forwardMessage(cMessage *msg)
  *
  * @param msg the message for which the error is simulated
  */
-bool RfPhysicalInterface::simulateError(cMessage *msg){
+bool RfPhysicalInterface::simulateError(Packet *packet){
 
     bool errorInMsg;
 
@@ -246,7 +245,7 @@ bool RfPhysicalInterface::simulateError(cMessage *msg){
     }
 
     // Esto por ahora es de prueba para ver que accedemos al valor correcto
-    float SNR = computeSNR(msg);
+    float SNR = computeSNR(packet);
     EV<< "SNR calculado: " << SNR << endl;
 
     float BERleida = obtainBERforSNR(SNR);
@@ -267,7 +266,7 @@ bool RfPhysicalInterface::simulateError(cMessage *msg){
  *
  * @param msg the message for which SNR is calculated
  */
-float RfPhysicalInterface::computeSNR(cMessage *msg)
+float RfPhysicalInterface::computeSNR(Packet *packet)
 {
 
     // Intento 1 - No funciona
@@ -289,7 +288,12 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
     //std::string receptorName = obj -> getName();
 
     // EV << "OJO TAGS= " << receptorName << "W" << endl;
+    cSimulation *currentSimulation = getSimulation();
+    int  dummyDeleteMe = currentSimulation ->  getContextType();
+    EV<< "Simulation= " << dummyDeleteMe << endl;
 
+    //cModule *modulo = currentSimulation -> getModule("RFPHYPacket");
+    //Packet *packeteo = dynamic_cast<Packet*>(modulo);
 
     // We compute received power
     float rxPower = 2.24; // Esto falta conseguirlo
@@ -297,7 +301,7 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
     EV<< "RX power= " << rxPower << "mW" << endl;
 
     float rxPowerdB = 10 * log10(rxPower/1000);
-    EV<< "RX power= " << rxPowerdB << "dB" << endl;
+    EV<< "RX power= " << rxPowerdB << "dBW" << endl;
 
 
     // We compute background noise level
@@ -308,7 +312,7 @@ float RfPhysicalInterface::computeSNR(cMessage *msg)
 
     double backgroundNoisePowerdBm = ruidoFondo -> par("power");
     double backgroundNoisePowerdB = backgroundNoisePowerdBm - 30; // We transform to dB
-    EV<< "Noise power= " << backgroundNoisePowerdB << "dB" << endl;
+    EV<< "Noise power= " << backgroundNoisePowerdB << "dBW" << endl;
 
 
     float SNR = rxPowerdB - backgroundNoisePowerdB;
