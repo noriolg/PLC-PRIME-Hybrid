@@ -1,0 +1,43 @@
+\section{State of the art}\label{section_state_of_the_art}
+
+The academic field concerning Smart Grids and their applications has seen a substantial rise in popularity in recent years. It is certainly relevant to base the present paper on available conclusions and published work. This section is organized as follows. First, some background is provided on PRIME Alliance in section \ref{section_state_of_the_art_subsection_PRIME_Alliance}. Then, PLC and RF standards are discussed separately in sections \ref{section_state_of_the_art_subsection_PRIME_13_14} and \ref{section_state_of_the_art_subsection_802}. The combination of both standards is discussed in section \ref{section_state_of_the art_subsection_prime_hybrid}.
+
+
+\subsection{PRIME Alliance}\label{section_state_of_the_art_subsection_PRIME_Alliance}
+PRIME Alliance (PoweRline Intelligent Metering Evolution) is a worldwide organization whose main goal is to support smart metering and smart grid functionalities. They strive to pursue this by developing and maintaining standardized telecommunication solutions which are publicly available. It was created in 2009 and up until today, solutions with PRIME standards have been applied globally (Spain\footnote{In Spain, PRIME solution represents the most widely adopted standard}, Portugal, Poland, Brasil...) with high levels of success \cite{prime_alliance_description_document}. Discussion regarding this organization is relevant because the PLC standard and hybrid solution used in the simulation are based on published PRIME Alliance information.
+
+\subsection{PRIME v1.3 and v1.4}\label{section_state_of_the_art_subsection_PRIME_13_14}
+PRIME is a powerline communication (PLC) standard with presence throughout the globe. It is based on OFDM (orthogonal frequency division multiplexing) technology and it can operate in MV and LV networks. It was developed for "Advanced Metering, Grid Control and Asset Monitoring applications". One of its key benefits is the achieved interoperability between different manufacturers which has resulted in more than 20 million smart meters deployed worldwide \cite{prime_alliance_description_document}.
+
+The standard, has been recently updated to PRIME v1.4. This update was undertaken in 2014 \cite{prime_v14_evolution_a_future__proof_of_reality_beyond_metering} and adds additional robustness options and extended frequency coverage (up to 500kHz from the prior 90kHz) to the previous version PRIME v1.3.
+
+The PRIME standard defines two kinds of network nodes: Base Node (BN) and Service Node (SN). The base node manages the network and coordinates the responses from a pool of service nodes. This BN is usually located in the MV/LV transformer (see section \ref{section_introduction_subsection_lv_networks}). A network is comprised of multiple SN registered to one BN. Thus, the network is managed by a BN which periodically polls SN to obtain updated information of all devices connected to the network.
+
+Previous works related to the topic at hand include the following. In \cite{tesis_jmatanza}, the author discusses several PLC standards and develops a simulated environment to test them. In \cite{prime_v14_evolution_a_future__proof_of_reality_beyond_metering}, the authors discuss the uses of PRIME v1.4 and provide an overview of the improvements of the new version. Other important documents that will be taken into account are the white papers distributed by PRIME Alliance \cite{primeWhitePaper}, and the standard specifications \cite{prime_v14_specifications}.
+
+
+\subsection{Wireless RF, standard 802.15.4}\label{section_state_of_the_art_subsection_802}
+IEEE 802.15.4 is a standard developed for low-rate wireless networks. It was first devised in 2003 and it has been updated continuously over the years with its latest revision being in 2020. The goal of this standard since its inception was the creation of inexpensive, low-power communications.
+
+802.15.4 defines a physical layer (PHY) and a medium access control layer (MAC). It describes two types of devices that can participate in the network: full-function devices (FFD) and reduced-function devices (RFD). The difference between them is that a FFD is able to participate in the network serving as a personal area network (PAN) coordinator. On the other hand, RFD are intended to serve only for simple applications. One FFD is assigned to multiple RFD at a time, however the inverse is not true. One RDF can only have one FFD assigned at one time. Thus, the FFD plays the part of the network coordinator described in the PRIME standard.
+
+Several papers such as \cite{theoretical_analysis_of_report_success_probability_in_IEE_802154} and \cite{experimental_perf_evaluation_802154_SUN} have performed analysis regarding the implementation of this standard in smart utility networks (SUN). The combination of this with PLC communications is discussed in the following section.
+
+
+
+\subsection{PRIME Hybrid}\label{section_state_of_the art_subsection_prime_hybrid}
+The combination of both PLC and RF technologies is the latest tendency promoted by PRIME Alliance. The expected benefits of this combination have been laid out in previous sections (see section \ref{section_introduction_subsection_focus_of_the_study}) and are a key focus of the current study. 
+
+The basis of this hybrid solution is the addition of RF specifications into the PRIME v1.4 stack of protocols. This will allow nodes to communicate amongst each other whether they are PLC-only, RF-only or hybrid nodes containing both technologies. 
+
+The combination of both specifications is achieved by integrating both PHY layers onto the same MAC layer (defined by PRIME v1.4). This allows for a fully backward-compatible solution that will include the best of both alternatives.
+
+The hybrid alternative is a relatively new idea. It has been proposed and discussed in several papers such as \cite{prime_hybrid_solution_combines_plc_and_rf, evolution_of_prime_to_plc_rf_hybrid_systems, toward_more_efficient_more_secure_PLC_RF_Hybrid}. Most of these papers stay at a theoretical level when discussing the hybrid approach. A well-documented example of a simulation and implementation of the technology is \cite{toward_more_efficient_more_secure_PLC_RF_Hybrid}. In this paper, the author sets up an outdoor experiment with street lamps controlled via PLC or RF. However, the proposed method does not allow a node to switch between the two technologies when needed. Instead, lamps are randomly assigned a transmission method (PLC or RF) and the experiment is run for that network configuration. Furthermore, the topology of the network and the number of connected nodes stays constant throughout the experiment. These two characteristics are results that this study aims to alter and consider. By taking into account both of these parameters, obtained results will have interesting implications for network deployment and planning.
+
+
+
+
+
+
+ 
+
