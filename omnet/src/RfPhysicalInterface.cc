@@ -270,7 +270,7 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
 {
 
     // Intento 1 - No funciona
-    //auto signalPowerInd = packet-> getTags<SignalPowerInd>();
+    //auto signalPowerInd = packet-> getTag<SignalPowerInd>();
     //auto rxPower_aux = signalPowerInd->getPower().get();
 
     // Intento 2 - No funciona
@@ -287,13 +287,22 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
     //EV << "Obtenido" << endl;
     //std::string receptorName = obj -> getName();
 
-    // EV << "OJO TAGS= " << receptorName << "W" << endl;
-    cSimulation *currentSimulation = getSimulation();
-    int  dummyDeleteMe = currentSimulation ->  getContextType();
-    EV<< "Simulation= " << dummyDeleteMe << endl;
-
+    // Intento 5 - No funciona
     //cModule *modulo = currentSimulation -> getModule("RFPHYPacket");
     //Packet *packeteo = dynamic_cast<Packet*>(modulo);
+
+    // Intento 6 - Funciona pero no conssigo llegar más allá de la simulación
+    // cSimulation *currentSimulation = getSimulation();
+    // int  dummyDeleteMe = currentSimulation ->  getContextType();
+    //cModule *modulo = currentSimulation -> findModuleByPath("RPHYPacket"); // Esto ya no funciona
+    //EV<< "Simulation= " << dummyDeleteMe << endl;
+
+    // Intento 7 - No funciona
+    //cModule *modulo = findModuleByPath("simulation.scheduled-events.RFPHYPacket"); // obtenido de la simulación directamente
+    //int indice = modulo -> getIndex();
+    //EV<< "Indice= " << indice << endl;
+
+    // Mirar línea 445 de Radio.cc  -> Hay que buscar en la clase Reception...
 
     // We compute received power
     float rxPower = 2.24; // Esto falta conseguirlo
