@@ -28,7 +28,7 @@ network RfCommunication
     parameters:
 
         int numberOfServiceNodes = default(2);
-        @display("bgb=391.68997,239.19998");
+        @display("bgb=391,266");
 
 
 
@@ -54,7 +54,7 @@ network RfCommunication
 
         RfServiceNodeA: WirelessNodeBasic {
 
-            @display("p=150,178");
+            @display("p=150,212");
         }
 
         //        RfServiceNodeB: WirelessNodeBasic {

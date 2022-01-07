@@ -305,11 +305,11 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
     // Mirar línea 445 de Radio.cc  -> Hay que buscar en la clase Reception...
 
     // We compute received power
-    float rxPower = 2.24; // Esto falta conseguirlo
+    float rxPower = 1.15; // Esto falta conseguirlo - Only for testing purposes
 
-    EV<< "RX power= " << rxPower << "mW" << endl;
+    EV<< "RX power= " << rxPower << "pW" << endl;
 
-    float rxPowerdB = 10 * log10(rxPower/1000);
+    float rxPowerdB = 10 * log10(rxPower* pow(10, -12));
     EV<< "RX power= " << rxPowerdB << "dBW" << endl;
 
 
@@ -325,9 +325,6 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
 
 
     float SNR = rxPowerdB - backgroundNoisePowerdB;
-
-    // This is only for testing purposes
-    SNR = 5.4;
 
     return SNR;
 }
