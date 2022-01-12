@@ -42,11 +42,11 @@ module PLC_Hybrid_SN
         //*.interfaceTableModule = "^.interfaceTable"; // Already defined in WirelessNodeBasic
         //wlan.radio.antenna.mobilityModule = default("^.^.^.mobility"); // Already defined in WirelessNodeBasic
     gates:
-        inout ethg @labels(EtherFrame-conn) ;
-        input radioIn @directIn ;
+        inout ethg @labels(EtherFrame-conn);
+        input radioIn @directIn;
 
     submodules:
-        BNApp: DLMSCOSEMSN {
+        SNApp: DLMSCOSEMSN {
             parameters:
                 registerSAP = true;
                 @display("p=155,40,col");
@@ -68,7 +68,7 @@ module PLC_Hybrid_SN
                 @display("p=242,362,row,150;q=txQueue");
         }
 
-		
+
 		// Podemos sustituir todo esto por un WirelessNodeBasic
 //        wlan: Ieee802154NarrowbandInterface if hasRF {
 //            parameters:
@@ -85,9 +85,10 @@ module PLC_Hybrid_SN
 //                @display("p=100,200;is=s");
 //        }
 
-		wlan: WirelessNodeBasic if hasRF{
-		    
-		}
+        wlan: WirelessNodeBasic if hasRF {
+
+            @display("p=107,347");
+        }
 
 
 
@@ -96,22 +97,22 @@ module PLC_Hybrid_SN
         llc.lowerLayerOut --> mac.upperLayerIn;
 
 
-        BNApp.out --> llc.upperLayerIn;
-        BNApp.in <-- llc.upperLayerOut;
+        SNApp.out --> llc.upperLayerIn;
+        SNApp.in <-- llc.upperLayerOut;
 
 
 		// Cambios aquí porque las puertas de mac NO son vectoriales.
 		// No he querido cambiar el código de simPRIME2 
 
-//        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
-//        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
+        //        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
+        //        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
         plclan.upperLayerIn <-- mac.physOut if hasPRIME;
         plclan.upperLayerOut --> mac.physIn if hasPRIME;
 
 
 
-//        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
-//        mac.physOut++ --> wlan.upperLayerIn if hasRF;
+        //        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
+        //        mac.physOut++ --> wlan.upperLayerIn if hasRF;
         mac.physIn <-- wlan.upperLayerOut if hasRF;
         mac.physOut --> wlan.upperLayerIn if hasRF;
 

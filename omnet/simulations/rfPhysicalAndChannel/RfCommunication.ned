@@ -52,10 +52,11 @@ network RfCommunication
         //
         //        }
 
-        RfServiceNodeA: WirelessNodeBasic {
+        RfServiceNodeB: WirelessNodeBasic {
 
-            @display("p=150,212");
+            @display("p=44,207");
         }
+
 
         //        RfServiceNodeB: WirelessNodeBasic {
         //

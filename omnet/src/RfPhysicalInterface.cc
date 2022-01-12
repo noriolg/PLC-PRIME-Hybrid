@@ -15,6 +15,13 @@
 
 #include "RfPhysicalInterface.h"
 
+// Para mirar los tags del mensajes
+#include <inet/common/Ptr.h>
+#include <inet/common/Units.h>
+#include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
+
+
+
 
 Define_Module(RfPhysicalInterface);
 Register_Class(RfPhysicalInterface);
@@ -269,9 +276,9 @@ bool RfPhysicalInterface::simulateError(Packet *packet){
 float RfPhysicalInterface::computeSNR(Packet *packet)
 {
 
-    // Intento 1 - No funciona
-    //auto signalPowerInd = packet-> getTag<SignalPowerInd>();
-    //auto rxPower_aux = signalPowerInd->getPower().get();
+    // Intento 1
+    auto signalPowerInd = packet-> getTag<SignalPowerInd>();
+    auto rxPower_aux = signalPowerInd->getPower().get();
 
     // Intento 2 - No funciona
     //Packet *packet = dynamic_cast<Packet*>(msg);

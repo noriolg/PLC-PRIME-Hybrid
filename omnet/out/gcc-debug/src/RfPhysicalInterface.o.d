@@ -43,7 +43,9 @@
  ../../../../inet4.3/src/inet/common/packet/chunk/BitCountChunk.h \
  ../../../../inet4.3/src/inet/common/packet/chunk/cPacketChunk.h \
  ../../../../inet4.3/src/inet/common/packet/chunk/EncryptedChunk.h \
- ../../../../inet4.3/src/inet/common/packet/chunk/FieldsChunk.h
+ ../../../../inet4.3/src/inet/common/packet/chunk/FieldsChunk.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/base/packetlevel/PhysicalLayerDefs.h
 
 RfPhysicalInterface.h:
 
@@ -138,3 +140,7 @@ global_variables.h:
 ../../../../inet4.3/src/inet/common/packet/chunk/EncryptedChunk.h:
 
 ../../../../inet4.3/src/inet/common/packet/chunk/FieldsChunk.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/base/packetlevel/PhysicalLayerDefs.h:
