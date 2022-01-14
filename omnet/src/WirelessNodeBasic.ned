@@ -18,7 +18,6 @@ package hybridmeter;
 // TODO auto-generated type
 //
 
-import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
 import inet.mobility.static.StationaryMobility;
 import inet.networklayer.common.InterfaceTable;
 
@@ -55,7 +54,7 @@ module WirelessNodeBasic //extends NodeBase
         }
 
 
-        wlan: Ieee802154NarrowbandInterface {
+        wlan: StandAloneRadio {
             parameters:
                 @display("p=250,200;q=queue");
                 mgmt.typename = "Ieee80211MgmtStaSimplified";

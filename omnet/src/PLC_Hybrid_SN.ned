@@ -20,9 +20,8 @@ package hybridmeter;
 //
 
 
-import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
-import inet.mobility.static.StationaryMobility;
-import inet.networklayer.common.InterfaceTable;
+import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
+import inet.visualizer.contract.IIntegratedVisualizer;
 import simprime2.DLMSCOSEMSN;
 import simprime2.PLCLLCSN;
 import simprime2.PLCMACSN;
@@ -42,10 +41,24 @@ module PLC_Hybrid_SN
         //*.interfaceTableModule = "^.interfaceTable"; // Already defined in WirelessNodeBasic
         //wlan.radio.antenna.mobilityModule = default("^.^.^.mobility"); // Already defined in WirelessNodeBasic
     gates:
-        inout ethg @labels(EtherFrame-conn) ;
-        input radioIn @directIn ;
+        inout ethg @labels(EtherFrame-conn);
+        input radioIn @directIn;
 
     submodules:
+
+        visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
+            parameters:
+                @display("p=45,128;is=s");
+        }
+
+
+        radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
+            @display("p=218,49");
+        }
+
+
+
+
         BNApp: DLMSCOSEMSN {
             parameters:
                 registerSAP = true;
@@ -68,7 +81,7 @@ module PLC_Hybrid_SN
                 @display("p=242,362,row,150;q=txQueue");
         }
 
-		
+
 		// Podemos sustituir todo esto por un WirelessNodeBasic
 //        wlan: Ieee802154NarrowbandInterface if hasRF {
 //            parameters:
@@ -85,12 +98,9 @@ module PLC_Hybrid_SN
 //                @display("p=100,200;is=s");
 //        }
 
-		wlan: WirelessNodeBasic if hasRF{
-		    
-		}
-
-
-
+        rflan: WirelessNodeBasic if hasRF {
+            @display("p=100,362");
+        }
     connections allowunconnected:
         llc.lowerLayerIn <-- mac.upperLayerOut;
         llc.lowerLayerOut --> mac.upperLayerIn;
@@ -103,22 +113,22 @@ module PLC_Hybrid_SN
 		// Cambios aquí porque las puertas de mac NO son vectoriales.
 		// No he querido cambiar el código de simPRIME2 
 
-//        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
-//        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
+        //        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
+        //        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
         plclan.upperLayerIn <-- mac.physOut if hasPRIME;
         plclan.upperLayerOut --> mac.physIn if hasPRIME;
 
 
 
-//        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
-//        mac.physOut++ --> wlan.upperLayerIn if hasRF;
-        mac.physIn <-- wlan.upperLayerOut if hasRF;
-        mac.physOut --> wlan.upperLayerIn if hasRF;
+        //        mac.physIn++ <-- rflan.upperLayerOut if hasRF;
+        //        mac.physOut++ --> rflan.upperLayerIn if hasRF;
+        mac.physIn <-- rflan.upperLayerOut if hasRF;
+        mac.physOut --> rflan.upperLayerIn if hasRF;
 
 
 
         ethg <--> { @display("m=s"); } <--> plclan.phys if hasPRIME;
-        wlan.radioIn <-- radioIn if hasRF;
+        rflan.radioIn <-- radioIn if hasRF;
 }
 
 

@@ -15,6 +15,27 @@
 
 #include "RfPhysicalInterface.h"
 
+#include <inet/common/InitStages.h>
+#include <inet/common/ModuleAccess.h>
+#include <inet/common/Ptr.h>
+#include <inet/common/Units.h>
+#include <inet/physicallayer/wireless/common/contract/packetlevel/IRadio.h>
+#include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
+#include <omnetpp/ccomponent.h>
+#include <omnetpp/cexception.h>
+#include <omnetpp/clog.h>
+#include <omnetpp/cmessage.h>
+#include <omnetpp/cmodule.h>
+#include <omnetpp/cobjectfactory.h>
+#include <omnetpp/cpacket.h>
+#include <omnetpp/cpar.h>
+#include <omnetpp/csimplemodule.h>
+#include <omnetpp/csimulation.h>
+#include <omnetpp/cwatch.h>
+#include <omnetpp/regmacros.h>
+#include <omnetpp/simtime.h>
+#include <cmath>
+
 
 Define_Module(RfPhysicalInterface);
 Register_Class(RfPhysicalInterface);
@@ -29,7 +50,11 @@ RfPhysicalInterface::~RfPhysicalInterface() {
 }
 
 
-void RfPhysicalInterface::initialize(){
+void RfPhysicalInterface::initialize(int stage){
+
+
+
+        if (stage == INITSTAGE_LOCAL) {
 
     EV << "I am initialized\n";
 
@@ -60,6 +85,13 @@ void RfPhysicalInterface::initialize(){
     ////double radioVar= radioReceiver -> par("power");
     //EV << "This is my receiver: " << parentName << "\n";
     //EV << "This is his variable: " << radioVar << "\n";
+
+    radio = getModuleFromPar<inet::physicallayer::IRadio>(par("radioModule"), this);
+        }
+        else if (stage == INITSTAGE_LINK_LAYER) {
+
+    radio->setRadioMode(inet::physicallayer::IRadio::RADIO_MODE_TRANSCEIVER);
+        }
 
 }
 
@@ -205,7 +237,7 @@ void RfPhysicalInterface::forwardMessage(Packet *packet)
         auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
 
         Packet *packet = new Packet("RFPHYPacket_alt", data);   // I create a packet with the "data" defined above
-        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::STP_MULTICAST_ADDRESS);
         packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
 
@@ -216,7 +248,7 @@ void RfPhysicalInterface::forwardMessage(Packet *packet)
         EV << "Packet does not have bit error. Returning same message\n";
 
         //Packet *packet = dynamic_cast<Packet*>(msg);
-        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::STP_MULTICAST_ADDRESS);
         packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
         EV << "Sending same message again\n";
@@ -270,8 +302,8 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
 {
 
     // Intento 1 - No funciona
-    //auto signalPowerInd = packet-> getTag<SignalPowerInd>();
-    //auto rxPower_aux = signalPowerInd->getPower().get();
+    auto signalPowerInd = packet-> getTag<SignalPowerInd>();
+    auto rxPower_aux = signalPowerInd->getPower().get();
 
     // Intento 2 - No funciona
     //Packet *packet = dynamic_cast<Packet*>(msg);
