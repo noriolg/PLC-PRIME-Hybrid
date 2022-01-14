@@ -20,9 +20,8 @@ package hybridmeter;
 //
 
 
-import inet.linklayer.ieee802154.Ieee802154NarrowbandInterface;
-import inet.mobility.static.StationaryMobility;
-import inet.networklayer.common.InterfaceTable;
+import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
+import inet.visualizer.contract.IIntegratedVisualizer;
 import simprime2.DLMSCOSEMBN;
 import simprime2.PLCLLCBN;
 import simprime2.PLCMACBN;
@@ -47,6 +46,19 @@ module PLC_Hybrid_BN
         input radioIn @directIn;
 
     submodules:
+
+        visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
+            parameters:
+                @display("p=100,200;is=s");
+        }
+
+
+        radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
+            @display("p=218,49");
+        }
+
+
+
         BNApp: DLMSCOSEMBN {
             parameters:
                 registerSAP = true;
@@ -124,8 +136,8 @@ module PLC_Hybrid_BN
         plclan.upperLayerOut --> mac.physIn if hasPRIME;
 
 
-        //        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
-        //        mac.physOut++ --> wlan.upperLayerIn if hasRF;
+        //          mac.physIn++ <-- rflan.upperLayerOut if hasRF;
+        //        mac.physOut++ --> rflan.upperLayerIn if hasRF;
         mac.physIn <-- rflan.upperLayerOut if hasRF;
         mac.physOut --> rflan.upperLayerIn if hasRF;
 

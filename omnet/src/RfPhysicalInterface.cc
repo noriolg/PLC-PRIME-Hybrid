@@ -15,11 +15,11 @@
 
 #include "RfPhysicalInterface.h"
 
+
 // Para mirar los tags del mensajes
 #include <inet/common/Ptr.h>
 #include <inet/common/Units.h>
 #include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
-
 
 
 
@@ -36,7 +36,11 @@ RfPhysicalInterface::~RfPhysicalInterface() {
 }
 
 
-void RfPhysicalInterface::initialize(){
+void RfPhysicalInterface::initialize(int stage){
+
+
+
+        if (stage == INITSTAGE_LOCAL) {
 
     EV << "I am initialized\n";
 
@@ -67,6 +71,13 @@ void RfPhysicalInterface::initialize(){
     ////double radioVar= radioReceiver -> par("power");
     //EV << "This is my receiver: " << parentName << "\n";
     //EV << "This is his variable: " << radioVar << "\n";
+
+    radio = getModuleFromPar<inet::physicallayer::IRadio>(par("radioModule"), this);
+        }
+        else if (stage == INITSTAGE_LINK_LAYER) {
+
+    radio->setRadioMode(inet::physicallayer::IRadio::RADIO_MODE_TRANSCEIVER);
+        }
 
 }
 
@@ -212,7 +223,7 @@ void RfPhysicalInterface::forwardMessage(Packet *packet)
         auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
 
         Packet *packet = new Packet("RFPHYPacket_alt", data);   // I create a packet with the "data" defined above
-        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::STP_MULTICAST_ADDRESS);
         packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
 
@@ -223,7 +234,7 @@ void RfPhysicalInterface::forwardMessage(Packet *packet)
         EV << "Packet does not have bit error. Returning same message\n";
 
         //Packet *packet = dynamic_cast<Packet*>(msg);
-        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+        packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::STP_MULTICAST_ADDRESS);
         packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
 
         EV << "Sending same message again\n";
@@ -275,6 +286,7 @@ bool RfPhysicalInterface::simulateError(Packet *packet){
  */
 float RfPhysicalInterface::computeSNR(Packet *packet)
 {
+
 
     // Intento 1
     auto signalPowerInd = packet-> getTag<SignalPowerInd>();

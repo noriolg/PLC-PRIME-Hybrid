@@ -29,6 +29,7 @@
 #include "inet/common/Protocol.h"
 #include "inet/common/ProtocolTag_m.h"
 
+#include "inet/physicallayer/wireless/common/contract/packetlevel/IRadio.h"
 
 using namespace inet;
 
@@ -41,16 +42,19 @@ class INET_API RfPhysicalInterface : public cSimpleModule {
         int numReceivedMessages;
         int numErroneousMessages;
 
+         inet::physicallayer::IRadio * radio;
+
     public:
         int address;
         RfPhysicalInterface();
         virtual ~RfPhysicalInterface();
 
     protected:
-        virtual void initialize() override;
+        virtual void initialize(int stage) override;
         void loadBERCurveFile();
         virtual void finish() override;
         virtual void handleMessage(cMessage *msg) override;
+        virtual int numInitStages() const override { return NUM_INIT_STAGES; }
 
 
         void handleSelfMessage(cMessage *msg);
