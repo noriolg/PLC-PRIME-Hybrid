@@ -47,18 +47,6 @@ module PLC_Hybrid_BN
 
     submodules:
 
-        visualizer: <default(firstAvailableOrEmpty("IntegratedCanvasVisualizer"))> like IIntegratedVisualizer if typename != "" {
-            parameters:
-                @display("p=100,200;is=s");
-        }
-
-
-        radioMedium: <default("Ieee802154NarrowbandScalarRadioMedium")> like IRadioMedium {
-            @display("p=218,49");
-        }
-
-
-
         BNApp: DLMSCOSEMBN {
             parameters:
                 registerSAP = true;

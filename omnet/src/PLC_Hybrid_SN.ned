@@ -85,7 +85,7 @@ module PLC_Hybrid_SN
 //                @display("p=100,200;is=s");
 //        }
 
-        wlan: WirelessNodeBasic if hasRF {
+        rflan: WirelessNodeBasic if hasRF {
 
             @display("p=107,347");
         }
@@ -110,8 +110,8 @@ module PLC_Hybrid_SN
 
         //        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
         //        mac.physOut++ --> wlan.upperLayerIn if hasRF;
-        mac.physIn <-- wlan.upperLayerOut if hasRF;
-        mac.physOut --> wlan.upperLayerIn if hasRF;
+        mac.physIn <-- rflan.upperLayerOut if hasRF;
+        mac.physOut --> rflan.upperLayerIn if hasRF;
 
 
 

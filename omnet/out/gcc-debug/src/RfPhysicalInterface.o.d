@@ -44,8 +44,48 @@
  ../../../../inet4.3/src/inet/common/packet/chunk/cPacketChunk.h \
  ../../../../inet4.3/src/inet/common/packet/chunk/EncryptedChunk.h \
  ../../../../inet4.3/src/inet/common/packet/chunk/FieldsChunk.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IRadio.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IWirelessSignal.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IArrival.h \
+ ../../../../inet4.3/src/inet/common/geometry/common/Coord.h \
+ ../../../../inet4.3/src/inet/common/geometry/common/Quaternion.h \
+ ../../../../inet4.3/src/inet/common/geometry/common/EulerAngles.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IRadioSignal.h \
+ ../../../../inet4.3/src/inet/common/math/Functions.h \
+ ../../../../inet4.3/src/inet/common/math/AlgebraicOperations.h \
+ ../../../../inet4.3/src/inet/common/math/PrimitiveFunctions.h \
+ ../../../../inet4.3/src/inet/common/math/FunctionBase.h \
+ ../../../../inet4.3/src/inet/common/math/IFunction.h \
+ ../../../../inet4.3/src/inet/common/math/Domain.h \
+ ../../../../inet4.3/src/inet/common/math/Interval.h \
+ ../../../../inet4.3/src/inet/common/math/Point.h \
+ ../../../../inet4.3/src/inet/common/math/Interpolators.h \
+ ../../../../inet4.3/src/inet/common/math/IInterpolator.h \
+ ../../../../inet4.3/src/inet/common/math/CompoundFunctions.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IListening.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IPhysicalLayerFrame.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/base/packetlevel/PhysicalLayerDefs.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReception.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/bitlevel/ISignalAnalogModel.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ITransmission.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IAntennaGain.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IAntenna.h \
+ ../../../../inet4.3/src/inet/mobility/contract/IMobility.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IPhysicalLayer.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReceiver.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IInterference.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/INoise.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IListeningDecision.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReceptionDecision.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReceptionResult.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/RadioControlInfo_m.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IModulation_m.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IModulation.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IApskModulation.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ISnir.h \
+ ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ITransmitter.h \
  ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h \
- ../../../../inet4.3/src/inet/physicallayer/wireless/common/base/packetlevel/PhysicalLayerDefs.h
+ ../../../../inet4.3/src/inet/common/ModuleAccess.h
 
 RfPhysicalInterface.h:
 
@@ -141,6 +181,86 @@ global_variables.h:
 
 ../../../../inet4.3/src/inet/common/packet/chunk/FieldsChunk.h:
 
-../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h:
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IRadio.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IWirelessSignal.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IArrival.h:
+
+../../../../inet4.3/src/inet/common/geometry/common/Coord.h:
+
+../../../../inet4.3/src/inet/common/geometry/common/Quaternion.h:
+
+../../../../inet4.3/src/inet/common/geometry/common/EulerAngles.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IRadioSignal.h:
+
+../../../../inet4.3/src/inet/common/math/Functions.h:
+
+../../../../inet4.3/src/inet/common/math/AlgebraicOperations.h:
+
+../../../../inet4.3/src/inet/common/math/PrimitiveFunctions.h:
+
+../../../../inet4.3/src/inet/common/math/FunctionBase.h:
+
+../../../../inet4.3/src/inet/common/math/IFunction.h:
+
+../../../../inet4.3/src/inet/common/math/Domain.h:
+
+../../../../inet4.3/src/inet/common/math/Interval.h:
+
+../../../../inet4.3/src/inet/common/math/Point.h:
+
+../../../../inet4.3/src/inet/common/math/Interpolators.h:
+
+../../../../inet4.3/src/inet/common/math/IInterpolator.h:
+
+../../../../inet4.3/src/inet/common/math/CompoundFunctions.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IListening.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IPhysicalLayerFrame.h:
 
 ../../../../inet4.3/src/inet/physicallayer/wireless/common/base/packetlevel/PhysicalLayerDefs.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReception.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/bitlevel/ISignalAnalogModel.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ITransmission.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IAntennaGain.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IAntenna.h:
+
+../../../../inet4.3/src/inet/mobility/contract/IMobility.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IPhysicalLayer.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReceiver.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IInterference.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/INoise.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IListeningDecision.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReceptionDecision.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IReceptionResult.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/RadioControlInfo_m.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IModulation_m.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IModulation.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IApskModulation.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ISnir.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ITransmitter.h:
+
+../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h:
+
+../../../../inet4.3/src/inet/common/ModuleAccess.h:

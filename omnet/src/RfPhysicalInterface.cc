@@ -23,6 +23,10 @@
 
 
 
+#include <inet/common/InitStages.h>
+#include <inet/common/ModuleAccess.h>
+
+
 Define_Module(RfPhysicalInterface);
 Register_Class(RfPhysicalInterface);
 
