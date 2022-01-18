@@ -40,6 +40,7 @@ module PLC_Hybrid_BN
 
         //*.interfaceTableModule = "^.interfaceTable"; // Already defined in WirelessNodeBasic
         //wlan.radio.antenna.mobilityModule = default("^.^.^.mobility"); // Already defined in WirelessNodeBasic
+        
 
     gates:
         inout ethg @labels(EtherFrame-conn);
@@ -120,14 +121,14 @@ module PLC_Hybrid_BN
 
         //        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
         //        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
-        plclan.upperLayerIn <-- mac.physOut if hasPRIME;
-        plclan.upperLayerOut --> mac.physIn if hasPRIME;
+        plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
+        plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
 
 
         //          mac.physIn++ <-- rflan.upperLayerOut if hasRF;
         //        mac.physOut++ --> rflan.upperLayerIn if hasRF;
-        mac.physIn <-- rflan.upperLayerOut if hasRF;
-        mac.physOut --> rflan.upperLayerIn if hasRF;
+        mac.physRFIn <-- rflan.upperLayerOut if hasRF;
+        mac.physRFOut --> rflan.upperLayerIn if hasRF;
 
 
         ethg <--> { @display("m=s"); } <--> plclan.phys if hasPRIME;

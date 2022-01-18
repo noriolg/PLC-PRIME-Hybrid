@@ -30,7 +30,7 @@ simple RfPhysicalInterface
         string BERFilename = default("");
         bool standaloneRFNetwork = default(true);
         
-                string radioModule = default("^.wlan.radio");   // The path to the Radio module  //FIXME remove default value
+       string radioModule = default("^.wlan.radio");   // The path to the Radio module  //FIXME remove default value
         
         
     gates:

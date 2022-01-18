@@ -66,7 +66,7 @@ network HybridMeter_Net
 
 
 		// ------------------------------------ Hybrid  ---------------------------------------------------------------
-
+        
         PLC_BN: PLC_Hybrid_BN {
             parameters:
                 @display("p=20,100;q=txQueue");

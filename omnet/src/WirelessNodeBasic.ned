@@ -37,7 +37,7 @@ module WirelessNodeBasic //extends NodeBase
         @display("bgb=821.044,695.492");
 
 
-        @networkNode();
+//        @networkNode();
 
 
     gates:
