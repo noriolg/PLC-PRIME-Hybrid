@@ -33,10 +33,11 @@ PROJECTRELATIVE_PATH = src
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
-OBJS = $O/RfPhysicalInterface.o
+OBJS = $O/RfPhysicalInterface.o $O/RFMessage_m.o
 
 # Message files
-MSGFILES =
+MSGFILES = \
+    RFMessage.msg
 
 # SM files
 SMFILES =

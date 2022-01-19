@@ -36,8 +36,10 @@ module WirelessNodeBasic //extends NodeBase
         @display("i=misc/sensor2");
         @display("bgb=821.044,695.492");
 
-
-//        @networkNode();
+		// OJO, esto en el caso standalone debe descomentarse
+        //@networkNode();
+		// En caso de estar en modo híbrido esto debe estar comentado. La razón de esto es porque todos los networkNode() buscan un visualizer, y este debe estar a nivel de network.
+		// Solo algo que esté a nivel de network debe ser networkNode()
 
 
     gates:

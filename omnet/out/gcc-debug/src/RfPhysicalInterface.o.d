@@ -84,8 +84,10 @@
  ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/IApskModulation.h \
  ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ISnir.h \
  ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ITransmitter.h \
+ ../../../../inet4.3/src/inet/common/ModuleAccess.h \
  ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h \
- ../../../../inet4.3/src/inet/common/ModuleAccess.h
+ ../../../../simprime2/omnet/simPRIME2/src/MACMsg_m.h \
+ ../../../../simprime2/omnet/simPRIME2/src/global_variables.h
 
 RfPhysicalInterface.h:
 
@@ -261,6 +263,10 @@ global_variables.h:
 
 ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/ITransmitter.h:
 
+../../../../inet4.3/src/inet/common/ModuleAccess.h:
+
 ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h:
 
-../../../../inet4.3/src/inet/common/ModuleAccess.h:
+../../../../simprime2/omnet/simPRIME2/src/MACMsg_m.h:
+
+../../../../simprime2/omnet/simPRIME2/src/global_variables.h:

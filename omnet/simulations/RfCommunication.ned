@@ -54,7 +54,7 @@ network RfCommunication
 
         RfServiceNodeA: WirelessNodeBasic {
 
-            @display("p=298,180");
+            @display("p=150,151");
         }
 
         //        RfServiceNodeB: WirelessNodeBasic {

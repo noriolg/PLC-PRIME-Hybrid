@@ -15,16 +15,14 @@
 
 #include "RfPhysicalInterface.h"
 
+#include <inet/common/InitStages.h>
+#include <inet/common/ModuleAccess.h>
 
-// Para mirar los tags del mensajes
 #include <inet/common/Ptr.h>
 #include <inet/common/Units.h>
 #include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
 
-
-
-#include <inet/common/InitStages.h>
-#include <inet/common/ModuleAccess.h>
+#include <MACMsg_m.h>
 
 
 Define_Module(RfPhysicalInterface);
@@ -171,11 +169,37 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
 
     EV << "Message received from upper layer at RfPhysicalInterface\n";
 
+
+    cPacket *omnetPacket = (cPacket * )msg;
+    MACMsg *macFrame= (MACMsg *) omnetPacket;
+
+    //Packet *packet = dynamic_cast<Packet*>(msg);
+
+    switch( macFrame -> getHDR_HT() ){
+        case 0: // This message has a specific MAC address
+            EV << "This message has a specific MAC address";
+            break;
+        default:
+            EV << "This message has generic MAC address\n";
+            break;
+    }
+
+    // This is dummy packet creation
+    long packetByteLength = long(par("packetByteLength"));
+    auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
+    Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
+    packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
+    // Until here
+
+
     // The packet is created. Destination address is supposedly already set? // PREGUNTAR
-    Packet *packet = dynamic_cast<Packet*>(msg);
+    //Packet *packet = dynamic_cast<Packet*>(msg);
+
+    //packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
     //packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
 
-    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
+    //packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
 
     EV << "Sending new message\n";
     send(packet, "rfgateout");
@@ -294,7 +318,7 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
 
     // Intento 1
     auto signalPowerInd = packet-> getTag<SignalPowerInd>();
-    auto rxPower_aux = signalPowerInd->getPower().get();
+    auto rxPower = signalPowerInd->getPower().get();
 
     // Intento 2 - No funciona
     //Packet *packet = dynamic_cast<Packet*>(msg);
@@ -328,7 +352,7 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
     // Mirar línea 445 de Radio.cc  -> Hay que buscar en la clase Reception...
 
     // We compute received power
-    float rxPower = 1.15; // Esto falta conseguirlo - Only for testing purposes
+    //float rxPower_aux = 1.15; // Esto falta conseguirlo - Only for testing purposes
 
     EV<< "RX power= " << rxPower << "pW" << endl;
 
@@ -339,7 +363,15 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
     // We compute background noise level
 
     // The background noise level in dB is obtained from wireless model
-    cModule *ruidoFondo = getParentModule() -> getParentModule() -> getSubmodule("radioMedium") -> getSubmodule("backgroundNoise");
+    cModule *ruidoFondo;
+    if (par("standaloneRFNetwork")){
+        // En caso de ser standalone no hay que mirar tan arriba para encontrar el radioMedium
+        ruidoFondo = getParentModule() -> getParentModule() -> getSubmodule("radioMedium") -> getSubmodule("backgroundNoise");
+    }else{
+        // En caso de NO ser standalone
+        ruidoFondo = getParentModule() -> getParentModule() -> getParentModule() -> getSubmodule("radioMedium") -> getSubmodule("backgroundNoise");
+    }
+
     // std::string backgroundNoisePower = ruidoFondo -> getName(); // Para comprobar que estoy cogiendo el módulo correcto
 
     double backgroundNoisePowerdBm = ruidoFondo -> par("power");
