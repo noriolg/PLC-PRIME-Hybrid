@@ -17,12 +17,11 @@
 
 #include <inet/common/InitStages.h>
 #include <inet/common/ModuleAccess.h>
-
 #include <inet/common/Ptr.h>
 #include <inet/common/Units.h>
 #include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
-
 #include <MACMsg_m.h>
+#include "RFMessage_m.h"
 
 
 Define_Module(RfPhysicalInterface);
@@ -181,28 +180,32 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
             break;
         default:
             EV << "This message has generic MAC address\n";
+
+
+            // We will send this newly created INET packet
+            Packet *packet = new Packet("RFPHYPacket");
+
+
+            // How to add a tag to a packet
+            //auto RFMacMsgContent_object = packet->addTag<RFMacMsgContent>(); // add tag for dispatch
+            //RFMacMsgContent_object->setMensajeMac(macFrame); // set designated interface
+
+
+            // We add the macFrame that comes from the upper layer
+            packet->addTag<RFMacMsgContent>()->setMensajeMac(macFrame);
+
+
+            // Because it is a generic MAC Address
+            packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+            packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
+
+            EV << "Sending new message\n";
+            send(packet, "rfgateout");
+
+
             break;
     }
 
-    // This is dummy packet creation
-    long packetByteLength = long(par("packetByteLength"));
-    auto data =  makeShared<ByteCountChunk>(B(packetByteLength));
-    Packet *packet = new Packet("RFPHYPacket", data);   // I create a packet with the "data" defined above
-    packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae);
-    // Until here
-
-
-    // The packet is created. Destination address is supposedly already set? // PREGUNTAR
-    //Packet *packet = dynamic_cast<Packet*>(msg);
-
-    //packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-    //packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-
-    //packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
-
-    EV << "Sending new message\n";
-    send(packet, "rfgateout");
 
 }
 
@@ -356,7 +359,8 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
 
     EV<< "RX power= " << rxPower << "pW" << endl;
 
-    float rxPowerdB = 10 * log10(rxPower* pow(10, -12));
+    //float rxPowerdB = 10 * log10(rxPower* pow(10, -12)); // Esto sería con el auxiliar y convirtiendo a mW
+    float rxPowerdB = 10 * log10(rxPower);
     EV<< "RX power= " << rxPowerdB << "dBW" << endl;
 
 
@@ -375,6 +379,7 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
     // std::string backgroundNoisePower = ruidoFondo -> getName(); // Para comprobar que estoy cogiendo el módulo correcto
 
     double backgroundNoisePowerdBm = ruidoFondo -> par("power");
+
     double backgroundNoisePowerdB = backgroundNoisePowerdBm - 30; // We transform to dB
     EV<< "Noise power= " << backgroundNoisePowerdB << "dBW" << endl;
 
@@ -399,7 +404,11 @@ float RfPhysicalInterface::obtainBERforSNR(float SNR_mensaje)
     // Esto estaría bien crearlo en la inicialización y dejar el mapa creado como variable global
 
     // We will now interpolate the message's SNR between to valid points in the curve. The points in the curve are separated .25
+
+
     float SNR_limite_superior = obtenerSNRValidaSuperior(SNR_mensaje);
+
+
     float SNR_limite_inferior = SNR_limite_superior - 0.25;
 
     float BER_leida_superior = leerBERforSNRfromFile(SNR_limite_superior);
@@ -426,6 +435,7 @@ float RfPhysicalInterface::obtenerSNRValidaSuperior(float SNR_a_redondear)
 
     // Finally, we divide by 100 to get back to the true SNR value
     float SNR_redondeada_float = (float)SNR_redondeada_int / 100;
+
 
     // The returned value is a valid value of SNR (in intervals of .25) rounded upwards from the read value
     return SNR_redondeada_float;

@@ -16,12 +16,14 @@
 import inet.common.INETDefs;
 import inet.common.TagBase;
 
+
 namespace inet;
 
 class RFMessageAddressTagBase extends TagBase
 {
     long srcAddress;  
     long destAddress; 
+    cPacket *mensajeMac;
 }
 
 
@@ -36,5 +38,9 @@ class RFMacAddressReq extends RFMessageAddressTagBase
 // Specifies the source and destination MAC addresses for an incoming packet.
 //
 class RFMacAddressInd extends RFMessageAddressTagBase
+{
+}
+
+class RFMacMsgContent extends RFMessageAddressTagBase
 {
 }
