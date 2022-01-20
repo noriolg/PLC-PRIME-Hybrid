@@ -190,65 +190,52 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
     //Packet *packet = dynamic_cast<Packet*>(msg);
 
     switch( macFrame -> getHDR_HT() ){
+
         case 0: // This message has a specific MAC address
             EV << "This message has a specific MAC address";
-
-
-            break;
+          break;
         default:
             EV << "This message has generic MAC address\n";
-
-
-            // We will send this newly created INET packet
-            Packet *packet = new Packet("RFPHYPacket");
-
-
-            // How to add a tag to a packet
-            //auto RFMacMsgContent_object = packet->addTag<RFMacMsgContent>(); // add tag for dispatch
-            //RFMacMsgContent_object->setMensajeMac(macFrame); // set designated interface
-
-
-            // We add the macFrame that comes from the upper layer
-            packet->addTag<RFMacMsgContent>()->setMensajeMac(macFrame);
-
-
-            // Because it is a generic MAC Address
-            packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
-            packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
-
-
-
-            //auto macFrameRecv = packet-> getTag<RFMacMsgContent>()->getMensajeMac();
-            auto macFrame_aux = const_cast<cPacket*>(packet-> getTag<RFMacMsgContent>()->getMensajeMac());
-
-
-
-
-            // Test1 del macFrame
-            //EV << "Sending macFrame as self message\n";
-            //scheduleAt(simTime()+ 1.0,macFrame_aux );
-            // Esto lo coge bien!!
-            // Pero he leído que los tags son para comunicarse entre capas de un mismo host. No se envían por la red
-
-
-            // Test2 del macFrame
-            const auto& payload = makeShared<RFMessageChunk>();
-            //payload->setChunkLength(B(par("messageLength")));
-            payload->setChunkLength(B(5));
-            payload->setMensajeMac(macFrame);
-            packet->insertAtBack(payload);
-
-
-
-
-            EV << "Sending new message\n";
-            send(packet, "rfgateout");
-
 
 
             break;
     }
 
+    // We will send this newly created INET packet
+    Packet *packet = new Packet("RFPHYPacket");
+
+
+    // How to add a tag to a packet
+    //auto RFMacMsgContent_object = packet->addTag<RFMacMsgContent>(); // add tag for dispatch
+    //RFMacMsgContent_object->setMensajeMac(macFrame); // set designated interface
+
+
+    // We add the macFrame that comes from the upper layer
+    packet->addTag<RFMacMsgContent>()->setMensajeMac(macFrame);
+
+
+    // Because it is a generic MAC Address
+    packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
+
+    //auto macFrameRecv = packet-> getTag<RFMacMsgContent>()->getMensajeMac();
+    //auto macFrame_aux = const_cast<cPacket*>(packet-> getTag<RFMacMsgContent>()->getMensajeMac());
+
+    // Test1 del macFrame
+    //EV << "Sending macFrame as self message\n";
+    //scheduleAt(simTime()+ 1.0,macFrame_aux );
+    // Esto lo coge bien!!
+    // Pero he leído que los tags son para comunicarse entre capas de un mismo host. No se envían por la red
+
+    // Test2 del macFrame
+    const auto& payload = makeShared<RFMessageChunk>();
+    //payload->setChunkLength(B(par("messageLength")));
+    payload->setChunkLength(B(5));
+    payload->setMensajeMac(macFrame);
+    packet->insertAtBack(payload);
+
+    EV << "Sending new message\n";
+    send(packet, "rfgateout");
 
 }
 
@@ -287,12 +274,12 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
 
         // Desencapsulamos test 3
         const auto& payload = packet->peekData<RFMessageChunk>();
-        MACMsg *macFrame= (MACMsg *) payload->getMensajeMac();
-        EV_INFO << "packet content1: " << macFrame->getHDR_HT() << endl;
+        MACMsg *macFrameRecibida= (MACMsg *) payload->getMensajeMac();
+        EV_INFO << "packet content1: " << macFrameRecibida->getHDR_HT() << endl;
 
         EV << "Desencapsulación hecha\n";
 
-        send(macFrame, "upperLayerOut");
+        send(macFrameRecibida->dup(), "upperLayerOut");
         // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
     }
 }
