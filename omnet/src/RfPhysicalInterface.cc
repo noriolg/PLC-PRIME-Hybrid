@@ -21,7 +21,22 @@
 #include <inet/common/Units.h>
 #include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
 #include <MACMsg_m.h>
+#include <omnetpp/ccomponent.h>
+#include <omnetpp/cexception.h>
+#include <omnetpp/clog.h>
+#include <omnetpp/cmessage.h>
+#include <omnetpp/cmodule.h>
+#include <omnetpp/cobjectfactory.h>
+#include <omnetpp/cpacket.h>
+#include <omnetpp/cpar.h>
+#include <omnetpp/csimplemodule.h>
+#include <omnetpp/csimulation.h>
+#include <omnetpp/cwatch.h>
+#include <omnetpp/regmacros.h>
+#include <omnetpp/simtime.h>
+
 #include "RFMessage_m.h"
+#include "RFMessageChunk_m.h"
 
 
 Define_Module(RfPhysicalInterface);
@@ -177,6 +192,8 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
     switch( macFrame -> getHDR_HT() ){
         case 0: // This message has a specific MAC address
             EV << "This message has a specific MAC address";
+
+
             break;
         default:
             EV << "This message has generic MAC address\n";
@@ -201,11 +218,32 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
 
 
 
-            auto macFrameRecv = packet-> getTag<RFMacMsgContent>()->getMensajeMac().get();
+            //auto macFrameRecv = packet-> getTag<RFMacMsgContent>()->getMensajeMac();
+            auto macFrame_aux = const_cast<cPacket*>(packet-> getTag<RFMacMsgContent>()->getMensajeMac());
+
+
+
+
+            // Test1 del macFrame
+            //EV << "Sending macFrame as self message\n";
+            //scheduleAt(simTime()+ 1.0,macFrame_aux );
+            // Esto lo coge bien!!
+            // Pero he leído que los tags son para comunicarse entre capas de un mismo host. No se envían por la red
+
+
+            // Test2 del macFrame
+            const auto& payload = makeShared<RFMessageChunk>();
+            //payload->setChunkLength(B(par("messageLength")));
+            payload->setChunkLength(B(5));
+            payload->setMensajeMac(macFrame);
+            packet->insertAtBack(payload);
+
+
 
 
             EV << "Sending new message\n";
             send(packet, "rfgateout");
+
 
 
             break;
@@ -235,12 +273,24 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
         forwardMessage(packet);
 
     }else{
+
         // Utilizado para la integración hybrid
 
-        // Desencapsulamos
-        auto RFMacMsgContent_object = packet-> getTag<RFMacMsgContent>();
-        MACMsg *macFrame = (MACMsg *) RFMacMsgContent_object->getMensajeMac().get();
+        // Desencapsulamos test 1
+        //auto RFMacMsgContent_object = packet-> getTag<RFMacMsgContent>();
+        //MACMsg *macFrame = (MACMsg*) RFMacMsgContent_object->getMensajeMac();
 
+
+        // Desencapsulamos test 2
+        //auto macFrame = const_cast<cPacket*>(packet-> getTag<RFMacMsgContent>()->getMensajeMac());
+
+
+        // Desencapsulamos test 3
+        const auto& payload = packet->peekData<RFMessageChunk>();
+        MACMsg *macFrame= (MACMsg *) payload->getMensajeMac();
+        EV_INFO << "packet content1: " << macFrame->getHDR_HT() << endl;
+
+        EV << "Desencapsulación hecha\n";
 
         send(macFrame, "upperLayerOut");
         // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
