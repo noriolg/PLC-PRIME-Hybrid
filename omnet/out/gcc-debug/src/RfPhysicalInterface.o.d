@@ -87,7 +87,8 @@
  ../../../../inet4.3/src/inet/common/ModuleAccess.h \
  ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h \
  ../../../../simprime2/omnet/simPRIME2/src/MACMsg_m.h \
- ../../../../simprime2/omnet/simPRIME2/src/global_variables.h
+ ../../../../simprime2/omnet/simPRIME2/src/global_variables.h \
+ RFMessage_m.h
 
 RfPhysicalInterface.h:
 
@@ -270,3 +271,5 @@ global_variables.h:
 ../../../../simprime2/omnet/simPRIME2/src/MACMsg_m.h:
 
 ../../../../simprime2/omnet/simPRIME2/src/global_variables.h:
+
+RFMessage_m.h:

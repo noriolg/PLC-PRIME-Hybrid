@@ -199,6 +199,11 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
             packet->addTagIfAbsent<MacAddressReq>()->setDestAddress(MacAddress::BROADCAST_ADDRESS);
             packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ieee8021ae); // Es posible que haya que quitar el "If absent" y editar un tag ya creado
 
+
+
+            auto macFrameRecv = packet-> getTag<RFMacMsgContent>()->getMensajeMac().get();
+
+
             EV << "Sending new message\n";
             send(packet, "rfgateout");
 
@@ -231,7 +236,13 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
 
     }else{
         // Utilizado para la integración hybrid
-        send(packet, "upperLayerOut");
+
+        // Desencapsulamos
+        auto RFMacMsgContent_object = packet-> getTag<RFMacMsgContent>();
+        MACMsg *macFrame = (MACMsg *) RFMacMsgContent_object->getMensajeMac().get();
+
+
+        send(macFrame, "upperLayerOut");
         // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
     }
 }
