@@ -230,7 +230,13 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
     // Test2 del macFrame
     const auto& payload = makeShared<RFMessageChunk>();
     //payload->setChunkLength(B(par("messageLength")));
-    payload->setChunkLength(B(5));
+
+    // Vemos si podemos obtener el Byte len. del macFrame
+    auto tamanoBytes = macFrame -> getByteLength();
+    EV << "Tamaño de paquete de MacFrame: "<<  tamanoBytes  <<" B\n";
+
+
+    payload->setChunkLength(B(tamanoBytes));
     payload->setMensajeMac(macFrame);
     packet->insertAtBack(payload);
 
@@ -285,7 +291,7 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
         //if (dblrand() < 1.0 - pow(1.0 - BER, (double) frame->getBitLength()))
         //    frame->setBitError(true);
         if(hasBitError){
-            macFrameRecibida -> setBitError(true);
+            //macFrameRecibida -> setBitError(true);
         }
 
 
@@ -343,14 +349,6 @@ bool RfPhysicalInterface::simulateError(Packet *packet){
 
     bool errorInMsg;
 
-    if (uniform(0,1) < 0.5){
-        EV << "Error in message\n";
-        errorInMsg = true;
-
-    }else{
-        EV << "No error in message\n";
-        errorInMsg = false;
-    }
 
     // Esto por ahora es de prueba para ver que accedemos al valor correcto
     float SNR = computeSNR(packet);
@@ -359,6 +357,16 @@ bool RfPhysicalInterface::simulateError(Packet *packet){
     float BERleida = obtainBERforSNR(SNR);
     EV << "Ber leida: " << BERleida << endl;
 
+
+    // Esto es temporal. Debe cambiarse por lo inferior para simulaciones correctas
+    if (uniform(0,1) < 0.5){
+        EV << "Error in message\n";
+        errorInMsg = true;
+
+    }else{
+        EV << "No error in message\n";
+        errorInMsg = false;
+    }
 
     //Considerar esto:
     //auto length = packet->getTotalLength();

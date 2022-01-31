@@ -66,10 +66,10 @@ network HybridMeter_Net
 
 
 		// ------------------------------------ Hybrid  ---------------------------------------------------------------
-        
+
         PLC_BN: PLC_Hybrid_BN {
             parameters:
-                @display("p=20,100;q=txQueue");
+                @display("p=55.440002,100.8;q=txQueue");
         }
         PLC_SN[nHostsPerBranch*nBranches]: PLC_Hybrid_SN {
             parameters:

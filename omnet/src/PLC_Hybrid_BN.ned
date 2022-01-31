@@ -105,6 +105,10 @@ module PLC_Hybrid_BN
         //lanCombiner.rfgatein <-- rflan.upperLayerOut if hasRF;
         // Hasta aquí
 
+
+
+
+
 		// Esto sería sin combiner
         plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
         plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
