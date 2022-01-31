@@ -61,29 +61,15 @@ module PLC_Hybrid_SN
             parameters:
                 @display("p=155,200;q=txQueue");
         }
-
+		
+		// Este combiner SOLO combina el tráfico de entrada.
+		// Para salida, el nodo solo utilizará una de las dos comunicaciones pero tiene que ser capaz de escuchar ambas
+		lanCombiner: PLCRFCombiner;
 
         plclan: PLCPHYSN if hasPRIME {
             parameters:
                 @display("p=242,362,row,150;q=txQueue");
         }
-
-
-		// Podemos sustituir todo esto por un WirelessNodeBasic
-//        wlan: Ieee802154NarrowbandInterface if hasRF {
-//            parameters:
-//                @display("p=108,362;q=queue");
-//                mgmt.typename = "Ieee80211MgmtStaSimplified";
-//                agent.typename = "";
-//        }
-//        interfaceTable: InterfaceTable {
-//            parameters:
-//                @display("p=100,100;is=s");
-//        }
-//        mobility: StationaryMobility if hasRF {
-//            parameters:
-//                @display("p=100,200;is=s");
-//        }
 
         rflan: WirelessNodeBasic if hasRF {
 
@@ -91,28 +77,31 @@ module PLC_Hybrid_SN
         }
 
     connections allowunconnected:
-        llc.lowerLayerIn <-- mac.upperLayerOut;
-        llc.lowerLayerOut --> mac.upperLayerIn;
-
-
         SNApp.out --> llc.upperLayerIn;
         SNApp.in <-- llc.upperLayerOut;
 
 
-		// Cambios aquí porque las puertas de mac NO son vectoriales.
-		// No he querido cambiar el código de simPRIME2 
+        llc.lowerLayerIn <-- mac.upperLayerOut;
+        llc.lowerLayerOut --> mac.upperLayerIn;
 
-        //        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
-        //        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
+		
+		// Esto con combiner
+        //mac.physPLCOut --> plclan.upperLayerIn if hasPRIME;
+        //mac.physRFOut --> rflan.upperLayerIn if hasRF;
+
+        //mac.physIn <-- lanCombiner.upperLayerOut;
+
+        //lanCombiner.plcgatein <-- plclan.upperLayerOut if hasPRIME;
+        //lanCombiner.rfgatein <-- rflan.upperLayerOut if hasRF;
+        // Hasta aquí
+
+		// Esto sería sin combiner
         plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
         plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
 
-
-        //        mac.physIn++ <-- wlan.upperLayerOut if hasRF;
-        //        mac.physOut++ --> wlan.upperLayerIn if hasRF;
         mac.physRFIn <-- rflan.upperLayerOut if hasRF;
         mac.physRFOut --> rflan.upperLayerIn if hasRF;
-
+        // Hasta aquí
 
 
 

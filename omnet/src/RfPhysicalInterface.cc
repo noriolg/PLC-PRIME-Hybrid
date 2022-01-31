@@ -279,6 +279,17 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
 
         EV << "Desencapsulación hecha\n";
 
+
+        // Aquí falta poner el error a la macFrameRecibida
+        // Así está en MAC.cpp
+        //if (dblrand() < 1.0 - pow(1.0 - BER, (double) frame->getBitLength()))
+        //    frame->setBitError(true);
+        if(hasBitError){
+            macFrameRecibida -> setBitError(true);
+        }
+
+
+
         send(macFrameRecibida->dup(), "upperLayerOut");
         // Lo enviamos hacia arriba YA HABIENDO CALCULADO EL ERROR
     }
@@ -405,7 +416,7 @@ float RfPhysicalInterface::computeSNR(Packet *packet)
     // We compute received power
     //float rxPower_aux = 1.15; // Esto falta conseguirlo - Only for testing purposes
 
-    EV<< "RX power= " << rxPower << "pW" << endl;
+    EV<< "RX power= " << rxPower << "W" << endl;
 
     //float rxPowerdB = 10 * log10(rxPower* pow(10, -12)); // Esto sería con el auxiliar y convirtiendo a mW
     float rxPowerdB = 10 * log10(rxPower);

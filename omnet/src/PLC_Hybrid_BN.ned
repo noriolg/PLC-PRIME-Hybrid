@@ -20,8 +20,6 @@ package hybridmeter;
 //
 
 
-import inet.physicallayer.wireless.common.contract.packetlevel.IRadioMedium;
-import inet.visualizer.contract.IIntegratedVisualizer;
 import simprime2.DLMSCOSEMBN;
 import simprime2.PLCLLCBN;
 import simprime2.PLCMACBN;
@@ -40,7 +38,7 @@ module PLC_Hybrid_BN
 
         //*.interfaceTableModule = "^.interfaceTable"; // Already defined in WirelessNodeBasic
         //wlan.radio.antenna.mobilityModule = default("^.^.^.mobility"); // Already defined in WirelessNodeBasic
-        
+
 
     gates:
         inout ethg @labels(EtherFrame-conn);
@@ -59,6 +57,8 @@ module PLC_Hybrid_BN
                 @display("p=155,120;q=txQueue");
                 baseNode = true;
         }
+
+
         mac: PLCMACBN {
             parameters:
 
@@ -67,70 +67,53 @@ module PLC_Hybrid_BN
         }
 
 
+		// Este combiner SOLO combina el tráfico de entrada
+		// Para salida, el nodo solo utilizará una de las dos comunicaciones pero tiene que ser capaz de escuchar ambas
+        lanCombiner: PLCRFCombiner {
+
+
+            @display("p=155,285");
+        }
         plclan: PLCPHYBN if hasPRIME {
             parameters:
-                @display("p=242,310,row,150;q=txQueue");
+                @display("p=252,298,row,150;q=txQueue");
         }
 
 
-
-//        PHYLayerAbstraction: RfPhysicalInterface {
-//            parameters:
-//                @display("p=280.84,353.52798");
-//        }
-
-//        li: MessageDispatcher {
-//            parameters:
-//                @display("p=153,293;b=263,12,,,,1");
-//        }
-
-		// Todo esto de aquí se podría sustituir por WirelessNodeBasic, verdad?
-//        wlan: Ieee802154NarrowbandInterface if hasRF {
-//            parameters:
-//                @display("p=100,309;q=queue");
-//                mgmt.typename = "Ieee80211MgmtStaSimplified";
-//                agent.typename = "";
-//        }
-//        interfaceTable: InterfaceTable {
-//            parameters:
-//                @display("p=61,40;is=s");
-//        }
-//        mobility: StationaryMobility if hasRF {
-//            parameters:
-//                @display("p=100,200;is=s");
-//        }
-
         rflan: WirelessNodeBasic if hasRF {
 
-            @display("p=99,302");
+            @display("p=67,298");
         }
 
 
 
     connections allowunconnected:
-        llc.lowerLayerIn <-- mac.upperLayerOut;
-        llc.lowerLayerOut --> mac.upperLayerIn;
-
-
         BNApp.out --> llc.upperLayerIn;
         BNApp.in <-- llc.upperLayerOut;
 
 
-		// Cambios aquí porque las puertas de mac NO son vectoriales.
-		// No he querido cambiar el código de simPRIME2 
+        llc.lowerLayerIn <-- mac.upperLayerOut;
+        llc.lowerLayerOut --> mac.upperLayerIn;
 
-        //        plclan.upperLayerIn <-- mac.physOut++ if hasPRIME;
-        //        plclan.upperLayerOut --> mac.physIn++ if hasPRIME;
+		// Esto con combiner
+        //mac.physPLCOut --> plclan.upperLayerIn if hasPRIME;
+        //mac.physRFOut --> rflan.upperLayerIn if hasRF;
+
+        //mac.physIn <-- lanCombiner.upperLayerOut;
+
+        //lanCombiner.plcgatein <-- plclan.upperLayerOut if hasPRIME;
+        //lanCombiner.rfgatein <-- rflan.upperLayerOut if hasRF;
+        // Hasta aquí
+
+		// Esto sería sin combiner
         plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
         plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
 
-
-        //          mac.physIn++ <-- rflan.upperLayerOut if hasRF;
-        //        mac.physOut++ --> rflan.upperLayerIn if hasRF;
         mac.physRFIn <-- rflan.upperLayerOut if hasRF;
         mac.physRFOut --> rflan.upperLayerIn if hasRF;
-
-
+		// Hasta aquí
+		
+		
         ethg <--> { @display("m=s"); } <--> plclan.phys if hasPRIME;
         rflan.radioIn <-- radioIn if hasRF;
 }

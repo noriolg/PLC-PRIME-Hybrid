@@ -1,11 +1,2 @@
 The netwok logical topology is :
  -> I am node with SID = 0
-	|
-	|
-	-> I am node with SID = -1 and LNID = 1
-	|
-	|
-	-> I am node with SID = -1 and LNID = 2
-	|
-	|
-	-> I am node with SID = -1 and LNID = 3
