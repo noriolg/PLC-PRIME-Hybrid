@@ -13,29 +13,25 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package hybridmeter;
+#include "PLCRFCombiner.h"
 
-//
-// Esta clase se crea para recibir mensajes de la capa física  RF y  PLC y pasarlos a la capa MAC híbrida
-// De esta manera resolvemos el problema de dos puertas de entrada para la capa MAC y lo hacemos 'transparente'
-//
-simple PLCRFCombiner
-{
-    parameters:
-        @class(PLCRFCombiner);
 
-    
-	gates:
-		
-		// Pueden entrar mensajes de RF o de PLC
-		input rfgatein; 
-		input plcgatein;
-		
-		output upperLayerOut;
-    
-    //connections allowunconnected:
-        
-        //rfgatein --> upperLayerOut;
-        //plcgatein --> upperLayerOut;
-    	
+
+Define_Module(PLCRFCombiner);
+Register_Class(PLCRFCombiner);
+
+
+PLCRFCombiner::PLCRFCombiner() {
+    // TODO Auto-generated constructor stub
+
+}
+
+PLCRFCombiner::~PLCRFCombiner() {
+    // TODO Auto-generated destructor stub
+}
+
+void PLCRFCombiner::handleMessage(cMessage *msg){
+    EV << "Combiner has received the message. Sending to MAC layer\n";
+
+    send(msg, "upperLayerOut");
 }

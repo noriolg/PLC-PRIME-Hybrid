@@ -13,29 +13,17 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package hybridmeter;
+#ifndef PLCRFCOMBINER_H_
+#define PLCRFCOMBINER_H_
 
-//
-// Esta clase se crea para recibir mensajes de la capa física  RF y  PLC y pasarlos a la capa MAC híbrida
-// De esta manera resolvemos el problema de dos puertas de entrada para la capa MAC y lo hacemos 'transparente'
-//
-simple PLCRFCombiner
-{
-    parameters:
-        @class(PLCRFCombiner);
+#include <omnetpp.h>
+using namespace omnetpp;
 
-    
-	gates:
-		
-		// Pueden entrar mensajes de RF o de PLC
-		input rfgatein; 
-		input plcgatein;
-		
-		output upperLayerOut;
-    
-    //connections allowunconnected:
-        
-        //rfgatein --> upperLayerOut;
-        //plcgatein --> upperLayerOut;
-    	
-}
+class PLCRFCombiner : public cSimpleModule
+{    public:
+        PLCRFCombiner();
+        virtual ~PLCRFCombiner();
+        virtual void handleMessage(cMessage *msg) override;
+};
+
+#endif /* PLCRFCOMBINER_H_ */

@@ -96,25 +96,22 @@ module PLC_Hybrid_BN
         llc.lowerLayerOut --> mac.upperLayerIn;
 
 		// Esto con combiner
-        //mac.physPLCOut --> plclan.upperLayerIn if hasPRIME;
-        //mac.physRFOut --> rflan.upperLayerIn if hasRF;
+        mac.physPLCOut --> plclan.upperLayerIn if hasPRIME;
+        mac.physRFOut --> rflan.upperLayerIn if hasRF;
 
-        //mac.physIn <-- lanCombiner.upperLayerOut;
+        mac.physPLCIn <-- lanCombiner.upperLayerOut; // Con el caso de combiner el PLCIN está agregando ambos tráficos
 
-        //lanCombiner.plcgatein <-- plclan.upperLayerOut if hasPRIME;
-        //lanCombiner.rfgatein <-- rflan.upperLayerOut if hasRF;
+        lanCombiner.plcgatein <-- plclan.upperLayerOut if hasPRIME;
+        lanCombiner.rfgatein <-- rflan.upperLayerOut if hasRF;
         // Hasta aquí
 
 
-
-
-
 		// Esto sería sin combiner
-        plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
-        plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
+        //plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
+        //plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
 
-        mac.physRFIn <-- rflan.upperLayerOut if hasRF;
-        mac.physRFOut --> rflan.upperLayerIn if hasRF;
+        //mac.physRFIn <-- rflan.upperLayerOut if hasRF;
+        //mac.physRFOut --> rflan.upperLayerIn if hasRF;
 		// Hasta aquí
 		
 		

@@ -61,19 +61,21 @@ module PLC_Hybrid_SN
             parameters:
                 @display("p=155,200;q=txQueue");
         }
-		
-		// Este combiner SOLO combina el tráfico de entrada.
-		// Para salida, el nodo solo utilizará una de las dos comunicaciones pero tiene que ser capaz de escuchar ambas
-		lanCombiner: PLCRFCombiner;
 
+        // Este combiner SOLO combina el tráfico de entrada.
+        // Para salida, el nodo solo utilizará una de las dos comunicaciones pero tiene que ser capaz de escuchar ambas
+        lanCombiner: PLCRFCombiner {
+
+            @display("p=155,308");
+        }
         plclan: PLCPHYSN if hasPRIME {
             parameters:
-                @display("p=242,362,row,150;q=txQueue");
+                @display("p=250,347,row,150;q=txQueue");
         }
 
         rflan: WirelessNodeBasic if hasRF {
 
-            @display("p=107,347");
+            @display("p=65,347");
         }
 
     connections allowunconnected:
@@ -84,23 +86,23 @@ module PLC_Hybrid_SN
         llc.lowerLayerIn <-- mac.upperLayerOut;
         llc.lowerLayerOut --> mac.upperLayerIn;
 
-		
+
 		// Esto con combiner
-        //mac.physPLCOut --> plclan.upperLayerIn if hasPRIME;
-        //mac.physRFOut --> rflan.upperLayerIn if hasRF;
+        mac.physPLCOut --> plclan.upperLayerIn if hasPRIME;
+        mac.physRFOut --> rflan.upperLayerIn if hasRF;
 
-        //mac.physIn <-- lanCombiner.upperLayerOut;
+        mac.physPLCIn <-- lanCombiner.upperLayerOut; // Con el caso de combiner el PLCIN está agregando ambos tráficos
 
-        //lanCombiner.plcgatein <-- plclan.upperLayerOut if hasPRIME;
-        //lanCombiner.rfgatein <-- rflan.upperLayerOut if hasRF;
+        lanCombiner.plcgatein <-- plclan.upperLayerOut if hasPRIME;
+        lanCombiner.rfgatein <-- rflan.upperLayerOut if hasRF;
         // Hasta aquí
 
 		// Esto sería sin combiner
-        plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
-        plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
+        //plclan.upperLayerIn <-- mac.physPLCOut if hasPRIME;
+        //plclan.upperLayerOut --> mac.physPLCIn if hasPRIME;
 
-        mac.physRFIn <-- rflan.upperLayerOut if hasRF;
-        mac.physRFOut --> rflan.upperLayerIn if hasRF;
+        //mac.physRFIn <-- rflan.upperLayerOut if hasRF;
+        //mac.physRFOut --> rflan.upperLayerIn if hasRF;
         // Hasta aquí
 
 

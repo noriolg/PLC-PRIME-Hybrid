@@ -56,44 +56,49 @@ void RfPhysicalInterface::initialize(int stage){
 
 
 
-        if (stage == INITSTAGE_LOCAL) {
+    if (stage == INITSTAGE_LOCAL) {
 
-    EV << "I am initialized\n";
-
-
-    // Load BER Curve Data
-    loadBERCurveFile();
-
-    // Statistics collection
-    numReceivedMessages = 0;
-    numErroneousMessages = 0;
-
-    WATCH(numReceivedMessages);
-    WATCH(numErroneousMessages);
+        EV << "I am initialized\n";
 
 
-    if( par("sendMsgOnInit").boolValue() == true) {
+        // Load BER Curve Data
+        loadBERCurveFile();
 
-        // We schedule an initial auto-message. When it arrives, we will send the first network message
-        EV << "Creating INITSELFMSG\n";
-        cMessage * msg = new cMessage("InitialSelfMessage", INITSELFMSG);
-        scheduleAt(simTime()+ 1.0,msg );
+        // Statistics collection
+        numReceivedMessages = 0;
+        numErroneousMessages = 0;
+
+        WATCH(numReceivedMessages);
+        WATCH(numErroneousMessages);
+
+
+        if( par("sendMsgOnInit").boolValue() == true) {
+
+            // We schedule an initial auto-message. When it arrives, we will send the first network message
+            EV << "Creating INITSELFMSG\n";
+            cMessage * msg = new cMessage("InitialSelfMessage", INITSELFMSG);
+            scheduleAt(simTime()+ 1.0,msg );
+
+        }
+
+
+        //cModule *radioReceiver = getParentModule() -> getSubmodule("wlan") -> getSubmodule("radio") -> getSubmodule("receiver");
+        //std::string radioName = radioReceiver -> getName();
+        ////double radioVar= radioReceiver -> par("power");
+        //EV << "This is my receiver: " << parentName << "\n";
+        //EV << "This is his variable: " << radioVar << "\n";
+
+        radio = getModuleFromPar<inet::physicallayer::IRadio>(par("radioModule"), this);
+    }
+    else if (stage == INITSTAGE_LINK_LAYER) {
+
+        radio->setRadioMode(inet::physicallayer::IRadio::RADIO_MODE_TRANSCEIVER);
+
 
     }
+    else if (stage == INITSTAGE_LAST){
 
-
-    //cModule *radioReceiver = getParentModule() -> getSubmodule("wlan") -> getSubmodule("radio") -> getSubmodule("receiver");
-    //std::string radioName = radioReceiver -> getName();
-    ////double radioVar= radioReceiver -> par("power");
-    //EV << "This is my receiver: " << parentName << "\n";
-    //EV << "This is his variable: " << radioVar << "\n";
-
-    radio = getModuleFromPar<inet::physicallayer::IRadio>(par("radioModule"), this);
-        }
-        else if (stage == INITSTAGE_LINK_LAYER) {
-
-    radio->setRadioMode(inet::physicallayer::IRadio::RADIO_MODE_TRANSCEIVER);
-        }
+    }
 
 }
 
