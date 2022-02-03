@@ -89,6 +89,28 @@ void RfPhysicalInterface::initialize(int stage){
         //EV << "This is his variable: " << radioVar << "\n";
 
         radio = getModuleFromPar<inet::physicallayer::IRadio>(par("radioModule"), this);
+
+
+
+    }
+    else if (stage == INITSTAGE_PHYSICAL_ENVIRONMENT) {
+
+        // Necesito dos parent modules para llegar hasta el PLC_SN en caso standalone esto no va a funcionar
+        // Cojo el display string que ya ha sido actualizada en la capa MAC
+
+        //cDisplayString& grandParentDispStr = getParentModule()->getParentModule()->getDisplayString();
+        //EV << "El display string de mi grandparent es: "<< grandParentDispStr <<"\n";
+
+        // Cojo un puntero al display string de mi padre, que es la que va a mirar luego la radio
+
+        //cDisplayString& parentDispStr  = getParentModule() -> getDisplayString();
+        //EV << "Mi parent display string es: "<< parentDispStr <<"\n";
+
+        // Actualizo mi puntero a los mismos valores que ha tocado la capa MAC
+        //parentDispStr.parse(grandParentDispStr);
+        //EV << "Mi parent string actualizado es: "<< parentDispStr <<"\n";
+
+
     }
     else if (stage == INITSTAGE_LINK_LAYER) {
 
