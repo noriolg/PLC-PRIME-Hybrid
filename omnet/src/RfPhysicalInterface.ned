@@ -31,6 +31,8 @@ simple RfPhysicalInterface
         bool standaloneRFNetwork = default(true);
         
        string radioModule = default("^.wlan.radio");   // The path to the Radio module  //FIXME remove default value
+       
+       int posicionYdelBN = default(300);
         
         
     gates:

@@ -17,11 +17,13 @@
 
 #include <inet/common/InitStages.h>
 #include <inet/common/ModuleAccess.h>
+#include <inet/common/packet/chunk/FieldsChunk.h>
 #include <inet/common/Ptr.h>
 #include <inet/common/Units.h>
 #include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
 #include <MACMsg_m.h>
 #include <omnetpp/ccomponent.h>
+#include <omnetpp/cdisplaystring.h>
 #include <omnetpp/cexception.h>
 #include <omnetpp/clog.h>
 #include <omnetpp/cmessage.h>
@@ -34,6 +36,8 @@
 #include <omnetpp/cwatch.h>
 #include <omnetpp/regmacros.h>
 #include <omnetpp/simtime.h>
+#include <PLCMAC.h>
+#include <cmath>
 
 #include "RFMessage_m.h"
 #include "RFMessageChunk_m.h"
@@ -95,20 +99,170 @@ void RfPhysicalInterface::initialize(int stage){
     }
     else if (stage == INITSTAGE_PHYSICAL_ENVIRONMENT) {
 
-        // Necesito dos parent modules para llegar hasta el PLC_SN en caso standalone esto no va a funcionar
-        // Cojo el display string que ya ha sido actualizada en la capa MAC
-
-        //cDisplayString& grandParentDispStr = getParentModule()->getParentModule()->getDisplayString();
-        //EV << "El display string de mi grandparent es: "<< grandParentDispStr <<"\n";
 
         // Cojo un puntero al display string de mi padre, que es la que va a mirar luego la radio
 
-        //cDisplayString& parentDispStr  = getParentModule() -> getDisplayString();
+        cDisplayString& parentDispStr  = getParentModule() -> getDisplayString();
         //EV << "Mi parent display string es: "<< parentDispStr <<"\n";
+        //  Ejemplo de display string de mi grandparent p=1033,290;i=misc/house;q=txQueue;i2=status/red
+
+        // Tengo que encontrar la verdadera posición en la que debería de estar este nodo.
+        // Para eso voy a utilizar su MacAddress y los siguientes parámetros
+        int nBranchesInt =  (cSimulation::getActiveSimulation())->getSystemModule()->par("nBranches"); // Para decidir si es par o impar lo necesitamos como int
+        float nBranches = static_cast< float >(nBranchesInt); // Lo cogemos como float para que miRama se calcule correctamente
+        int nhostsPerBranch = (cSimulation::getActiveSimulation())->getSystemModule()->par("nHostsPerBranch");
+        int busLengthInMetersInt = (cSimulation::getActiveSimulation())->getSystemModule() ->par("busLengthForRadios");
+        float busLengthInMeters = static_cast< float >(busLengthInMetersInt);
+        //float total_number_nodes = nBranches * nhostsPerBranch;
+
+        // Comencemos...
+
+        // Cogemos la dirección MAC de la capa mac (que ya ha sido inicialiada)
+        // primer padre: WirelessNodeBasic     segundo padre: PLC_Hybrid_SN  que ya tiene un submódulo llamado mac
+        cModule *submoduloMAC = this ->getParentModule() ->  getParentModule() ->  getSubmodule("mac");
+        PLCMAC *claseMAC = (PLCMAC*) submoduloMAC;
+        int miMAC = (int) claseMAC -> getMACAddress();
+        EV << "Mi MAC Address: " << miMAC << "\n";
+
+
+        // En un principio pensaba que las MAC Address empezaban en 0 y todo el codigo está pensado para ello. Por eso se hace este ajuste aquí:
+        miMAC = miMAC -1; // Siento la chapuza...
+        // El BN es un caso especial. Ver el final de este trozo de código (en la inicialización de posicion_x y posicion_y) para ver cómo se trata a este nodo
+
+
+        // Esto lo hacemos para que el primer SN tenga de posición el "0". Esto nos servirá para colocarlo en la posición 0 de la primera rama
+        float miPosicionEnVectorDeSN = miMAC -1;
+
+        // Porque si no el bucle for que viene a continuación se vuelve loco
+        if (miMAC == 0){
+            miPosicionEnVectorDeSN++;
+        }
+
+
+        // Mi rama es la parte entera de dividir mi índice SN entre el número de ramas. Los SN se van colocando de manera ordenada "rellenando" estas Branches.
+        //float miRamaFloat = miPosicionEnVectorDeSN/nBranches;
+        //int miRama = (int)(miRamaFloat-0.01);
+
+        int miRama;
+        int miPosicionEnLaRama;
+        int counter = 0;
+        for(int i = 0; i < nBranches; i++){
+            for(int j = 0; j<nhostsPerBranch; j++){
+
+                if(counter==miPosicionEnVectorDeSN){
+                    miRama = i;
+                    miPosicionEnLaRama = j;
+                }
+
+                counter = counter +1;
+            }
+        }
+
+
+
+        // He asumido de aquí en adelante que la primera branch (la de más arriba) es la branch 0
+        //miRama = miRama-1;
+
+        // Mi posición en la rama es la parte decimal de dividir mi índice SN entre el número de ramas multiplicado por el número de objetos en una rama.
+        // Mi posición puede ir desde 0 (el primero de la rama) hasta nhostPerBranch -1 (el último de la rama)
+        //float miPosicionEnLaRamaFloat = ( (miPosicionEnVectorDeSN/nBranches) - miRama ) * nhostsPerBranch;
+        //int miPosicionEnLaRama = round(miPosicionEnLaRamaFloat-0.01); // Para aproximar al entero más cercano porque no coge todos los decimales en el paso anterior
+
+
+        // Mi posición X se obtiene dividiendo la longitud en "nhostsperBranch" trozos y después multiplicando por mi posición en la rama (ajustado +1 para que la pos 0 empiece a distancia del BN)
+        float miX = (busLengthInMeters/nhostsPerBranch) * (miPosicionEnLaRama + 1);
+
+
+        //EV << "Mi X: " << miX << "\n";
+        //EV << "Mi rama: " << miRama << "\n";
+        //EV << "Mi posicionenVectorSN: " << miPosicionEnVectorDeSN << "\n";
+        //EV << "Mi posicionEnLaRamaFloat: " << miPosicionEnLaRamaFloat << "\n";
+        //EV << "Mi posicionEnLaRama: " << miPosicionEnLaRama << "\n";
+
+
+        // Ahora calculamos el Y de mi rama. Esta posición dependerá de dónde estes relativa al BN y depende de si las ramas son pares o no
+        int yDelBaseNodeInt = par("posicionYdelBN");
+        float yDelBaseNode = static_cast< float >(yDelBaseNodeInt);
+        int verticalDistBetweenBusesInt = (cSimulation::getActiveSimulation())->getSystemModule() ->par("verticalDistanceBetweenBuses");
+        float verticalDistBetweenBuses = static_cast< float >(verticalDistBetweenBusesInt);
+        int indRama;
+        float offsetMiRama;
+        float yMiRama;
+
+        // Según si las ramas son pares o no, se hace un cálculo de la Y distinto
+        if (nBranchesInt%2 == 0){
+
+            // Número par de ramas
+            // miRama   índice_deseado
+            //   0        2
+            //   1        1
+            //   2       -1
+            //   3       -2
+
+            if (miRama >= nBranchesInt/2){
+                indRama = -miRama  + nBranchesInt/2 - 1; // Primero convertimos al índice. Estos están por debajo del BN y serán negativos
+                offsetMiRama =  -( (verticalDistBetweenBuses/2) + (-indRama - 1) * verticalDistBetweenBuses); // Después calculamos el offset respecto al BN
+            }
+            else{
+
+                indRama = nBranchesInt/2 - miRama; // Primero obtenemos el índice. Estos están por encima del BN
+                offsetMiRama = (verticalDistBetweenBuses/2) + (indRama - 1) * verticalDistBetweenBuses; // Ahora el offset respecto al BN
+            }
+
+            yMiRama = yDelBaseNode + offsetMiRama;
+        }
+        else{
+
+            // Número impar de ramas
+            // miRama   índice_deseado
+            //   0        2
+            //   1        1
+            //   2        0
+            //   3       -1
+            //   4       -2
+            if (miRama >  nBranchesInt/2){
+                indRama = -miRama + nBranchesInt/2;
+                offsetMiRama = verticalDistBetweenBuses * indRama;
+
+            }
+            else if(miRama < nBranchesInt/2){
+                indRama = nBranchesInt/2 - miRama;
+                offsetMiRama = verticalDistBetweenBuses * indRama;
+            }
+            else{
+                yMiRama = 0; // Esta rama está a la misma altura que el BN. Es la rama "central"
+                indRama = yMiRama;
+            }
+            offsetMiRama = verticalDistBetweenBuses * indRama;
+            yMiRama = yDelBaseNode + offsetMiRama;
+        }
+
+
+        float posicion_x = miX;
+        float posicion_y = yMiRama;
+
+        // Si soy el BN, estoy en la posición (0, yDelBaseNode)
+        if (miMAC == 0){
+            posicion_x = 0;
+            posicion_y = yDelBaseNode;
+        }
+
+
+
+        // Una vez encontrada, cambio sus argumentos de posición
+        parentDispStr.setTagArg("p",0,posicion_x);
+        parentDispStr.setTagArg("p",1,posicion_y);
+
+
+        // Y muestro la posición en el string del abuelo
+        cDisplayString& abueloDispStr  = getParentModule()-> getParentModule() -> getDisplayString();
+        string  strBase = "x: " + to_string(round(posicion_x)) + " y: " + to_string(round(posicion_y));
+        abueloDispStr.setTagArg("t",0, strBase.c_str() );
+
 
         // Actualizo mi puntero a los mismos valores que ha tocado la capa MAC
         //parentDispStr.parse(grandParentDispStr);
-        //EV << "Mi parent string actualizado es: "<< parentDispStr <<"\n";
+        EV << "Mi parent string actualizado es: "<< parentDispStr <<"\n";
 
 
     }
@@ -298,7 +452,7 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
 
         // Desencapsulamos test 1
         //auto RFMacMsgContent_object = packet-> getTag<RFMacMsgContent>();
-        //MACMsg *macFrame = (MACMsg*) RFMacMsgContent_object->getMensajeMac();
+        //MACMsg *macFrame = (MACMsg*) RFMacMsgContent_object->getMensajeMac();v
 
 
         // Desencapsulamos test 2
@@ -636,3 +790,4 @@ void RfPhysicalInterface::finish(){
     recordScalar("#ErroneousMessages", numErroneousMessages);
 
 }
+

@@ -18,6 +18,8 @@ network HybridMeter_Net
 
         int nHostsPerBranch = default(3);
         int nBranches = default(2);
+        int busLengthForRadios = default(1000); // Este es un parámetro duplciado de plcBus.busLength porque no sabía acceder al otro. Ambos se inicializan en el .ini
+        int verticalDistanceBetweenBuses = default(10); 
         @display("bgi=background/streetmap,s;bgb=1600,1000");
 
     submodules:
