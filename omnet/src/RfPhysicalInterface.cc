@@ -100,11 +100,6 @@ void RfPhysicalInterface::initialize(int stage){
     else if (stage == INITSTAGE_PHYSICAL_ENVIRONMENT) {
 
 
-        // Cojo un puntero al display string de mi padre, que es la que va a mirar luego la radio
-
-        cDisplayString& parentDispStr  = getParentModule() -> getDisplayString();
-        //EV << "Mi parent display string es: "<< parentDispStr <<"\n";
-        //  Ejemplo de display string de mi grandparent p=1033,290;i=misc/house;q=txQueue;i2=status/red
 
         // Tengo que encontrar la verdadera posición en la que debería de estar este nodo.
         // Para eso voy a utilizar su MacAddress y los siguientes parámetros
@@ -248,6 +243,8 @@ void RfPhysicalInterface::initialize(int stage){
         }
 
 
+        // Cojo un puntero al display string de mi padre, que es la que va a mirar luego la radio
+        cDisplayString& parentDispStr  = getParentModule() -> getDisplayString();
 
         // Una vez encontrada, cambio sus argumentos de posición
         parentDispStr.setTagArg("p",0,posicion_x);
@@ -272,10 +269,6 @@ void RfPhysicalInterface::initialize(int stage){
 
 
     }
-    else if (stage == INITSTAGE_LAST){
-
-    }
-
 }
 
 
