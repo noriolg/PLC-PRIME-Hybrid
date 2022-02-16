@@ -51,6 +51,8 @@ class INET_API RfPhysicalInterface : public cSimpleModule {
 
     protected:
         virtual void initialize(int stage) override;
+        void inicializarPosicionRadio();
+
         void loadBERCurveFile();
         virtual void finish() override;
         virtual void handleMessage(cMessage *msg) override;

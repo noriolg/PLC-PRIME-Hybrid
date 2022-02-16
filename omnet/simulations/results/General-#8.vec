@@ -1,8 +1,8 @@
 version 3
-run General-8-20220204-08:24:41-4860
+run General-8-20220204-08:53:18-5381
 attr configname General
-attr datetime 20220204-08:24:41
-attr datetimef 20220204-082441
+attr datetime 20220204-08:53:18
+attr datetimef 20220204-085318
 attr experiment General
 attr inifile HybridMeter.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network HybridMeter_Net
-attr processid 4860
+attr processid 5381
 attr repetition 8
 attr replication #8
 attr resultdir results

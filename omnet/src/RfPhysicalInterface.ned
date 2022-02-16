@@ -33,6 +33,8 @@ simple RfPhysicalInterface
        string radioModule = default("^.wlan.radio");   // The path to the Radio module  //FIXME remove default value
        
        int posicionYdelBN = default(300);
+       
+      //bool allow-object-stealing-on-deletion=true;
         
         
     gates:

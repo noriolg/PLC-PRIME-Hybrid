@@ -95,6 +95,7 @@
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cmessage.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cmodule.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cobjectfactory.h \
+ /home/nico/omnetpp-6.0pre14/include/omnetpp/cownedobject.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cpacket.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cpar.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/csimplemodule.h \
@@ -314,6 +315,8 @@ global_variables.h:
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cmodule.h:
 
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cobjectfactory.h:
+
+/home/nico/omnetpp-6.0pre14/include/omnetpp/cownedobject.h:
 
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cpacket.h:
 

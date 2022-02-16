@@ -1,8 +1,8 @@
 version 3
-run General-1-20220131-12:35:18-7843
+run General-1-20220204-14:59:16-4269
 attr configname General
-attr datetime 20220131-12:35:18
-attr datetimef 20220131-123518
+attr datetime 20220204-14:59:16
+attr datetimef 20220204-145916
 attr experiment General
 attr inifile HybridMeter.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network HybridMeter_Net
-attr processid 7843
+attr processid 4269
 attr repetition 1
 attr replication #1
 attr resultdir results
@@ -24,19 +24,22 @@ config **.radio.bandwidth "2.8 MHz"
 config **.radio.headerLength "(1 *8 + 7 + 1) * 16us"
 config **.transmitter.modulation "\"BPSK\""
 config **.transmitter.bitrate 250kbps
-config **.transmitter.power 2.24mW
+config **.transmitter.power 5mW
 config **.receiver.modulation "\"BPSK\""
 config **.receiver.sensitivity -100dBm
 config **.receiver.minInterferencePower -120dBm
 config *.RfBaseNode.mobility.typename StationaryMobility
 config *.PLC_BN.hasRF true
 config *.PLC_BN.hasPRIME true
-config *.PLC_BN.mac.ISendtoRFPHY true
+config *.PLC_BN.mac.amIHybridMAC true
+config *.PLC_BN.mac.oneOfEveryXNodesIsRF 0
+config *.*.rflan.PHYLayerAbstraction.posicionYdelBN 300
 config *.RfServiceNode.mobility.typename StationaryMobility
 config *.PLC_SN[*].hasRF true
 config *.PLC_SN[*].hasPRIME true
-config *.PLC_SN[*].mac.ISendtoRFPHY true
-config sim-time-limit 1000s
+config *.PLC_SN[*].mac.amIHybridMAC true
+config *.PLC_SN[*].mac.oneOfEveryXNodesIsRF 0
+config sim-time-limit 3000s
 config **.endSimTime 50000
 config **.uniform_d true
 config **.fixedArch false
@@ -91,25 +94,22 @@ config **.nBranches 2
 config **.PLC_SN[*].mac.CAP_CFP false
 config **.PLC_SN[*].llc.CAP_CFP false
 config **.PLC_BN.mac.policy 1
-config **.plcBus[*].nullAttenuation true
-config **.nHostsPerBranch 3
-config **.attFileAddress "\"topologiasLINTER/att/mil_nodos_att.txt\""
+config **.plcBus[*].nullAttenuation false
+config **.nHostsPerBranch 5
+config **.attFileAddress "\"topologiasLINTER/att/atenuaciones_5.txt\""
 config **.CAP_CFP_NUM_SN -1
-config **.busLength 400
+config **.busLength 300
+config **.busLengthForRadios 300
+config **.verticalDistanceBetweenBuses 20
 config **.positions "\"25 38 37\""
 config **.archFileAddress "\"\""
 
 vector 0 HybridMeter_Net.PLC_BN.mac PLCAccessDelay ETV
-vector 1 HybridMeter_Net.PLC_BN.rflan.wlan.radio transmissionState:vector ETV
-attr interpolationmode sample-hold
-attr source transmissionStateChanged
-attr title "Radio transmission state, vector"
-vector 2 HybridMeter_Net.PLC_SN[0].rflan.wlan.radio receptionState:vector ETV
-attr interpolationmode sample-hold
-attr source receptionStateChanged
-attr title "Radio reception state, vector"
-vector 3 HybridMeter_Net.PLC_SN[1].rflan.wlan.radio receptionState:vector ETV
-attr interpolationmode sample-hold
-attr source receptionStateChanged
-attr title "Radio reception state, vector"
-vector 4 HybridMeter_Net.PLC_SN[2].rflan.wlan.radio rece
+vector 1 HybridMeter_Net.PLC_SN[5].mac I_received_BCN ETV
+vector 2 HybridMeter_Net.PLC_SN[0].mac I_received_BCN ETV
+vector 3 HybridMeter_Net.PLC_SN[5].mac I_sent_REG_REQ ETV
+vector 4 HybridMeter_Net.PLC_SN[0].mac I_sent_REG_REQ ETV
+vector 5 HybridMeter_Net.PLC_SN[6].mac I_received_BCN ETV
+vector 6 HybridMeter_Net.PLC_SN[1].mac I_received_BCN ETV
+vector 7 HybridMeter_Net.PLC_SN[6].mac I_sent_REG_REQ ETV
+vector 
