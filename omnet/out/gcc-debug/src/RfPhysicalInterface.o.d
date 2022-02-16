@@ -88,14 +88,12 @@
  ../../../../inet4.3/src/inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h \
  ../../../../simprime2/omnet/simPRIME2/src/MACMsg_m.h \
  ../../../../simprime2/omnet/simPRIME2/src/global_variables.h \
- /home/nico/omnetpp-6.0pre14/include/omnetpp/ccomponent.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cdisplaystring.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cexception.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/clog.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cmessage.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cmodule.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cobjectfactory.h \
- /home/nico/omnetpp-6.0pre14/include/omnetpp/cownedobject.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cpacket.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/cpar.h \
  /home/nico/omnetpp-6.0pre14/include/omnetpp/csimplemodule.h \
@@ -302,8 +300,6 @@ global_variables.h:
 
 ../../../../simprime2/omnet/simPRIME2/src/global_variables.h:
 
-/home/nico/omnetpp-6.0pre14/include/omnetpp/ccomponent.h:
-
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cdisplaystring.h:
 
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cexception.h:
@@ -315,8 +311,6 @@ global_variables.h:
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cmodule.h:
 
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cobjectfactory.h:
-
-/home/nico/omnetpp-6.0pre14/include/omnetpp/cownedobject.h:
 
 /home/nico/omnetpp-6.0pre14/include/omnetpp/cpacket.h:
 

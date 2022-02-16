@@ -45,7 +45,7 @@ class INET_API RfPhysicalInterface : public cSimpleModule {
          inet::physicallayer::IRadio * radio;
 
     public:
-        int address;
+        bool soyRF;
         RfPhysicalInterface();
         virtual ~RfPhysicalInterface();
 
@@ -74,6 +74,8 @@ class INET_API RfPhysicalInterface : public cSimpleModule {
         float obtenerSNRValidaSuperior(float SNR_a_redondear);
         int roundUp(int numToRound, int multiple);
         float leerBERforSNRfromFile(float SNR_a_leer);
+
+        void changeNodeImage(string  strBase);
 
 };
 

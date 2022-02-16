@@ -22,14 +22,12 @@
 #include <inet/common/Units.h>
 #include <inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h>
 #include <MACMsg_m.h>
-#include <omnetpp/ccomponent.h>
 #include <omnetpp/cdisplaystring.h>
 #include <omnetpp/cexception.h>
 #include <omnetpp/clog.h>
 #include <omnetpp/cmessage.h>
 #include <omnetpp/cmodule.h>
 #include <omnetpp/cobjectfactory.h>
-#include <omnetpp/cownedobject.h>
 #include <omnetpp/cpacket.h>
 #include <omnetpp/cpar.h>
 #include <omnetpp/csimplemodule.h>
@@ -86,6 +84,17 @@ void RfPhysicalInterface::initialize(int stage){
     else if (stage == INITSTAGE_LINK_LAYER) {
 
         radio->setRadioMode(inet::physicallayer::IRadio::RADIO_MODE_TRANSCEIVER);
+
+
+        cModule *submoduloMAC = this ->getParentModule() ->  getParentModule() ->  getSubmodule("mac");
+        PLCMAC *claseMAC = (PLCMAC*) submoduloMAC;
+        soyRF = (bool) claseMAC -> getIsOutGateRF();
+
+        if (soyRF){
+            string imagen_nodo = "misc/signal_departure";
+            changeNodeImage(imagen_nodo);
+        }
+
     }
 }
 
@@ -187,8 +196,6 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
           break;
         default:
             EV << "This message has generic MAC address\n";
-
-
             break;
     }
 
@@ -199,6 +206,12 @@ void RfPhysicalInterface::processMsgFromUpperLayer(cMessage *msg){
     // How to add a tag to a packet
     //auto RFMacMsgContent_object = packet->addTag<RFMacMsgContent>(); // add tag for dispatch
     //RFMacMsgContent_object->setMensajeMac(macFrame); // set designated interface
+
+
+    // Si soy RF, marco el mensaje enviado como tal
+    if (soyRF){
+        macFrame -> setHybridTransmitMode(1); // 1 indica que lo estoy enviando por RF
+    }
 
 
     // We add the macFrame that comes from the upper layer
@@ -356,6 +369,7 @@ bool RfPhysicalInterface::simulateError(Packet *packet){
     EV << "Ber leida: " << BERleida << endl;
 
 
+    /*
     // Esto es temporal. Debe cambiarse por lo inferior para simulaciones correctas
     if (uniform(0,1) < 0.5){
         EV << "Error in message\n";
@@ -365,11 +379,23 @@ bool RfPhysicalInterface::simulateError(Packet *packet){
         EV << "No error in message\n";
         errorInMsg = false;
     }
+    */
 
     //Considerar esto:
-    //auto length = packet->getTotalLength();
-    //auto hasErrors = hasProbabilisticError(length, ber); // decide randomly
     // https://inet.omnetpp.org/docs/developers-guide/ch-packets.html#:~:text=raw%20chunks%20(accurate)-,The,-first%20example%20shows
+
+
+
+    if (dblrand() < 1.0 - pow(1.0 - BERleida, (double) packet->getBitLength())){
+        packet->setBitError(true);
+        errorInMsg = true;
+        EV << "Error en el mensaje RF recibido\n";
+    }else{
+        EV << "No error en el mensaje RF recibido\n";
+        errorInMsg = false;
+
+    }
+
 
     return errorInMsg;
 }
@@ -774,11 +800,19 @@ void RfPhysicalInterface::inicializarPosicionRadio(){
 }
 
 
+void RfPhysicalInterface::changeNodeImage(string  strBase){
+
+    cDisplayString& abueloDispStr  = getParentModule()-> getParentModule() -> getDisplayString();
+
+    //string  strBase = "misc/helicopter";
+
+    abueloDispStr.setTagArg("i",0, strBase.c_str() );
+}
+
 
 void RfPhysicalInterface::finish(){
 
     recordScalar("#ReceivedMessages", numReceivedMessages);
     recordScalar("#ErroneousMessages", numErroneousMessages);
-
 }
 
