@@ -258,15 +258,15 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
     bool hasBitError = simulateError(packet);
 
 
-    if (hasBitError){
-        // We add to the counter of erroneous messages
-        numErroneousMessages++;
-        packet->setBitError(true);
-    }
-
-
     if( par("standaloneRFNetwork").boolValue() == true) {
         // Utilizado cuando probamos RfCommuncation de manera individual
+
+        if (hasBitError){
+            // We add to the counter of erroneous messages
+            numErroneousMessages++;
+            packet->setBitError(true);
+        }
+
         forwardMessage(packet);
 
     }else{
@@ -295,7 +295,8 @@ void RfPhysicalInterface::processMsgFromNetwork(cMessage *msg){
         //if (dblrand() < 1.0 - pow(1.0 - BER, (double) frame->getBitLength()))
         //    frame->setBitError(true);
         if(hasBitError){
-            //macFrameRecibida -> setBitError(true);
+            EV << "Error añadido al MACFrame\n";
+            macFrameRecibida -> setBitError(true);
         }
 
         delete packet;
@@ -387,7 +388,6 @@ bool RfPhysicalInterface::simulateError(Packet *packet){
 
 
     if (dblrand() < 1.0 - pow(1.0 - BERleida, (double) packet->getBitLength())){
-        packet->setBitError(true);
         errorInMsg = true;
         EV << "Error en el mensaje RF recibido\n";
     }else{
