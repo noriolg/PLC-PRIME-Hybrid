@@ -15,6 +15,16 @@
 
 #include "PLCRFCombiner.h"
 
+#include <global_variables.h>
+#include <MACMsg_m.h>
+#include <omnetpp/clog.h>
+#include <omnetpp/cmodule.h>
+#include <omnetpp/cobjectfactory.h>
+#include <omnetpp/csimplemodule.h>
+#include <omnetpp/regmacros.h>
+#include <PLCMAC.h>
+#include <iostream>
+
 
 
 Define_Module(PLCRFCombiner);
@@ -31,7 +41,66 @@ PLCRFCombiner::~PLCRFCombiner() {
 }
 
 void PLCRFCombiner::handleMessage(cMessage *msg){
-    EV << "Combiner has received the message. Sending to MAC layer\n";
+    EV << "Combiner has received the message\n";
 
-    send(msg, "upperLayerOut");
+    cModule *submoduloMAC = this ->getParentModule() -> getSubmodule("mac");
+    PLCMAC *claseMAC = (PLCMAC*) submoduloMAC;
+
+    int tipoNodo = claseMAC -> getNodeType();
+    EV << "Combiner has determined that I am a type "<< tipoNodo <<"node. (0 PLC, 1 RF, 2 HYB)\n";
+    bool puedoRecibir = canIHandleThisMessage(msg, tipoNodo);
+
+    if (puedoRecibir){
+        EV << "Combiner has determined that I can receive. Sending to MAC layer\n";
+        send(msg, "upperLayerOut");
+    }
+    else{
+        EV << "Combiner has determined that I cannot receive. Deleting message\n";
+        delete(msg);
+    }
+
+
 }
+
+
+
+bool PLCRFCombiner::canIHandleThisMessage(cMessage *msg, int nodeType){
+
+    // Primero veo si este nodo debería haber recibido este mensaje dependiendo de qué tipo de mensaje es:
+    //
+    // Y dependiendom de qué tipo de nodo soy:
+    // nodeType --> NODE_TYPE_PLC, NODE_TYPE_RF o NODE_TYPE_HYBRID
+    // (MACMsg *) msg
+
+    bool deberiaHaberRecibido;
+    MACMsg *frame = (MACMsg *) msg;
+    int interfaz_entrada = frame -> getHybridTransmitMode();
+
+
+    if(nodeType == NODE_TYPE_HYBRID){
+        EV << "Soy un nodo híbrido\n";
+        deberiaHaberRecibido = true;
+    }else if(nodeType == NODE_TYPE_PLC){
+        EV << "Soy un nodo no híbrido PLC\n";
+        if (interfaz_entrada == PLC_PREFERENCE){
+            EV << "La interfaz de entrada de este mensaje es PLC\n";
+            deberiaHaberRecibido = true;
+        }else{
+            EV << "La interfaz de entrada de este mensaje es RF\n";
+            deberiaHaberRecibido = false;
+        }
+
+    }else{
+        EV << "Soy un nodo no híbrido RF\n";
+        if (interfaz_entrada == RF_PREFERENCE){
+            EV << "La interfaz de entrada de este mensaje es RF\n";
+            deberiaHaberRecibido = true;
+        }else{
+            EV << "La interfaz de entrada de este mensaje es PLC\n";
+            deberiaHaberRecibido = false;
+        }
+    }
+
+    return deberiaHaberRecibido;
+}
+

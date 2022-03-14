@@ -24,6 +24,7 @@ class PLCRFCombiner : public cSimpleModule
         PLCRFCombiner();
         virtual ~PLCRFCombiner();
         virtual void handleMessage(cMessage *msg) override;
+        bool canIHandleThisMessage(cMessage *msg, int nodeType);
 };
 
 #endif /* PLCRFCOMBINER_H_ */

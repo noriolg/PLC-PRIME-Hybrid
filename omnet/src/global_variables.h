@@ -16,6 +16,11 @@ using namespace std;
 
 std::map<float, float> snrBerMap;
 
+#define PLC_PREFERENCE 0
+#define RF_PREFERENCE 1
 
+#define NODE_TYPE_PLC 0
+#define NODE_TYPE_RF 1
+#define NODE_TYPE_HYBRID 2
 
 #endif /* GLOBAL_VARIABLES_H_ */
