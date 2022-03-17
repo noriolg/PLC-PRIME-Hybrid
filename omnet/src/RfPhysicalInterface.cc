@@ -92,7 +92,8 @@ void RfPhysicalInterface::initialize(int stage){
 
         if (soyRF){
             string imagen_nodo = "misc/signal_departure";
-            changeNodeImage(imagen_nodo);
+            // Nico - lo he cambiado para hacer todas las actualizaciones desde PLCMACSN
+            //changeNodeImage(imagen_nodo);
         }
 
     }

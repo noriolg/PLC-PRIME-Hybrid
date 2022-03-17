@@ -8,7 +8,10 @@ The netwok logical topology is :
 	-> I am node with SID = -1 and LNID = 2
 	|
 	|
-	-> I am node with SID = -1 and LNID = 4
+	-> I am node with SID = 1 and LNID = 4
+		|
+		|
+		-> I am node with SID = -1 and LNID = 7
 	|
 	|
 	-> I am node with SID = -1 and LNID = 5
