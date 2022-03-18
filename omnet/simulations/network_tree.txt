@@ -2,19 +2,37 @@ The netwok logical topology is :
  -> I am node with SID = 0
 	|
 	|
-	-> I am node with SID = -1 and LNID = 1
-	|
-	|
-	-> I am node with SID = -1 and LNID = 2
-	|
-	|
-	-> I am node with SID = 1 and LNID = 4
+	-> I am node with SID = 2 and LNID = 1
 		|
 		|
-		-> I am node with SID = -1 and LNID = 7
+		-> I am node with SID = -1 and LNID = 14
+		|
+		|
+		-> I am node with SID = -1 and LNID = 21
 	|
 	|
-	-> I am node with SID = -1 and LNID = 5
-	|
-	|
-	-> I am node with SID = -1 and LNID = 6
+	-> I am node with SID = 1 and LNID = 2
+		|
+		|
+		-> I am node with SID = 7 and LNID = 7
+		|
+		|
+		-> I am node with SID = 3 and LNID = 4
+			|
+			|
+			-> I am node with SID = 5 and LNID = 13
+				|
+				|
+				-> I am node with SID = -1 and LNID = 18
+				|
+				|
+				-> I am node with SID = -1 and LNID = 19
+		|
+		|
+		-> I am node with SID = 4 and LNID = 11
+			|
+			|
+			-> I am node with SID = 6 and LNID = 15
+				|
+				|
+				-> I am node with SID = -1 and LNID = 22
