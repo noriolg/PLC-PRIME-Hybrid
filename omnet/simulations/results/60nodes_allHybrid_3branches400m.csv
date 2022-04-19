@@ -1,882 +1,886 @@
 run,type,module,name,attrname,attrvalue,vectime,vecvalue
-General-0-20220317-23:23:54-3773,runattr,,,configname,General,,
-General-0-20220317-23:23:54-3773,runattr,,,datetime,20220317-23:23:54,,
-General-0-20220317-23:23:54-3773,runattr,,,datetimef,20220317-232354,,
-General-0-20220317-23:23:54-3773,runattr,,,experiment,General,,
-General-0-20220317-23:23:54-3773,runattr,,,inifile,HybridMeter.ini,,
-General-0-20220317-23:23:54-3773,runattr,,,iterationvars,,,
-General-0-20220317-23:23:54-3773,runattr,,,iterationvarsd,,,
-General-0-20220317-23:23:54-3773,runattr,,,iterationvarsf,,,
-General-0-20220317-23:23:54-3773,runattr,,,measurement,,,
-General-0-20220317-23:23:54-3773,runattr,,,network,HybridMeter_Net,,
-General-0-20220317-23:23:54-3773,runattr,,,processid,3773,,
-General-0-20220317-23:23:54-3773,runattr,,,repetition,0,,
-General-0-20220317-23:23:54-3773,runattr,,,replication,#0,,
-General-0-20220317-23:23:54-3773,runattr,,,resultdir,results,,
-General-0-20220317-23:23:54-3773,runattr,,,runnumber,0,,
-General-0-20220317-23:23:54-3773,runattr,,,seedset,0,,
-General-0-20220317-23:23:54-3773,config,,,network,HybridMeter_Net,,
-General-0-20220317-23:23:54-3773,config,,,repeat,1,,
-General-0-20220317-23:23:54-3773,config,,,**.*.*.BERFilename,"""./BERDATA/RSC_M_4.txt""",,
-General-0-20220317-23:23:54-3773,config,,,**.*.*.standaloneRFNetwork,false,,
-General-0-20220317-23:23:54-3773,config,,,**.radio.centerFrequency,905 MHz,,
-General-0-20220317-23:23:54-3773,config,,,**.radio.bandwidth,2.8 MHz,,
-General-0-20220317-23:23:54-3773,config,,,**.radio.headerLength,(1 *8 + 7 + 1) * 16us,,
-General-0-20220317-23:23:54-3773,config,,,**.transmitter.modulation,"""BPSK""",,
-General-0-20220317-23:23:54-3773,config,,,**.transmitter.bitrate,250kbps,,
-General-0-20220317-23:23:54-3773,config,,,**.transmitter.power,2.29mW,,
-General-0-20220317-23:23:54-3773,config,,,**.receiver.modulation,"""BPSK""",,
-General-0-20220317-23:23:54-3773,config,,,**.receiver.sensitivity,-94.01dBm,,
-General-0-20220317-23:23:54-3773,config,,,**.receiver.minInterferencePower,-120dBm,,
-General-0-20220317-23:23:54-3773,config,,,*.RfBaseNode.mobility.typename,StationaryMobility,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_BN.hasRF,true,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_BN.hasPRIME,true,,
-General-0-20220317-23:23:54-3773,config,,,*.*.rflan.PHYLayerAbstraction.posicionYdelBN,300,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_BN.mac.oneOfEveryXNodesIsHybrid,1,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_BN.mac.oneOfEveryXRegularNodesIsRF,0,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_BN.mac.oneOfEveryXHybridNodesIsRF,1,,
-General-0-20220317-23:23:54-3773,config,,,*.RfServiceNode.mobility.typename,StationaryMobility,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_SN[*].hasRF,true,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_SN[*].hasPRIME,true,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_SN[*].mac.oneOfEveryXNodesIsHybrid,1,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_SN[*].mac.oneOfEveryXRegularNodesIsRF,0,,
-General-0-20220317-23:23:54-3773,config,,,*.PLC_SN[*].mac.oneOfEveryXHybridNodesIsRF,2,,
-General-0-20220317-23:23:54-3773,config,,,sim-time-limit,2000s,,
-General-0-20220317-23:23:54-3773,config,,,**.endSimTime,50000,,
-General-0-20220317-23:23:54-3773,config,,,**.uniform_d,true,,
-General-0-20220317-23:23:54-3773,config,,,**.fixedArch,false,,
-General-0-20220317-23:23:54-3773,config,,,**.recordDLMSCOSEMAppMsgRoundtripLatency,true,,
-General-0-20220317-23:23:54-3773,config,,,**.recordDLMSCOSEMAppMsgLatency,false,,
-General-0-20220317-23:23:54-3773,config,,,**.recordDLMSCOSEMAppTTRAllMeters,true,,
-General-0-20220317-23:23:54-3773,config,,,**.record_app_roundtrip,true,,
-General-0-20220317-23:23:54-3773,config,,,**.record_PRO_Num_Switches,true,,
-General-0-20220317-23:23:54-3773,config,,,**.record_REG,true,,
-General-0-20220317-23:23:54-3773,config,,,**.printLog,false,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_BN.mac.DEFAULT_ALV_TIME,120,,
-General-0-20220317-23:23:54-3773,config,,,**.BER_SIM,-1.0,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.DEFAULT_COMMUNICATION_MODE,0,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.RANDOM_REGISTRATION_NUMBER,10,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.RANDOM_REGISTRATION,false,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.ALV_OFFSET,60,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.SWITCH_CAPABILITY,true,,
-General-0-20220317-23:23:54-3773,config,,,**.mac.PRN_WAIT_TIME,30,,
-General-0-20220317-23:23:54-3773,config,,,**.interAppMsgTime,10.0,,
-General-0-20220317-23:23:54-3773,config,,,**.firstAppMsgAt,300.0,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_BN.mac.promotionNode_EUI48,-1,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_BN.mac.promotionNode_2ndLevel_EUI48,-1,,
-General-0-20220317-23:23:54-3773,config,,,**.ctrlIndComMode,0,,
-General-0-20220317-23:23:54-3773,config,,,**.initialIndComMode,0,,
-General-0-20220317-23:23:54-3773,config,,,**.usePRM,true,,
-General-0-20220317-23:23:54-3773,config,,,**.interPromotionTime,200,,
-General-0-20220317-23:23:54-3773,config,,,**.appBlockBehaviour,true,,
-General-0-20220317-23:23:54-3773,config,,,**.AppReqMsgSize_Bytes,70,,
-General-0-20220317-23:23:54-3773,config,,,**.AppResMsgSize_Bytes,232,,
-General-0-20220317-23:23:54-3773,config,,,**.AppGetReqSize_Bytes,71,,
-General-0-20220317-23:23:54-3773,config,,,**.AppGetReqNextSize_Bytes,14,,
-General-0-20220317-23:23:54-3773,config,,,**.AppResBlockSize_Bytes,512,,
-General-0-20220317-23:23:54-3773,config,,,**.AppProcessingTime,0.5,,
-General-0-20220317-23:23:54-3773,config,,,**.llc.llcReTxTimer,10,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.allowSwitchIfDBPSK_FEC,true,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.refreshSwitchPower,false,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.numDisconnectionsBeforePRN,5,,
-General-0-20220317-23:23:54-3773,config,,,**.alvNChances,3,,
-General-0-20220317-23:23:54-3773,config,,,**.plcBus[*].impulsive,false,,
-General-0-20220317-23:23:54-3773,config,,,**.sequentialPollingInterval,9,,
-General-0-20220317-23:23:54-3773,config,,,**.useSequentialPolling,true,,
-General-0-20220317-23:23:54-3773,config,,,**.sendALV,true,,
-General-0-20220317-23:23:54-3773,config,,,**.appTimeOut,50,,
-General-0-20220317-23:23:54-3773,config,,,**.txQueueLimit,10000,,
-General-0-20220317-23:23:54-3773,config,,,warmup-period,5s,,
-General-0-20220317-23:23:54-3773,config,,,**.llc.CIMTUSizeBytes,256,,
-General-0-20220317-23:23:54-3773,config,,,**.llc.CIMTUSizeBits,2048,,
-General-0-20220317-23:23:54-3773,config,,,**.llc.defaultWindowSize,1,,
-General-0-20220317-23:23:54-3773,config,,,**.appBehavior,2001,,
-General-0-20220317-23:23:54-3773,config,,,**.nBranches,3,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].mac.CAP_CFP,false,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_SN[*].llc.CAP_CFP,false,,
-General-0-20220317-23:23:54-3773,config,,,**.PLC_BN.mac.policy,1,,
-General-0-20220317-23:23:54-3773,config,,,**.plcBus[*].nullAttenuation,false,,
-General-0-20220317-23:23:54-3773,config,,,**.nHostsPerBranch,20,,
-General-0-20220317-23:23:54-3773,config,,,**.attFileAddress,"""topologiasLINTER/att/LossMat6Nodos_100mTotDist.txt""",,
-General-0-20220317-23:23:54-3773,config,,,**.attFileAddress,"""topologiasLINTER/att/LossMat21Nodos_400mTotDist.txt""",,
-General-0-20220317-23:23:54-3773,config,,,**.CAP_CFP_NUM_SN,-1,,
-General-0-20220317-23:23:54-3773,config,,,**.busLength,400,,
-General-0-20220317-23:23:54-3773,config,,,**.busLengthForRadios,400,,
-General-0-20220317-23:23:54-3773,config,,,**.verticalDistanceBetweenBuses,20,,
-General-0-20220317-23:23:54-3773,config,,,**.positions,"""25 38 37""",,
-General-0-20220317-23:23:54-3773,config,,,**.archFileAddress,"""""",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[21].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[21].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[1].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[41].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[1].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[41].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[3].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[43].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[3].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[43].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCTxQueueLength,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCTxQueueLengthALV,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[46].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[13].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[53].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[41].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[41].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[33].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[1].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[1].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[43].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[43].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[21].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[3].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[3].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCNumRegNodes,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,Registering_EUI48,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[21].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[21].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[3].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[43].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[22].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[1].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[3].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[43].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[42].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[21].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[1].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[41].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[0].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[40].mac,PLCMessagesWithErrors,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[20].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[24].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[44].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[4].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[45].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[25].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[5].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[47].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[27].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[7].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[48].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[28].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[8].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[49].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[29].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[9].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[50].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[30].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[10].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[51].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[31].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[11].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[52].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[32].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[12].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[54].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[34].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[14].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[55].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[35].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[15].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[56].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[36].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[16].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[57].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[37].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[17].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[58].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[38].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[18].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[59].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[39].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[19].mac,PLC_Number_of_self_disconnections,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[2].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[41].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,PLCTxQueueLength,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].mac,PLCTxQueueLengthALV,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,PLCNumSwitches,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_BN.mac,switch_nodes,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[33].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[33].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[33].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[33].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,transmissionState:vector,,,"",""
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
-General-0-20220317-23:23:54-3773,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[46].mac,I_received_BCN,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[46].mac,I_sent_REG_REQ,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[46].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[46].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].mac,PLCTxAttemptsBeforeTx,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[6].mac,PLCAccessDelay,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[33].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
-General-0-20220317-23:23:54-3773,vector,HybridMeter_Net.PLC_SN[26].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,runattr,,,configname,General,,
+General-0-20220407-20:01:45-3550,runattr,,,datetime,20220407-20:01:45,,
+General-0-20220407-20:01:45-3550,runattr,,,datetimef,20220407-200145,,
+General-0-20220407-20:01:45-3550,runattr,,,experiment,General,,
+General-0-20220407-20:01:45-3550,runattr,,,inifile,HybridMeter.ini,,
+General-0-20220407-20:01:45-3550,runattr,,,iterationvars,,,
+General-0-20220407-20:01:45-3550,runattr,,,iterationvarsd,,,
+General-0-20220407-20:01:45-3550,runattr,,,iterationvarsf,,,
+General-0-20220407-20:01:45-3550,runattr,,,measurement,,,
+General-0-20220407-20:01:45-3550,runattr,,,network,HybridMeter_Net,,
+General-0-20220407-20:01:45-3550,runattr,,,processid,3550,,
+General-0-20220407-20:01:45-3550,runattr,,,repetition,0,,
+General-0-20220407-20:01:45-3550,runattr,,,replication,#0,,
+General-0-20220407-20:01:45-3550,runattr,,,resultdir,results,,
+General-0-20220407-20:01:45-3550,runattr,,,runnumber,0,,
+General-0-20220407-20:01:45-3550,runattr,,,seedset,0,,
+General-0-20220407-20:01:45-3550,config,,,network,HybridMeter_Net,,
+General-0-20220407-20:01:45-3550,config,,,repeat,1,,
+General-0-20220407-20:01:45-3550,config,,,**.*.*.BERFilename,"""./BERDATA/RSC_M_4.txt""",,
+General-0-20220407-20:01:45-3550,config,,,**.*.*.standaloneRFNetwork,false,,
+General-0-20220407-20:01:45-3550,config,,,**.radio.centerFrequency,905 MHz,,
+General-0-20220407-20:01:45-3550,config,,,**.radio.bandwidth,2.8 MHz,,
+General-0-20220407-20:01:45-3550,config,,,**.radio.headerLength,(1 *8 + 7 + 1) * 16us,,
+General-0-20220407-20:01:45-3550,config,,,**.transmitter.modulation,"""BPSK""",,
+General-0-20220407-20:01:45-3550,config,,,**.transmitter.bitrate,250kbps,,
+General-0-20220407-20:01:45-3550,config,,,**.transmitter.power,2.29mW,,
+General-0-20220407-20:01:45-3550,config,,,**.receiver.modulation,"""BPSK""",,
+General-0-20220407-20:01:45-3550,config,,,**.receiver.sensitivity,-94.01dBm,,
+General-0-20220407-20:01:45-3550,config,,,**.receiver.minInterferencePower,-120dBm,,
+General-0-20220407-20:01:45-3550,config,,,*.RfBaseNode.mobility.typename,StationaryMobility,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_BN.hasRF,true,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_BN.hasPRIME,true,,
+General-0-20220407-20:01:45-3550,config,,,*.*.rflan.PHYLayerAbstraction.posicionYdelBN,300,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_BN.mac.oneOfEveryXNodesIsHybrid,1,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_BN.mac.oneOfEveryXRegularNodesIsRF,0,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_BN.mac.oneOfEveryXHybridNodesIsRF,0,,
+General-0-20220407-20:01:45-3550,config,,,*.RfServiceNode.mobility.typename,StationaryMobility,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_SN[*].hasRF,true,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_SN[*].hasPRIME,true,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_SN[*].mac.oneOfEveryXNodesIsHybrid,1,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_SN[*].mac.oneOfEveryXRegularNodesIsRF,0,,
+General-0-20220407-20:01:45-3550,config,,,*.PLC_SN[*].mac.oneOfEveryXHybridNodesIsRF,2,,
+General-0-20220407-20:01:45-3550,config,,,sim-time-limit,800s,,
+General-0-20220407-20:01:45-3550,config,,,**.endSimTime,50000,,
+General-0-20220407-20:01:45-3550,config,,,**.uniform_d,true,,
+General-0-20220407-20:01:45-3550,config,,,**.fixedArch,false,,
+General-0-20220407-20:01:45-3550,config,,,**.recordDLMSCOSEMAppMsgRoundtripLatency,true,,
+General-0-20220407-20:01:45-3550,config,,,**.recordDLMSCOSEMAppMsgLatency,false,,
+General-0-20220407-20:01:45-3550,config,,,**.recordDLMSCOSEMAppTTRAllMeters,true,,
+General-0-20220407-20:01:45-3550,config,,,**.record_app_roundtrip,true,,
+General-0-20220407-20:01:45-3550,config,,,**.record_PRO_Num_Switches,true,,
+General-0-20220407-20:01:45-3550,config,,,**.record_REG,true,,
+General-0-20220407-20:01:45-3550,config,,,**.printLog,false,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_BN.mac.DEFAULT_ALV_TIME,120,,
+General-0-20220407-20:01:45-3550,config,,,**.BER_SIM,-1.0,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.DEFAULT_COMMUNICATION_MODE,0,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.RANDOM_REGISTRATION_NUMBER,10,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.RANDOM_REGISTRATION,false,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.ALV_OFFSET,60,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.SWITCH_CAPABILITY,true,,
+General-0-20220407-20:01:45-3550,config,,,**.mac.PRN_WAIT_TIME,30,,
+General-0-20220407-20:01:45-3550,config,,,**.interAppMsgTime,10.0,,
+General-0-20220407-20:01:45-3550,config,,,**.firstAppMsgAt,300.0,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_BN.mac.promotionNode_EUI48,-1,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_BN.mac.promotionNode_2ndLevel_EUI48,-1,,
+General-0-20220407-20:01:45-3550,config,,,**.ctrlIndComMode,0,,
+General-0-20220407-20:01:45-3550,config,,,**.initialIndComMode,0,,
+General-0-20220407-20:01:45-3550,config,,,**.usePRM,true,,
+General-0-20220407-20:01:45-3550,config,,,**.interPromotionTime,200,,
+General-0-20220407-20:01:45-3550,config,,,**.appBlockBehaviour,true,,
+General-0-20220407-20:01:45-3550,config,,,**.AppReqMsgSize_Bytes,70,,
+General-0-20220407-20:01:45-3550,config,,,**.AppResMsgSize_Bytes,232,,
+General-0-20220407-20:01:45-3550,config,,,**.AppGetReqSize_Bytes,71,,
+General-0-20220407-20:01:45-3550,config,,,**.AppGetReqNextSize_Bytes,14,,
+General-0-20220407-20:01:45-3550,config,,,**.AppResBlockSize_Bytes,512,,
+General-0-20220407-20:01:45-3550,config,,,**.AppProcessingTime,0.5,,
+General-0-20220407-20:01:45-3550,config,,,**.llc.llcReTxTimer,10,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.allowSwitchIfDBPSK_FEC,true,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.refreshSwitchPower,false,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.numDisconnectionsBeforePRN,5,,
+General-0-20220407-20:01:45-3550,config,,,**.alvNChances,3,,
+General-0-20220407-20:01:45-3550,config,,,**.plcBus[*].impulsive,false,,
+General-0-20220407-20:01:45-3550,config,,,**.sequentialPollingInterval,9,,
+General-0-20220407-20:01:45-3550,config,,,**.useSequentialPolling,true,,
+General-0-20220407-20:01:45-3550,config,,,**.sendALV,true,,
+General-0-20220407-20:01:45-3550,config,,,**.appTimeOut,50,,
+General-0-20220407-20:01:45-3550,config,,,**.txQueueLimit,10000,,
+General-0-20220407-20:01:45-3550,config,,,warmup-period,5s,,
+General-0-20220407-20:01:45-3550,config,,,**.llc.CIMTUSizeBytes,256,,
+General-0-20220407-20:01:45-3550,config,,,**.llc.CIMTUSizeBits,2048,,
+General-0-20220407-20:01:45-3550,config,,,**.llc.defaultWindowSize,1,,
+General-0-20220407-20:01:45-3550,config,,,**.appBehavior,2001,,
+General-0-20220407-20:01:45-3550,config,,,**.nBranches,3,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].mac.CAP_CFP,false,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_SN[*].llc.CAP_CFP,false,,
+General-0-20220407-20:01:45-3550,config,,,**.PLC_BN.mac.policy,1,,
+General-0-20220407-20:01:45-3550,config,,,**.plcBus[*].nullAttenuation,false,,
+General-0-20220407-20:01:45-3550,config,,,**.nHostsPerBranch,20,,
+General-0-20220407-20:01:45-3550,config,,,**.attFileAddress,"""topologiasLINTER/att/LossMat6Nodos_100mTotDist.txt""",,
+General-0-20220407-20:01:45-3550,config,,,**.CAP_CFP_NUM_SN,-1,,
+General-0-20220407-20:01:45-3550,config,,,**.busLength,400,,
+General-0-20220407-20:01:45-3550,config,,,**.busLengthForRadios,400,,
+General-0-20220407-20:01:45-3550,config,,,**.verticalDistanceBetweenBuses,20,,
+General-0-20220407-20:01:45-3550,config,,,**.positions,"""25 38 37""",,
+General-0-20220407-20:01:45-3550,config,,,**.archFileAddress,"""""",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[41].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[21].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[41].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[21].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[43].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[23].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[43].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[23].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[45].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[25].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[45].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[25].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[47].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[27].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[47].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[27].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[9].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[9].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[51].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[31].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[11].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[51].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[31].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[11].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[53].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[33].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[13].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[55].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[35].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[15].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[55].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[35].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[15].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[37].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[17].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[37].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[17].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[59].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[39].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[19].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[59].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[39].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[19].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[35].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[35].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCTxQueueLength,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCTxQueueLengthALV,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[3].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[5].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[23].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[25].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[43].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[45].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[1].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[7].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[21].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[27].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[41].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[47].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[9].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[29].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[31].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[33].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[11].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[13].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[51].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[53].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[35].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[15].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[55].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[37].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[17].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[57].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[21].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[55].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[31].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[51].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCNumRegNodes,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,Registering_EUI48,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[38].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[39].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[19].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[59].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[32].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[50].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[17].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[48].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,source,receptionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[4].rflan.wlan.radio,receptionState:vector,title,"Radio reception state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[43].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[11].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[47].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[58].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[37].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[27].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[43].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[23].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[19].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[45].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[45].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[41].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[23].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[15].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[25].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[59].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[39].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[2].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[56].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[9].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[9].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[11].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[11].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[41].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[41].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[12].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[24].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[39].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[39].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[37].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[37].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[47].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[47].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[55].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[55].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[18].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[59].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[59].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[43].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[43].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[16].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[17].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[17].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_BN.rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[25].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[45].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[0].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[40].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[21].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[21].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[20].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[22].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[27].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[47].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[23].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[23].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[42].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[36].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[8].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[31].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[31].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[19].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[19].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[30].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[35].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[15].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[55].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[28].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[15].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[15].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[45].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[14].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[54].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[34].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[51].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[51].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[44].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[10].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[52].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[25].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[25].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[27].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[27].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[35].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[9].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[11].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[31].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[51].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[39].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[19].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[59].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[37].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[17].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[9].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[6].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[21].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[41].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[20].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[26].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].mac,PLCMessagesWithErrors,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[40].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[46].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[4].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[48].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[28].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[8].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[50].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[30].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[10].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[52].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[32].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[12].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[54].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[34].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[14].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[56].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[36].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[16].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[58].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[38].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[18].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[0].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLC_Number_of_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,Unregistering_EUI48,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[44].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[24].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,PLCTxQueueLength,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].mac,PLCTxQueueLengthALV,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,PLCNumSwitches,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.mac,switch_nodes,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[53].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[53].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[53].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[53].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,transmissionState:vector,,,"",""
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,transmissionState:vector,interpolationmode,sample-hold,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,transmissionState:vector,source,transmissionStateChanged,,
+General-0-20220407-20:01:45-3550,attr,HybridMeter_Net.PLC_SN[49].rflan.wlan.radio,transmissionState:vector,title,"Radio transmission state, vector",,
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[33].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[33].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[13].mac,I_received_BCN,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[13].mac,I_sent_REG_REQ,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[33].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[33].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[13].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[13].mac,PLCTxAttemptsBeforeTx,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[13].mac,PLCAccessDelay,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.BNApp,DLMSCOSEMAppTTRAllMeters,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[1].SNApp,app_roundtrip,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.BNApp,DLMSCOSEMAppMsgRoundtripLatency,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_BN.BNApp,appMsg_bps,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[2].SNApp,app_roundtrip,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[3].SNApp,app_roundtrip,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[5].SNApp,app_roundtrip,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[7].SNApp,app_roundtrip,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[29].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[46].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].mac,PLCnumberOfmacSCPMaxTxAttempts,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[57].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[53].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[26].mac,PLC_Number_of_self_disconnections,,,"",""
+General-0-20220407-20:01:45-3550,vector,HybridMeter_Net.PLC_SN[6].mac,PLC_Number_of_self_disconnections,,,"",""
